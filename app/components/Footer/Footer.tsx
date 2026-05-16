@@ -44,7 +44,7 @@ export default function Footer() {
               {/* Acerca de Innovasum */}
               <div className="flex-1 min-w-44">
                 <h5 className="text-base font-bold uppercase mb-4 letter-spacing-wide text-white">
-                  ACERCA DE JBIMPORTS
+                  ACERCA DE INNOVASUM
                 </h5>
                 <ul className="list-none m-0 p-0">
                   <li className="mb-2.5">

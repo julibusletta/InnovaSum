@@ -1,0 +1,17 @@
+[
+  {
+    "email": "julibusletta@gmail.com",
+    "password": "$2b$10$jObmeELjFQo6sjvFV2XKuOGN21U/tZDOyNnCDBq5zl.o9olYPuIPS",
+    "firstName": "Test",
+    "lastName": "test2",
+    "dni": "37991025",
+    "role": "user",
+    "address": {
+      "street": "Joaquín V. González",
+      "number": "1420",
+      "city": "BURZACO",
+      "state": "Buenos Aires",
+      "zip": "1852"
+    }
+  }
+]

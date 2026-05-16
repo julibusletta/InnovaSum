@@ -1,0 +1,111 @@
+/* === PRODUCT CAROUSEL SECTION === */
+
+.native-carrusel {
+  padding: 30px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+}
+
+.main-section-title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+}
+
+.categories-title-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.categories-title-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: #fc4500;
+  border-radius: 2px;
+}
+
+.products-carousel-wrapper {
+  margin-top: 20px;
+}
+
+/* Product Card Styling - Hardened */
+.product-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: #fc4500 !important;
+}
+
+.product-image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.02);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-image-container::after {
+  opacity: 1;
+}
+
+/* Navigation Buttons Styling */
+.products-carousel-wrapper button svg {
+  transition: transform 0.2s ease;
+}
+
+.products-carousel-wrapper button:hover svg {
+  transform: scale(1.2);
+}
+
+.products-carousel-wrapper button:active {
+  transform: scale(0.9);
+}
+
+/* Tablet Optimizations */
+@media (max-width: 1024px) {
+  .main-section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .native-carrusel {
+    padding: 20px 0;
+  }
+  
+  .main-section-title {
+    font-size: 1.4rem;
+  }
+
+  .categories-title-wrapper::after {
+    width: 40px;
+    height: 3px;
+    bottom: -4px;
+  }
+}
+
+/* Extra Small Mobile (Specific Fixes) */
+@media (max-width: 480px) {
+  .product-card {
+    height: auto !important;
+  }
+  
+  .product-info h3 {
+    min-height: 3rem !important;
+  }
+}

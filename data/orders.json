@@ -1,0 +1,202 @@
+[
+  {
+    "id": "JB-1773693274557",
+    "userEmail": "invitado@jbimports.com",
+    "userName": "Cliente Invitado",
+    "items": [
+      {
+        "name": "RTX 4090 Founders Edition",
+        "quantity": 2,
+        "price": 1799
+      }
+    ],
+    "total": 3598,
+    "status": "APPROVED",
+    "createdAt": "2026-03-16T20:34:37.861Z",
+    "updatedAt": "2026-03-17T11:25:04.786Z",
+    "navePaymentId": "nave-test-payment-id"
+  },
+  {
+    "id": "JB-1773749965040",
+    "userEmail": "invitado@jbimports.com",
+    "userName": "Cliente Invitado",
+    "items": [
+      {
+        "name": "RTX 4090 Founders Edition",
+        "quantity": 1,
+        "price": 1799
+      }
+    ],
+    "total": 1799,
+    "status": "PENDING",
+    "createdAt": "2026-03-17T12:19:27.684Z",
+    "updatedAt": "2026-03-17T12:19:27.684Z",
+    "navePaymentId": "8541cf78-292e-4968-a70c-6c231c2fb709"
+  },
+  {
+    "id": "JB-1773750293865",
+    "userEmail": "invitado@jbimports.com",
+    "userName": "Cliente Invitado",
+    "items": [
+      {
+        "name": "RTX 4090 Founders Edition",
+        "quantity": 2,
+        "price": 1799
+      },
+      {
+        "name": "RTX 4070 Ti Gaming",
+        "quantity": 1,
+        "price": 1349
+      }
+    ],
+    "total": 4947,
+    "status": "PENDING",
+    "createdAt": "2026-03-17T12:24:57.698Z",
+    "updatedAt": "2026-03-17T12:24:57.698Z",
+    "navePaymentId": "73d19699-c750-4124-91ab-f201ded251d9"
+  },
+  {
+    "id": "JB-1773750425697",
+    "userEmail": "invitado@jbimports.com",
+    "userName": "Cliente Invitado",
+    "items": [
+      {
+        "name": "RTX 4090 Founders Edition",
+        "quantity": 1,
+        "price": 1799
+      }
+    ],
+    "total": 1799,
+    "status": "PENDING",
+    "createdAt": "2026-03-17T12:27:08.104Z",
+    "updatedAt": "2026-03-17T12:27:08.104Z",
+    "navePaymentId": "639879e5-bc8b-4b09-9cf5-1bb59b4a3969"
+  },
+  {
+    "id": "JB-1773750973386",
+    "userEmail": "julibusletta@gmail.com",
+    "userName": "Test test2",
+    "items": [
+      {
+        "name": "RTX 4090 Founders Edition",
+        "quantity": 1,
+        "price": 1799
+      }
+    ],
+    "total": 1799,
+    "status": "PENDING",
+    "createdAt": "2026-03-17T12:36:29.814Z",
+    "updatedAt": "2026-03-17T12:36:29.814Z",
+    "navePaymentId": "d696c609-de9d-4338-b231-0d3fa4601c12"
+  },
+  {
+    "id": "JB-1773751620515",
+    "userEmail": "julibusletta@gmail.com",
+    "userName": "Test test2",
+    "items": [
+      {
+        "name": "RTX 4090 Founders Edition",
+        "quantity": 1,
+        "price": 1799
+      }
+    ],
+    "total": 1799,
+    "status": "APPROVED",
+    "createdAt": "2026-03-17T12:47:03.457Z",
+    "updatedAt": "2026-03-17T13:07:37.595Z",
+    "navePaymentId": "5ae86dc2-6fe1-4a16-9b75-7014912166e7"
+  },
+  {
+    "id": "JB-1773752661531",
+    "userEmail": "julibusletta@gmail.com",
+    "userName": "Test test2",
+    "items": [
+      {
+        "name": "RTX 4090 Founders Edition",
+        "quantity": 1,
+        "price": 1799
+      }
+    ],
+    "total": 1799,
+    "status": "PENDING",
+    "createdAt": "2026-03-17T13:04:26.455Z",
+    "updatedAt": "2026-03-17T13:04:26.455Z",
+    "navePaymentId": "c68bea48-7f7a-4dff-bba2-d3facadd6750"
+  },
+  {
+    "id": "JB-1773753005468",
+    "userEmail": "julibusletta@gmail.com",
+    "userName": "Test test2",
+    "items": [
+      {
+        "name": "RTX 4070 Ti Gaming",
+        "quantity": 1,
+        "price": 1349
+      },
+      {
+        "name": "RTX 4090 Founders Edition",
+        "quantity": 1,
+        "price": 1799
+      },
+      {
+        "name": "RTX 4070 Super",
+        "quantity": 1,
+        "price": 849
+      },
+      {
+        "name": "RTX 4060 Ti Entry",
+        "quantity": 1,
+        "price": 449
+      },
+      {
+        "name": "RTX 3090 Ti",
+        "quantity": 1,
+        "price": 999
+      }
+    ],
+    "total": 5445,
+    "status": "APPROVED",
+    "createdAt": "2026-03-17T13:10:16.084Z",
+    "updatedAt": "2026-03-17T13:25:43.624Z",
+    "navePaymentId": "manual_debug_trigger"
+  },
+  {
+    "id": "JB-1773753746084",
+    "userEmail": "julibusletta@gmail.com",
+    "userName": "Test test2",
+    "items": [
+      {
+        "name": "RTX 4090 Founders Edition",
+        "quantity": 2,
+        "price": 1799
+      },
+      {
+        "name": "RTX 4070 Ti Gaming",
+        "quantity": 1,
+        "price": 1349
+      }
+    ],
+    "total": 4947,
+    "status": "PENDING",
+    "createdAt": "2026-03-17T13:22:28.897Z",
+    "updatedAt": "2026-03-17T13:22:28.897Z",
+    "navePaymentId": "ddea9bb4-6e93-4000-afa7-b487e2680ca7"
+  },
+  {
+    "id": "JB-1773755652351",
+    "userEmail": "julibusletta@gmail.com",
+    "userName": "Test test2",
+    "items": [
+      {
+        "name": "RTX 4090 Founders Edition",
+        "quantity": 1,
+        "price": 1799
+      }
+    ],
+    "total": 1799,
+    "status": "PENDING",
+    "createdAt": "2026-03-17T13:54:15.051Z",
+    "updatedAt": "2026-03-17T13:54:15.051Z",
+    "navePaymentId": "2dea9460-94c8-4048-bbdb-53463806f9f8"
+  }
+]

@@ -1,0 +1,255 @@
+/* === CATEGORIES SECTION === */
+
+.categories-section {
+  width: 100%;
+  background: white;
+  padding: 40px 0;
+  margin: 40px 0;
+}
+
+.categories-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.categories-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.categories-title-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.categories-header h2 {
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.categories-header h2 b {
+  color: #0066cc;
+}
+
+.categories-arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.arrow-btn {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.arrow-btn:hover {
+  border-color: #0066cc;
+  background: #f5f9ff;
+  color: #0066cc;
+  transform: scale(1.05);
+}
+
+.loading-text {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-size: 14px;
+}
+
+/* === CATEGORIES CONTENT === */
+
+.categories-content {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  height: auto;
+}
+
+/* === MAIN CATEGORY (HIDDEN IF NOT USED) === */
+
+.categories-main {
+  display: none; /* Hidden to unify all sizes */
+}
+
+/* === SECONDARY CATEGORIES (NOW PRIMARY) === */
+
+.categories-secondary {
+  flex: 1;
+  width: 100%;
+  overflow: visible;
+  border-radius: 8px;
+}
+
+.categories-carousel {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel-slide {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Square aspect ratio for uniformity */
+  min-width: 0;
+}
+
+.category-min.preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.category-min.preview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.category-min.preview-card {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.preview-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+  text-align: center;
+}
+
+.preview-text p {
+  margin: 0;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.categories-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.categories-carousel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.categories-carousel::-webkit-scrollbar-thumb {
+  background: #0066cc;
+  border-radius: 3px;
+}
+
+.categories-carousel::-webkit-scrollbar-thumb:hover {
+  background: #0052a3;
+}
+
+.carousel-slide {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+
+.category-min.preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.category-min.preview:hover {
+  transform: scale(1.02);
+}
+
+.category-min.preview-card {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 1024px) {
+  .categories-carousel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .categories-carousel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .categories-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .fade-in-out {
+    animation: simpleFadeIn 0.5s ease-in-out forwards;
+  }
+
+  @keyframes simpleFadeIn {
+    0% { opacity: 0; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  .carousel-slide {
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .preview-text p {
+    font-size: 12px;
+  }
+
+  .category-min.preview .preview-text p {
+    font-size: 11px;
+  }
+}

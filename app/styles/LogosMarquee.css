@@ -1,0 +1,192 @@
+/* === LOGOS MARQUEE SECTION === */
+
+.logos-marquee {
+  padding: 60px 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.logos-marquee.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 40px;
+  animation: scrollLogos 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.logo-item {
+  flex: 0 0 200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.logo-item:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.logo-image {
+  max-width: 120px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.logo-item:hover .logo-image {
+  filter: grayscale(0%);
+}
+
+.marquee-track {
+  animation: scrollLogos 40s linear infinite;
+}
+
+.marquee-track::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(to right, transparent 0%, #fff 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.marquee-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(to right, #fff 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* === TABLET (1024px and below) === */
+@media (max-width: 1024px) {
+  .logos-marquee {
+    padding: 40px 0;
+  }
+
+  .logo-item {
+    flex: 0 0 160px;
+    height: 50px;
+  }
+
+  .logo-image {
+    max-width: 100px;
+    max-height: 50px;
+  }
+
+  .marquee-track {
+    gap: 30px;
+    animation: scrollLogos 35s linear infinite;
+  }
+}
+
+/* === MOBILE (768px and below) === */
+@media (max-width: 768px) {
+  .logos-marquee {
+    padding: 30px 0;
+  }
+
+  .logo-item {
+    flex: 0 0 140px;
+    height: 45px;
+  }
+
+  .logo-image {
+    max-width: 90px;
+    max-height: 50px;
+  }
+
+  .marquee-track {
+    gap: 24px;
+    animation: scrollLogos 30s linear infinite;
+  }
+}
+
+/* === SMALL MOBILE (480px and below) === */
+@media (max-width: 480px) {
+  .logos-marquee {
+    padding: 20px 0;
+  }
+
+  .logo-item {
+    flex: 0 0 120px;
+    height: 55px;
+  }
+
+  .logo-image {
+    max-width: 80px;
+    max-height: 45px;
+  }
+
+  .marquee-track {
+    gap: 20px;
+    animation: scrollLogos 25s linear infinite;
+  }
+}
+
+/* === KEYFRAME ANIMATION === */
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+@media (max-width: 768px) {
+  .logos-marquee {
+    padding: 40px 0 !important;
+  }
+
+  .logo-item {
+    height: 60px !important;
+  }
+
+  .logo-image {
+    max-height: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .logos-marquee {
+    padding: 30px 0 !important;
+  }
+
+  .logo-item {
+    height: 45px !important;
+  }
+
+  .logo-image {
+    max-height: 22px !important;
+    max-width: 70px !important;
+  }
+}

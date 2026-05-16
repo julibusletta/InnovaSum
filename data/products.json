@@ -1,0 +1,254 @@
+[
+  {
+    "id": "amz-98632",
+    "name": "AMAZON ALEXA ECHO DOT 5 GERACAO WIFI/BT AZUL",
+    "price": 100800,
+    "category": "amazon",
+    "image": "/images/products/echo-dot-5-blue.png",
+    "images": [
+      "/images/products/echo-dot-5-blue.png"
+    ],
+    "description": "Amazon Echo Dot (5th Gen) en color Azul. Parlante inteligente con Alexa.",
+    "stock": 20
+  },
+  {
+    "id": "amz-92562",
+    "name": "AMAZON ALEXA ECHO DOT 5 GERACAO WIFI/BT BLACK",
+    "price": 100800,
+    "category": "amazon",
+    "image": "/images/products/echo-dot-5-black.png",
+    "images": [
+      "/images/products/echo-dot-5-black.png"
+    ],
+    "description": "Amazon Echo Dot (5th Gen) en color Negro. Parlante inteligente con Alexa.",
+    "stock": 20
+  },
+  {
+    "id": "amz-98649",
+    "name": "AMAZON ALEXA ECHO DOT 5 GERACAO WIFI/BT WHITE",
+    "price": 100800,
+    "category": "amazon",
+    "image": "/images/products/echo-dot-5-white.png",
+    "images": [
+      "/images/products/echo-dot-5-white.png"
+    ],
+    "description": "Amazon Echo Dot (5th Gen) en color Blanco. Parlante inteligente con Alexa.",
+    "stock": 20
+  },
+  {
+    "id": "amz-108782",
+    "name": "AMAZON ALEXA ECHO POP 1GEN WF/BT BLACK",
+    "price": 78750,
+    "category": "amazon",
+    "image": "/images/products/echo-pop-colors.png",
+    "images": [
+      "/images/products/echo-pop-colors.png"
+    ],
+    "description": "Amazon Echo Pop Negro. Parlante inteligente compacto con sonido potente.",
+    "stock": 15
+  },
+  {
+    "id": "amz-108812",
+    "name": "AMAZON ALEXA ECHO POP 1GEN WF/BT LAVANDER BLOOM",
+    "price": 76125,
+    "category": "amazon",
+    "image": "/images/products/echo-pop-colors.png",
+    "images": [
+      "/images/products/echo-pop-colors.png"
+    ],
+    "description": "Amazon Echo Pop Lavande Bloom. Parlante inteligente compacto y elegante.",
+    "stock": 15
+  },
+  {
+    "id": "amz-114714",
+    "name": "AMAZON ALEXA ECHO POP 1GEN WF/BT TEAL -AZUL-",
+    "price": 76125,
+    "category": "amazon",
+    "image": "/images/products/echo-pop-colors.png",
+    "images": [
+      "/images/products/echo-pop-colors.png"
+    ],
+    "description": "Amazon Echo Pop Teal. Parlante inteligente con diseño moderno.",
+    "stock": 15
+  },
+  {
+    "id": "amz-108829",
+    "name": "AMAZON ALEXA ECHO POP 1ST GEN WIFI/BT WHITE",
+    "price": 76650,
+    "category": "amazon",
+    "image": "/images/products/echo-dot-5-white.png",
+    "images": [
+      "/images/products/echo-dot-5-white.png"
+    ],
+    "description": "Amazon Echo Pop Blanco. Tu asistente Alexa en cualquier habitación.",
+    "stock": 15
+  },
+  {
+    "id": "amz-80675",
+    "name": "AMAZON ALEXA ECHO SHOW 5 3GERACAO WIFI/BT BLUE",
+    "price": 150150,
+    "category": "amazon",
+    "image": "/images/products/echo-show-lineup.png",
+    "images": [
+      "/images/products/echo-show-lineup.png"
+    ],
+    "description": "Amazon Echo Show 5 (3ra Gen) Azul. Pantalla inteligente de 5 pulgadas.",
+    "stock": 10
+  },
+  {
+    "id": "amz-96300",
+    "name": "AMAZON ALEXA ECHO SHOW 5 3GERACAO WIFI/BT PRETO",
+    "price": 150150,
+    "category": "amazon",
+    "image": "/images/products/echo-show-lineup.png",
+    "images": [
+      "/images/products/echo-show-lineup.png"
+    ],
+    "description": "Amazon Echo Show 5 (3ra Gen) Negro. Pantalla inteligente para tu mesa de noche.",
+    "stock": 10
+  },
+  {
+    "id": "amz-88008",
+    "name": "AMAZON ALEXA ECHO SHOW 5 3GERACAO WIFI/BT WHITE",
+    "price": 150150,
+    "category": "amazon",
+    "image": "/images/products/echo-show-lineup.png",
+    "images": [
+      "/images/products/echo-show-lineup.png"
+    ],
+    "description": "Amazon Echo Show 5 (3ra Gen) Blanco. Controla tu hogar con Alexa y video.",
+    "stock": 10
+  },
+  {
+    "id": "amz-73554",
+    "name": "AMAZON ALEXA ECHO SHOW 8 WIFI 3A GERACAO BRANCO",
+    "price": 262500,
+    "category": "amazon",
+    "image": "/images/products/echo-show-lineup.png",
+    "images": [
+      "/images/products/echo-show-lineup.png"
+    ],
+    "description": "Amazon Echo Show 8 (3ra Gen) Blanco. Pantalla HD de 8 pulgadas y sonido mejorado.",
+    "stock": 5
+  },
+  {
+    "id": "amz-83362",
+    "name": "AMAZON ALEXA ECHO SHOW 8 WIFI 3A GERACAO PRETO",
+    "price": 262500,
+    "category": "amazon",
+    "image": "/images/products/echo-show-lineup.png",
+    "images": [
+      "/images/products/echo-show-lineup.png"
+    ],
+    "description": "Amazon Echo Show 8 (3ra Gen) Negro. La mejor experiencia con pantalla Alexa.",
+    "stock": 5
+  },
+  {
+    "id": "amz-121866",
+    "name": "AMAZON ALEXA ECHO SPOT WIFI/BT BLACK",
+    "price": 121800,
+    "category": "amazon",
+    "image": "/images/products/echo-spot-colors.png",
+    "images": [
+      "/images/products/echo-spot-colors.png"
+    ],
+    "description": "Amazon Echo Spot Negro. Reloj inteligente con Alexa y pantalla redonda.",
+    "stock": 5
+  },
+  {
+    "id": "amz-121880",
+    "name": "AMAZON ALEXA ECHO SPOT WIFI/BT BLUE",
+    "price": 121800,
+    "category": "amazon",
+    "image": "/images/products/echo-spot-colors.png",
+    "images": [
+      "/images/products/echo-spot-colors.png"
+    ],
+    "description": "Amazon Echo Spot Azul. Combina estilo y funcionalidad con Alexa.",
+    "stock": 5
+  },
+  {
+    "id": "amz-121873",
+    "name": "AMAZON ALEXA ECHO SPOT WIFI/BT WHITE",
+    "price": 121800,
+    "category": "amazon",
+    "image": "/images/products/echo-spot-colors.png",
+    "images": [
+      "/images/products/echo-spot-colors.png"
+    ],
+    "description": "Amazon Echo Spot Blanco. Tu compañero ideal para el dormitorio.",
+    "stock": 5
+  },
+  {
+    "id": "amz-147668",
+    "name": "AMAZON FIRE TV STICK 3RA GENERACION HD 8G WIFI-5",
+    "price": 60900,
+    "category": "amazon",
+    "image": "/images/products/fire-lineup.png",
+    "images": [
+      "/images/products/fire-lineup.png"
+    ],
+    "description": "Fire TV Stick (3ra Gen). Streaming HD ultrarápido con control de voz Alexa.",
+    "stock": 30
+  },
+  {
+    "id": "amz-63135",
+    "name": "AMAZON FIRE TV STICK 4K 2GEN WIFI 6",
+    "price": 74550,
+    "category": "amazon",
+    "image": "/images/products/fire-tv-spot.png",
+    "images": [
+      "/images/products/fire-tv-spot.png"
+    ],
+    "description": "Fire TV Stick 4K (2da Gen). Calidad cinematográfica 4K y Wi-Fi 6.",
+    "stock": 25
+  },
+  {
+    "id": "amz-80729",
+    "name": "AMAZON FIRE TV STICK 4K MAX REMOTE 2DA GEN 16GB",
+    "price": 96600,
+    "category": "amazon",
+    "image": "/images/products/fire-tv-spot.png",
+    "images": [
+      "/images/products/fire-tv-spot.png"
+    ],
+    "description": "Fire TV Stick 4K Max. Nuestra stick de streaming más potente.",
+    "stock": 20
+  },
+  {
+    "id": "amz-157537",
+    "name": "TABLET AMAZON FIRE HD 10 10.1 32GB (13TH GEN) BLACK",
+    "price": 180600,
+    "category": "amazon",
+    "image": "/images/products/fire-hd-10-colors.png",
+    "images": [
+      "/images/products/fire-hd-10-colors.png"
+    ],
+    "description": "Tablet Fire HD 10 (13ra Gen) Negro. Pantalla 10.1 1080p, 32GB de almacenamiento.",
+    "stock": 10
+  },
+  {
+    "id": "amz-157575",
+    "name": "TABLET AMAZON FIRE HD 10 10.1 32GB (13TH GEN) PURPLE",
+    "price": 180600,
+    "category": "amazon",
+    "image": "/images/products/fire-hd-10-colors.png",
+    "images": [
+      "/images/products/fire-hd-10-colors.png"
+    ],
+    "description": "Tablet Fire HD 10 (13ra Gen) Púrpura. Entretenimiento vibrante en pantalla grande.",
+    "stock": 10
+  },
+  {
+    "id": "st-mini-3522",
+    "name": "CABLE INVERSOR 12V-30V STARLINK MINI AUTO",
+    "price": 51100,
+    "category": "accesorios-starlink",
+    "image": "/images/products/starlink-mini-cable.webp",
+    "images": [
+      "/images/products/starlink-mini-cable.webp"
+    ],
+    "description": "Cable adaptador conversor para Starlink MINI de 12v a 30V. Ideal para vehículos (autos, camionetas, motorhomes). Conexión directa al encendedor, 3 metros de largo, ficha original e impermeable (IP67). 90W de potencia.",
+    "stock": 10
+  }
+]

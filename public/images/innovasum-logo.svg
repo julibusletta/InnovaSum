@@ -1,0 +1,14 @@
+<svg width="450" height="100" viewBox="0 0 450 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Star icon -->
+  <g transform="translate(20, 25)">
+    <!-- Main dark part of the star -->
+    <path d="M25 0 L29 21 L50 25 L29 29 L25 50 L21 29 L0 25 L21 21 Z" fill="#4B4B4B"/>
+    <!-- Yellow highlight on the top left edge of the top point -->
+    <path d="M25 0 L25 25 L21 21 Z" fill="#D2A641"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="85" y="66" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="48" letter-spacing="1">
+    <tspan fill="#E39F47">INN</tspan><tspan fill="#D15E51">OVA</tspan><tspan fill="#72A362">SUM</tspan>
+  </text>
+</svg>

@@ -1,0 +1,107 @@
+{
+  "pc-1": [
+    { "label": "Marca", "value": "JBimports Custom" },
+    { "label": "Modelo", "value": "PC Gamer RTX5080 V70" },
+    { "label": "Procesador", "value": "AMD Ryzen 7 9800X3D" },
+    { "label": "Tarjeta de video", "value": "NVIDIA GeForce RTX 5080" },
+    { "label": "RAM", "value": "32GB DDR5 6000MHz" },
+    { "label": "Almacenamiento", "value": "2TB NVMe Gen 5" },
+    { "label": "Sistema operativo", "value": "Windows 11 Pro" },
+    { "label": "Garantía", "value": "12 meses" },
+    { "label": "Condición", "value": "Nuevo, en caja sellada" }
+  ],
+  "pc-2": [
+    { "label": "Marca", "value": "JBimports Custom" },
+    { "label": "Modelo", "value": "Workstation Ryzen 9 5950X" },
+    { "label": "Procesador", "value": "AMD Ryzen 9 5950X" },
+    { "label": "RAM", "value": "64GB DDR4 3600MHz ECC" },
+    { "label": "Almacenamiento", "value": "4TB NVMe + 8TB HDD" },
+    { "label": "Sistema operativo", "value": "Windows 11 Pro" },
+    { "label": "Garantía", "value": "12 meses" },
+    { "label": "Condición", "value": "Nuevo, en caja sellada" }
+  ],
+  "pc-3": [
+    { "label": "Marca", "value": "JBimports Custom" },
+    { "label": "Modelo", "value": "PC Gaming i5 RTX 3060" },
+    { "label": "Procesador", "value": "Intel Core i5-13600KF" },
+    { "label": "Tarjeta de video", "value": "NVIDIA GeForce RTX 3060" },
+    { "label": "RAM", "value": "16GB DDR4 3200MHz" },
+    { "label": "Almacenamiento", "value": "1TB NVMe" },
+    { "label": "Sistema operativo", "value": "Windows 11 Home" },
+    { "label": "Garantía", "value": "12 meses" },
+    { "label": "Condición", "value": "Nuevo, en caja sellada" }
+  ],
+  "pc-4": [
+    { "label": "Marca", "value": "JBimports Custom" },
+    { "label": "Modelo", "value": "Pro Design RTX 4090" },
+    { "label": "Procesador", "value": "Intel Core i9-14900K" },
+    { "label": "Tarjeta de video", "value": "NVIDIA GeForce RTX 4090" },
+    { "label": "RAM", "value": "64GB DDR5 5600MHz" },
+    { "label": "Almacenamiento", "value": "4TB NVMe Gen 4" },
+    { "label": "Sistema operativo", "value": "Windows 11 Pro" },
+    { "label": "Garantía", "value": "12 meses" },
+    { "label": "Condición", "value": "Nuevo, en caja sellada" }
+  ],
+  "pc-5": [
+    { "label": "Marca", "value": "JBimports Custom" },
+    { "label": "Modelo", "value": "Streaming i9 32GB" },
+    { "label": "Procesador", "value": "Intel Core i9-13900K" },
+    { "label": "RAM", "value": "32GB DDR5 5200MHz" },
+    { "label": "Almacenamiento", "value": "2TB NVMe" },
+    { "label": "Sistema operativo", "value": "Windows 11 Pro" },
+    { "label": "Garantía", "value": "12 meses" },
+    { "label": "Condición", "value": "Nuevo, en caja sellada" }
+  ],
+  "pc-6": [
+    { "label": "Marca", "value": "JBimports Custom" },
+    { "label": "Modelo", "value": "Servidor Xeon Quadro" },
+    { "label": "Procesador", "value": "Intel Xeon W-2295" },
+    { "label": "RAM", "value": "128GB DDR4 ECC" },
+    { "label": "Almacenamiento", "value": "8TB RAID SSD" },
+    { "label": "Sistema operativo", "value": "Windows Server 2022" },
+    { "label": "Garantía", "value": "24 meses" },
+    { "label": "Condición", "value": "Nuevo, en caja sellada" }
+  ],
+  "pc-7": [
+    { "label": "Marca", "value": "JBimports Custom" },
+    { "label": "Modelo", "value": "PC Retro 80s Gaming" },
+    { "label": "Procesador", "value": "AMD Ryzen 5 7600X" },
+    { "label": "RAM", "value": "16GB DDR5" },
+    { "label": "Almacenamiento", "value": "1TB SSD" },
+    { "label": "Sistema operativo", "value": "Windows 11 Home" },
+    { "label": "Garantía", "value": "12 meses" },
+    { "label": "Condición", "value": "Nuevo, en caja sellada" }
+  ],
+  "pc-8": [
+    { "label": "Marca", "value": "JBimports Custom" },
+    { "label": "Modelo", "value": "Budget i3" },
+    { "label": "Procesador", "value": "Intel Core i3-13100" },
+    { "label": "RAM", "value": "8GB DDR4" },
+    { "label": "Almacenamiento", "value": "500GB SSD" },
+    { "label": "Sistema operativo", "value": "Windows 11 Home" },
+    { "label": "Garantía", "value": "12 meses" },
+    { "label": "Condición", "value": "Nuevo, en caja sellada" }
+  ],
+  "gpu-1": [
+    { "label": "Marca", "value": "NVIDIA" },
+    { "label": "Modelo", "value": "RTX 4090 Founders Edition" },
+    { "label": "Memoria VRAM", "value": "24GB GDDR6X" },
+    { "label": "Interfaz", "value": "PCIe 4.0 x16" },
+    { "label": "Resolución máxima", "value": "7680x4320 (8K)" },
+    { "label": "Puertos", "value": "3x DisplayPort 1.4a, 1x HDMI 2.1" },
+    { "label": "TDP", "value": "450W" },
+    { "label": "Garantía", "value": "12 meses" },
+    { "label": "Condición", "value": "Nuevo, en caja sellada" }
+  ],
+  "gpu-2": [
+    { "label": "Marca", "value": "NVIDIA" },
+    { "label": "Modelo", "value": "RTX 4070 Ti Gaming" },
+    { "label": "Memoria VRAM", "value": "12GB GDDR6X" },
+    { "label": "Interfaz", "value": "PCIe 4.0 x16" },
+    { "label": "Resolución máxima", "value": "7680x4320 (8K)" },
+    { "label": "Puertos", "value": "3x DisplayPort 1.4a, 1x HDMI 2.1" },
+    { "label": "TDP", "value": "285W" },
+    { "label": "Garantía", "value": "12 meses" },
+    { "label": "Condición", "value": "Nuevo, en caja sellada" }
+  ]
+}

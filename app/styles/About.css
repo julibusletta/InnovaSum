@@ -1,0 +1,126 @@
+/* About.css */
+.about-page {
+    background-color: #fdfdfd;
+    min-height: 100vh;
+    padding: 20px 20px 80px 20px;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.8;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 60px 80px 100px 80px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    border-radius: 4px;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.about-header h1 {
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    color: #0066cc;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-header .title-line {
+    width: 40px;
+    height: 2px;
+    background: #0066cc;
+    margin: 0 auto;
+}
+
+.about-content {
+    font-size: 18px;
+    color: #444;
+}
+
+.about-content p {
+    margin-bottom: 30px;
+}
+
+.about-content .dropcap {
+    font-size: 48px;
+    float: left;
+    line-height: 1;
+    margin-top: 8px;
+    margin-right: 8px;
+    font-weight: 800;
+    color: #0066cc;
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding-top: 60px;
+    border-top: 1px solid #eee;
+}
+
+.value-item {
+    text-align: center;
+}
+
+.value-item h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.value-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.about-signature {
+    margin-top: 100px;
+    text-align: right;
+}
+
+.signature-text {
+    font-family: 'Dancing Script', cursive, serif;
+    font-size: 32px;
+    color: #0066cc;
+    margin-bottom: 5px;
+}
+
+.signature-name {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+/* Response */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 60px 30px;
+    }
+    
+    .about-values {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-header h1 {
+        font-size: 12px;
+    }
+    
+    .about-content {
+        font-size: 16px;
+    }
+}

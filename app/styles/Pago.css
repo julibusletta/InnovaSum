@@ -1,0 +1,128 @@
+/* Pago.css */
+.pago-page {
+    background-color: #fdfdfd;
+    min-height: 100vh;
+    padding: 20px 20px 80px 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.pago-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 60px 80px 100px 80px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    border-radius: 4px;
+}
+
+.pago-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.pago-header h1 {
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    color: #ff6600; /* Galicia Orange for a change, or keep Blue */
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.pago-header .title-line {
+    width: 40px;
+    height: 2px;
+    background: #ff6600;
+    margin: 0 auto;
+}
+
+.pago-content {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+}
+
+.pago-content h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.pago-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #0066cc;
+}
+
+.pago-content p {
+    margin-bottom: 25px;
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.method-item {
+    background: #f8f9fa;
+    padding: 30px;
+    text-align: center;
+    border-top: 3px solid #0066cc;
+}
+
+.method-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.method-item p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.trust-banner {
+    margin-top: 80px;
+    text-align: center;
+    padding-top: 60px;
+    border-top: 1px solid #eee;
+}
+
+.trust-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+}
+
+.trust-banner p {
+    font-size: 14px;
+    color: #888;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .pago-container {
+        padding: 40px 25px;
+    }
+    
+    .pago-header {
+        margin-bottom: 40px;
+    }
+    
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+}

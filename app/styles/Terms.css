@@ -1,0 +1,108 @@
+/* Terms.css */
+.terms-page {
+    background-color: #fdfdfd;
+    min-height: 100vh;
+    padding: 60px 20px 100px;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.terms-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 80px 60px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    border-radius: 8px;
+}
+
+.terms-header {
+    margin-bottom: 60px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+}
+
+.terms-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.terms-header p {
+    color: #888;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.terms-section {
+    margin-bottom: 45px;
+}
+
+.terms-section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0066cc;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    display: flex;
+    gap: 12px;
+}
+
+.terms-section h2 span {
+    color: #ddd;
+}
+
+.terms-section p, .terms-section ul {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.terms-section ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.terms-section li {
+    margin-bottom: 10px;
+}
+
+.arrepentimiento-box {
+    background: #f0f7ff;
+    border: 1px solid #cce3ff;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 40px 0;
+}
+
+.arrepentimiento-box h3 {
+    color: #004a99;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.arrepentimiento-box p {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #004a99;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .terms-container {
+        padding: 40px 25px;
+    }
+    
+    .terms-header h1 {
+        font-size: 26px;
+    }
+    
+    .terms-section h2 {
+        font-size: 16px;
+    }
+}

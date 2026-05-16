@@ -1,0 +1,332 @@
+.promo-banners-section {
+    width: 100%;
+    background: #fdfdfd;
+    padding: 60px 0;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+.promo-banners-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* === CARD BASE === */
+.tb-card {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 380px;
+    display: flex;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tb-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* === CARD MODIFIERS === */
+.tb-jbl {
+    background: url('/images/promo-jbl-bg.png') no-repeat center center;
+    background-size: cover;
+    align-items: center;
+}
+
+.tb-xiaomi {
+    background: url('/images/promo-xiaomi-bg.png') no-repeat center center;
+    background-size: cover;
+    align-items: center;
+}
+
+/* === COLUMNS === */
+.tb-image-col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    padding: 20px;
+}
+
+.tb-text-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 30px;
+}
+
+.tb-text-left {
+    align-items: flex-start;
+    padding-left: 50px;
+}
+
+/* === TYPOGRAPHY & COLORS === */
+.tb-title {
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.tb-subtitle {
+    margin-bottom: 24px;
+    font-size: 22px;
+}
+
+.tb-subtitle strong {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+/* LIGHT TEXT THEME (JBL) */
+.tb-text-light .tb-title {
+    color: #ffffff;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+.tb-text-light .tb-feature-text strong {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.tb-text-light .tb-feature-text span {
+    color: #dddddd;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+.tb-text-light .tb-icon-wrapper {
+    background: #ff5a00; /* JBL Orange */
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* DARK TEXT THEME (XIAOMI) */
+.tb-text-dark .tb-title {
+    color: #111111;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.8);
+}
+.tb-text-dark .tb-subtitle {
+    color: #333333;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.8);
+}
+.tb-text-dark .tb-subtitle strong {
+    color: #ff6900; /* Xiaomi Orange */
+}
+.tb-text-dark .tb-feature-text strong {
+    color: #111111;
+}
+.tb-text-dark .tb-feature-text span {
+    color: #444444;
+}
+.tb-text-dark .tb-icon-circle {
+    background: #ff6900;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* === FEATURES LIST (Vertical) === */
+.tb-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.tb-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tb-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.tb-feature-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.tb-feature-text strong {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.tb-feature-text span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* === FEATURES ROW (Horizontal) === */
+.tb-features-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.tb-feature-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tb-divider {
+    width: 2px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.1);
+    transform: rotate(15deg);
+}
+
+.tb-icon-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* === BUTTON === */
+.tb-btn {
+    background: #ffffff;
+    color: #111111;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.tb-text-dark .tb-btn-green {
+    background: #111111;
+    color: #ffffff;
+}
+
+.tb-card:hover .tb-btn {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1100px) {
+    .promo-banners-container {
+        grid-template-columns: 1fr;
+    }
+    .tb-card {
+        height: 320px;
+    }
+}
+
+/* === MOBILE: MODO CARRUSEL (solo ≤ 768px) === */
+@media (max-width: 768px) {
+
+    /* Transforma el container en un scroll horizontal con snap */
+    .promo-banners-container {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0 !important;
+        gap: 0 !important;
+    }
+
+    .promo-banners-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Cada card ocupa exactamente el 100% del container */
+    .tb-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+        scroll-snap-align: start;
+        height: 270px;
+        min-height: unset;
+        flex-direction: row;
+        border-radius: 0;
+    }
+
+    .tb-image-col {
+        flex: 1;
+        height: 100%;
+        order: unset;
+        padding: 16px;
+    }
+
+    .tb-text-col {
+        flex: 1;
+        order: unset;
+        padding: 22px 18px;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .tb-text-left {
+        padding-left: 18px;
+    }
+
+    .tb-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .tb-subtitle {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .tb-subtitle strong {
+        font-size: 16px;
+    }
+
+    .tb-features {
+        gap: 8px;
+        margin-bottom: 14px;
+        align-items: flex-start;
+    }
+
+    .tb-features-row {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .tb-divider {
+        display: none;
+    }
+
+    .tb-feature-text strong {
+        font-size: 12px;
+    }
+
+    .tb-feature-text span {
+        font-size: 10px;
+    }
+
+    .tb-btn {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+}

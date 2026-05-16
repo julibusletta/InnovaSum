@@ -1,0 +1,141 @@
+/* === BENEFITS SECTION === */
+
+.benefits-section {
+  width: 100%;
+  background: white;
+  padding: 10px 0;
+  margin: 10px 0;
+  opacity: 1 !important;
+  transform: none !important;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.benefits-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+  background: white;
+}
+
+/* Base styles for both */
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
+.benefit-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0066cc !important;
+}
+
+.benefit-text h2 {
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  font-size: 16px;
+  color: #0066cc;
+}
+
+.benefit-text p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.2;
+}
+
+/* Desktop Static Layout */
+.benefits-container.desktop-static {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.benefits-container.desktop-static .benefit-item-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 76px;
+}
+
+.divider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.vertical-divider {
+  width: 1px;
+  height: 100%;
+  background-color: #eee;
+}
+
+/* Mobile Slider specific */
+.slider-container-benefits.mobile-only {
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .benefits-section {
+    padding: 0 !important;
+    margin: -10px 0 0 0 !important; /* Slightly negative top margin to bridge gap */
+    border-top: none;
+  }
+
+  .benefit-item-wrapper {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    padding: 0 10px;
+  }
+
+  .benefit-item {
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .benefit-text {
+    text-align: left;
+    max-width: 250px;
+  }
+
+  .benefit-text h2 {
+    font-size: 15px;
+  }
+
+  .benefit-text p {
+    font-size: 12px;
+  }
+}
+
+.payment-logos {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 11px;
+  color: #888;
+}
+
+.payment-logos .divider {
+  width: 1px;
+  height: 12px;
+  background-color: #ddd;
+}
+
+.payment-logos span {
+  font-size: 11px;
+  color: #777;
+}

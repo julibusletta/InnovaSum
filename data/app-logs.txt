@@ -1,0 +1,39 @@
+[2026-03-17T13:21:25.150Z] NAVE WEBHOOK RECEIVED:
+Data: {
+  "id": "manual_debug_trigger",
+  "reference": "JB-1773753005468",
+  "status": "APPROVED",
+  "amount": 1000
+}
+--------------------------------------------------
+[2026-03-17T13:21:25.152Z] NAVE WEBHOOK: Processing order JB-1773753005468 with status APPROVED
+--------------------------------------------------
+[2026-03-17T13:21:25.157Z] NAVE WEBHOOK: Order JB-1773753005468 status updated to APPROVED in DB
+--------------------------------------------------
+[2026-03-17T13:21:25.158Z] NAVE WEBHOOK: Attempting to send email to julibusletta@gmail.com for order JB-1773753005468
+--------------------------------------------------
+[2026-03-17T13:21:32.372Z] Confirmation email sent to julibusletta@gmail.com for order #JB-1773753005468
+--------------------------------------------------
+[2026-03-17T13:21:32.377Z] NAVE WEBHOOK: Email sent successfully to julibusletta@gmail.com
+--------------------------------------------------
+[2026-03-17T13:25:43.619Z] NAVE WEBHOOK RECEIVED:
+Data: {
+  "id": "manual_debug_trigger",
+  "reference": "JB-1773753005468",
+  "status": "APPROVED",
+  "amount": 1000
+}
+--------------------------------------------------
+[2026-03-17T13:25:43.620Z] NAVE WEBHOOK: Processing order JB-1773753005468 with status APPROVED
+--------------------------------------------------
+[2026-03-17T13:25:43.625Z] NAVE WEBHOOK: Order JB-1773753005468 status updated to APPROVED in DB
+--------------------------------------------------
+[2026-03-17T13:25:43.627Z] NAVE WEBHOOK: Attempting to send email to julibusletta@gmail.com for order JB-1773753005468
+--------------------------------------------------
+[2026-03-17T13:25:49.333Z] Confirmation email sent to julibusletta@gmail.com for order #JB-1773753005468. MessageId: <90f34785-2250-5090-cecf-18763228f790@jbimports.com.ar>
+--------------------------------------------------
+[2026-03-17T13:25:49.334Z] NAVE WEBHOOK: Email sent successfully to julibusletta@gmail.com
+--------------------------------------------------
+[2026-03-28T02:49:25.022Z] ERROR sending transfer email to germanmcdonalds59@gmail.com
+Data: "Invalid login: 535 Incorrect authentication data"
+--------------------------------------------------

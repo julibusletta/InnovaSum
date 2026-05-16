@@ -1,0 +1,236 @@
+
+import mongoose from 'mongoose';
+const MONGODB_URI = 'mongodb+srv://admin:3CRVzt8trnHkhRkG@admin.j2yvyqi.mongodb.net/?appName=admin';
+
+const xiaomiList = `
+XIAOMI NOTE 14 128GB 6RAM BLACK GLOBAL / 131.75 | 
+12801-8 XIAOMI NOTE 14 128GB 6RAM BLUE GLOBAL / 128.00 | 
+12802-5 XIAOMI NOTE 14 128GB 6RAM GREEN GLOBAL / 128.00 | 
+14684-5 XIAOMI NOTE 14 128GB 6RAM PURPLE GLOBAL / 128.50 | 
+13059-2 XIAOMI NOTE 14 256GB 8RAM 5G BLACK GLOBAL / 193.75 | 
+13165-0 XIAOMI NOTE 14 256GB 8RAM 5G PURPLE GLOBAL / 193.75 | 
+12803-2 XIAOMI NOTE 14 256GB 8RAM BLACK GLOBAL / 157.00 | 
+12804-9 XIAOMI NOTE 14 256GB 8RAM BLUE GLOBAL / 157.00 | 
+12812-4 XIAOMI NOTE 14 256GB 8RAM GREEN GLOBAL / 157.00 | 
+12807-0 XIAOMI NOTE 14 PRO 256GB 8RAM 5G BLACK GLOBAL / 251.75 | 
+12805-6 XIAOMI NOTE 14 PRO 256GB 8RAM BLACK GLOBAL / 226.75 | 
+13130-8 XIAOMI NOTE 14 PRO 512GB 12RAM 5G GREEN GLOBAL / 287.75 | 
+12809-4 XIAOMI NOTE 14 PRO+ 256GB 8RAM 5G BLACK GLOBAL / 280.00 | 
+12810-0 XIAOMI NOTE 14 PRO+ 256GB 8RAM 5G BLUE GLOBAL / 280.00 | 
+14664-7 XIAOMI NOTE 14 PRO+ 256GB 8RAM 5G GOLD GLOBAL / 280.00 | 
+13053-0 XIAOMI NOTE 14 PRO+ 256GB 8RAM 5G PURPLE GLOBAL / 280.00 | 
+13366-1 XIAOMI NOTE 14S 256GB 8RAM BLACK GLOBAL / 187.00 | 
+13367-8 XIAOMI NOTE 14S 256GB 8RAM BLUE GLOBAL / 186.00 | 
+13423-1 XIAOMI NOTE 14S 256GB 8RAM PURPLE GLOBAL / 187.00 | 
+15288-4 XIAOMI NOTE 15 128GB 6RAM BLUE GLOBAL / 156.00 | 
+15279-2 XIAOMI NOTE 15 128GB 6RAM GREEN GLOBAL / 156.00 | 
+15280-8 XIAOMI NOTE 15 128GB 6RAM PURPLE GLOBAL / 156.00 | 
+15293-8 XIAOMI NOTE 15 256GB 8RAM 5G BLACK GLOBAL / 222.00 
+XIAOMI NOTE 15 256GB 8RAM 5G BLUE GLOBAL / 222.00 | 
+15292-1 XIAOMI NOTE 15 256GB 8RAM 5G PURPLE GLOBAL / 222.00 | 
+15283-9 XIAOMI NOTE 15 256GB 8RAM BLACK GLOBAL / 177.00 | 
+15284-6 XIAOMI NOTE 15 256GB 8RAM BLUE GLOBAL / 177.00 | 
+15282-2 XIAOMI NOTE 15 256GB 8RAM PURPLE GLOBAL / 177.00 | 
+15828-2 XIAOMI NOTE 15 512GB 8RAM 5G BLUE GLOBAL / 259.00 | 
+15287-7 XIAOMI NOTE 15 PRO 256GB 8RAM 5G BLACK GLOBAL / 275.00 | 
+15286-0 XIAOMI NOTE 15 PRO 256GB 8RAM 5G BLUE GLOBAL / 275.00 | 
+15289-1 XIAOMI NOTE 15 PRO 256GB 8RAM BLACK GLOBAL / 224.00 | 
+15291-4 XIAOMI NOTE 15 PRO 256GB 8RAM BLUE GLOBAL / 224.00 | 
+15290-7 XIAOMI NOTE 15 PRO 256GB 8RAM TITANUIM GLOBAL / 224.00 | 
+15829-9 XIAOMI NOTE 15 PRO 512GB 12RAM BLACK GLOBAL / 285.00 | 
+15830-5 XIAOMI NOTE 15 PRO 512GB 12RAM BLUE GLOBAL / 285.00 | 
+15831-2 XIAOMI NOTE 15 PRO 512GB 12RAM TITANIUM GLOBAL / 285.00 | 
+15335-5 XIAOMI NOTE 15 PRO 512GB 8RAM 5G BLACK GLOBAL / 293.00 | 
+15336-2 XIAOMI NOTE 15 PRO 512GB 8RAM 5G PURPLE GLOBAL / 293.00 | 
+15339-3 XIAOMI NOTE 15 PRO+ 256GB 8RAM 5G BLACK GLOBAL / 330.00 | 
+15341-6 XIAOMI NOTE 15 PRO+ 256GB 8RAM 5G BLUE GLOBAL / 330.00 | 
+15342-3 XIAOMI NOTE 15 PRO+ 256GB 8RAM 5G BROWN GLOBAL / 330.00 | 
+15337-9 XIAOMI NOTE 15 PRO+ 512GB 12RAM 5G BLACK GLOBAL / 393.00 | 
+15338-6 XIAOMI NOTE 15 PRO+ 512GB 12RAM 5G BLUE GLOBAL / 393.00 | 
+13581-8 XIAOMI POCO C71 128GB 4RAM BLACK GLOBAL / 87.50 | 
+13582-5 XIAOMI POCO C71 128GB 4RAM BLUE GLOBAL / 87.50 | 
+13583-2 XIAOMI POCO C71 128GB 4RAM GOLD GLOBAL / 87.50 | 
+13584-9 XIAOMI POCO C71 64GB 3RAM BLACK GLOBAL / 73.75 | 
+13585-6 XIAOMI POCO C71 64GB 3RAM BLUE GLOBAL / 76.00 | 
+13586-3 XIAOMI POCO C71 64GB 3RAM GOLD GLOBAL / 76.00 | 
+14455-1 XIAOMI POCO C85 128GB 6RAM BLACK GLOBAL / 103.75 | 
+14513-8 XIAOMI POCO C85 128GB 6RAM GREEN GLOBAL / 103.75 | 
+14514-5 XIAOMI POCO C85 128GB 6RAM PURPLE GLOBAL / 103.75 | 
+14495-7 XIAOMI POCO C85 256GB 8RAM BLACK GLOBAL / 124.75 | 
+14790-3 XIAOMI POCO C85 256GB 8RAM GREEN GLOBAL / 124.75 | 
+14536-7 XIAOMI POCO C85 256GB 8RAM PURPLE GLOBAL / 124.75 | 
+14418-6 XIAOMI POCO F7 12RAM 512GB 5G WHITE GLOBAL / 465.00 | 
+15151-1 XIAOMI POCO F8 PRO 12RAM 512GB 5G BLACK GLOBAL / 620.00 | 
+15218-1 XIAOMI POCO F8 PRO 12RAM 512GB 5G BLUE GLOBAL / 620.00 | 
+15159-7 XIAOMI POCO F8 ULTRA 12RAM 256GB 5G BLACK GLOBAL / 749.00 | 
+14317-2 XIAOMI POCO M7 PRO 256GB 8RAM 5G BLACK GLOBAL / 222.00 | 
+13561-0 XIAOMI POCO M7 PRO 256GB 8RAM 5G GREEN GLOBAL / 218.00 | 
+15373-7 XIAOMI POCO M8 256GB 8RAM 5G GREEN GLOBAL / 189.00 | 
+15375-1 XIAOMI POCO M8 512GB 8RAM 5G BLACK GLOBAL / 225.00 | 
+15420-8 XIAOMI POCO M8 512GB 8RAM 5G GREEN GLOBAL / 225.00 | 
+15376-8 XIAOMI POCO M8 512GB 8RAM 5G SILVER GLOBA / 225.00 | 
+15381-2 XIAOMI POCO M8 PRO 256GB 8RAM 5G GREEN GLOBAL / 260.00 | 
+15382-9 XIAOMI POCO M8 PRO 256GB 8RAM 5G SILVER GLOBAL / 260.00 | 
+15377-5 XIAOMI POCO M8 PRO 512GB 12RAM 5G BLACK GLOBAL / 315.00 | 
+15378-2 XIAOMI POCO M8 PRO 512GB 12RAM 5G GREEN GLOBAL / 315.00 | 
+15379-9 XIAOMI POCO M8 PRO 512GB 12RAM 5G SILVER GLOBAL / 315.00 | 
+12794-3 XIAOMI POCO X7 12RAM 512GB 5G BLACK GLOBAL / 292.00 | 
+13005-9 XIAOMI POCO X7 256GB 8RAM 5G SILVER GLOBAL / 250.00 | 
+13140-7 XIAOMI POCO X7 PRO 256GB 8RAM 5G BLACK GLOBAL / 295.00 | 
+12811-7 XIAOMI POCO X7 PRO 512GB 12RAM 5G BLACK GLOBAL / 362.00 | 
+12798-1 XIAOMI POCO X7 PRO 512GB 12RAM 5G GREEN GLOBAL / 362.00 | 
+15823-7 XIAOMI POCO X8 PRO 256GB 8RAM 5G BLACK GLOBAL / 305.00 | 
+15854-1 XIAOMI POCO X8 PRO 256GB 8RAM 5G GREEN GLOBAL / 305.00 | 
+15855-8 XIAOMI POCO X8 PRO 256GB 8RAM 5G WHITE GLOBAL / 305.00 | 
+15822-0 XIAOMI POCO X8 PRO 512GB 12RAM 5G BLACK GLOBAL / 385.00 | 
+15907-4 XIAOMI POCO X8 PRO 512GB 12RAM 5G VERDE GLOBAL / 385.00 | 
+15898-5 XIAOMI POCO X8 PRO 512GB 8RAM 5G BLACK GLOBAL / 334.00 | 
+15856-5 XIAOMI POCO X8 PRO 512GB 8RAM 5G GREEN GLOBAL / 334.00 | 
+15824-4 XIAOMI POCO X8 PRO 512GB 8RAM 5G WHITE GLOBAL / 334.00 | 
+15857-2 XIAOMI POCO X8 PRO MAX 256GB 12RAM 5G BLACK GLOBAL / 428.00 | 
+15825-1 XIAOMI POCO X8 PRO MAX 512GB 12RAM 5G BLACK GLOBAL / 473.00 | 
+15826-8 XIAOMI POCO X8 PRO MAX 512GB 12RAM 5G BLUE GLOBAL / 473.00 | 
+14461-2 XIAOMI REDMI 15 256GB 8RAM BLACK GLOBAL / 158.50 | 
+14462-9 XIAOMI REDMI 15 256GB 8RAM GREY GLOBAL / 158.50 | 
+14463-6 XIAOMI REDMI 15 256GB 8RAM PURPLE GLOBAL / 158.50 | 
+14457-5 XIAOMI REDMI 15C 128GB 4RAM BLACK GLOBAL / 99.75 | 
+14464-3 XIAOMI REDMI 15C 128GB 4RAM BLUE GLOBAL / 99.75 | 
+14497-1 XIAOMI REDMI 15C 128GB 4RAM GREEN GLOBAL / 98.75 | 
+14563-3 XIAOMI REDMI 15C 256GB 4RAM BLACK GLOBAL / 112.75 | 
+14465-0 XIAOMI REDMI 15C 256GB 4RAM BLUE GLOBAL / 112.75 | 
+14559-6 XIAOMI REDMI 15C 256GB 4RAM GREEN GLOBAL / 112.75 | 
+14467-4 XIAOMI REDMI 15C 256GB 8RAM BLACK GLOBAL / 127.00 | 
+14466-7 XIAOMI REDMI 15C 256GB 8RAM BLUE GLOBAL / 127.00 | 
+14506-0 XIAOMI REDMI 15C 256GB 8RAM ORANGE GLOBAL / 127.00 | 
+14505-3 XIAOMI REDMI 15C 256GB 8RAM VERDE GLOBAL / 127.00 | 
+13487-3 XIAOMI REDMI A5 128GB 4RAM GOLD GLOBAL / 98.00 | 
+13587-0 XIAOMI REDMI A5 64GB 3RAM BLACK GLOBAL / 76.00 | 
+13653-2 XIAOMI REDMI A5 64GB 3RAM BLUE GLOBAL / 76.00 | 
+13588-7 XIAOMI REDMI A5 64GB 3RAM GOLD GLOBAL / 75.00 | 
+14017-1 XIAOMI REDMI A5 64GB 3RAM GREEN GLOBAL / 75.00 | 
+15792-6 XIAOMI REDMI A7 PRO 128GB 4RAM BLACK GLOBAL / 102.50 | 
+15794-0 XIAOMI REDMI A7 PRO 128GB 4RAM GREEN GLOBAL / 102.50 | 
+15795-7 XIAOMI REDMI A7 PRO 64GB 4RAM BLACK GLOBAL / 92.50 | 
+15796-4 XIAOMI REDMI A7 PRO 64GB 4RAM BLUE GLOBA / 92.50
+`;
+
+async function run() {
+  await mongoose.connect(MONGODB_URI);
+  console.log('Connected to DB');
+
+  const Product = mongoose.models.Product || mongoose.model('Product', new mongoose.Schema({ 
+    id: String,
+    name: String,
+    price: Number,
+    category: String,
+    costPrice: Number,
+    stock: Number,
+    published: Boolean,
+    image: String,
+    images: [String],
+    description: String,
+    specifications: Array
+  }, { strict: false }));
+
+  const calculateFinalPrice = (cost) => {
+    let subtotal = 0;
+    if (cost < 500) {
+      subtotal = (cost * 1500) + 10000;
+    } else {
+      subtotal = (cost * 1.10) * 1500;
+    }
+    const finalPrice = subtotal * 1.30;
+    return Math.round(finalPrice * 100) / 100; // Exact price with decimals if needed
+  };
+
+  const dbProducts = await Product.find({ category: 'xiaomi' }).lean();
+
+  const items = xiaomiList.trim().split('\n').map(line => {
+    const lastSlashIndex = line.lastIndexOf('/');
+    if (lastSlashIndex === -1) return null;
+    const priceStr = line.substring(lastSlashIndex + 1).split('|')[0].trim();
+    const price = parseFloat(priceStr);
+    if (isNaN(price)) return null;
+    let name = line.substring(0, lastSlashIndex).trim().replace(/^\d+-\d+\s+/, '');
+    return { name, price };
+  }).filter(Boolean);
+
+  let updatedCount = 0;
+  let createdCount = 0;
+
+  const colorMap = {
+    'BLACK': ['BLACK', 'NEGRO', 'PRETO'],
+    'BLUE': ['BLUE', 'AZUL'],
+    'GREEN': ['GREEN', 'VERDE'],
+    'PURPLE': ['PURPLE', 'PÚRPURA', 'VIOLETA'],
+    'GOLD': ['GOLD', 'DORADO', 'OURO'],
+    'SILVER': ['SILVER', 'PLATA', 'PRATA'],
+    'WHITE': ['WHITE', 'BLANCO', 'BRANCO'],
+    'GREY': ['GREY', 'GRAY', 'GRIS', 'CINZA'],
+    'TITANIUM': ['TITANIUM', 'TITANIO', 'TITANIO'],
+    'TITANUIM': ['TITANUIM', 'TITANIO'],
+    'BROWN': ['BROWN', 'MARRON', 'MARROM'],
+    'ORANGE': ['ORANGE', 'NARANJA'],
+  };
+
+  for (const item of items) {
+    const finalPrice = calculateFinalPrice(item.price);
+    const itemFullLower = item.name.toLowerCase();
+    
+    let dbProduct = dbProducts.find(p => {
+        const dbName = p.name.toLowerCase();
+        const itemWords = item.name.replace('XIAOMI ', '').split(' ');
+        const matchAllWords = itemWords.every(word => {
+            const kw = word.toUpperCase();
+            if (colorMap[kw]) {
+                return colorMap[kw].some(alt => dbName.includes(alt.toLowerCase()));
+            }
+            if (kw === 'GLOBAL') return true;
+            return dbName.includes(word.toLowerCase());
+        });
+        return matchAllWords;
+    });
+
+    if (dbProduct) {
+      await Product.updateOne({ _id: dbProduct._id }, { 
+        $set: { 
+          costPrice: item.price,
+          price: finalPrice,
+          originalPrice: finalPrice
+        } 
+      });
+      updatedCount++;
+    } else {
+      const newId = `xiaomi-${item.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+      await Product.create({
+        id: newId,
+        name: item.name,
+        price: finalPrice,
+        costPrice: item.price,
+        originalPrice: finalPrice,
+        category: 'xiaomi',
+        image: '/images/hero-xiaomi.png',
+        images: ['/images/hero-xiaomi.png'],
+        description: `${item.name} - Versión Global.`,
+        stock: 5,
+        published: true,
+        specifications: [
+          { label: 'Marca', value: 'Xiaomi' },
+          { label: 'Modelo', value: item.name.replace('XIAOMI ', '') }
+        ]
+      });
+      createdCount++;
+    }
+  }
+
+  console.log(`\nResumen Sincronización Xiaomi:`);
+  console.log(`- Actualizados: ${updatedCount}`);
+  console.log(`- Creados: ${createdCount}`);
+  
+  process.exit(0);
+}
+
+run().catch(err => {
+    console.error(err);
+    process.exit(1);
+});

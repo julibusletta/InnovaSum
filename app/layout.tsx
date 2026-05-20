@@ -14,6 +14,7 @@ import AuthModal from "./components/Auth/AuthModal";
 import AnalyticsTracker from "./components/AnalyticsTracker";
 import CookieConsent from "./components/CookieConsent";
 import TrackingScripts from "./components/TrackingScripts";
+import SplashScreen from "./components/SplashScreen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,6 +63,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} antialiased`}
       >
+        <SplashScreen />
         <TrackingScripts />
         <ViewportHandler />
         <AnimationInitializer />

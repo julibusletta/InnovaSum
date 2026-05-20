@@ -151,7 +151,7 @@ export function ProductCarouselSection({ title, type = 'section', value }: Produ
         <div className="categories-header">
           <div className="categories-title-wrapper">
             <h2 className="main-section-title" style={{ fontWeight: 800 }}>
-              {title.split(' ').map((word, i) => i === title.split(' ').length - 1 ? <b key={i} style={{ color: '#002f6c' }}> {word}</b> : word + ' ')}
+              {title.split(' ').map((word, i) => i === title.split(' ').length - 1 ? <b key={i} style={{ color: '#001a3d' }}> {word}</b> : word + ' ')}
             </h2>
           </div>
           <div className="categories-arrows hidden md:flex">

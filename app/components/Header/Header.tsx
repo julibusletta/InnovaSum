@@ -196,7 +196,7 @@ export default function Header() {
       )}
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex bg-[#002f6c] header-nav px-10 py-0 items-center justify-center h-14">
+      <nav className="hidden md:flex bg-[#001a3d] header-nav px-10 py-0 items-center justify-center h-14">
         <div className="nav-primary flex gap-8 list-none m-0 p-0 w-auto h-14 items-center">
           {navLinks.map((link) => (
             <div key={link.label} className="dropdown relative inline-block group">

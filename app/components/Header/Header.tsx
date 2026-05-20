@@ -18,7 +18,7 @@ interface NavLink {
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<Record<string, boolean>>({});
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const userMenuRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
@@ -40,17 +40,26 @@ export default function Header() {
   };
 
   const navLinks: NavLink[] = [
+    { label: 'HOME', href: '/', id: 'home' },
+    { label: 'NOSOTROS', href: '/quienes-somos', id: 'nosotros' },
     {
-      label: 'SMART HOME',
-      href: '/category/smart-home',
-      id: 'smart-home',
+      label: 'PRODUCTOS',
+      href: '#',
+      id: 'productos',
       submenu: [
-        { label: 'ASPIRADORAS ROBOT', href: '/category/aspiradoras-robot' },
-        { label: 'CÁMARAS DE SEGURIDAD', href: '/category/camaras-seguridad' },
-        { label: 'AMAZON', href: '/category/amazon' },
+        { label: 'Cámaras de seguridad', href: '/category/camaras-seguridad' },
+        { label: 'Auriculares inteligentes', href: '/category/auriculares-inteligentes' },
+        {
+          label: 'Accesorios starlink',
+          href: '/category/accesorios-starlink',
+          submenu: [
+            { label: 'Inversores', href: '/category/inversores' },
+            { label: 'Soportes', href: '/category/soportes' },
+            { label: 'Fundas', href: '/category/fundas' },
+          ]
+        },
       ],
     },
-    { label: 'ACCESORIOS STARLINK', href: '/category/accesorios-starlink', id: 'starlink' },
   ];
 
   // Update active link based on scroll position
@@ -90,8 +99,12 @@ export default function Header() {
     // but if it's very long, maybe we do. Compragamer doesn't lock it usually.
   };
 
-  const toggleDropdown = (label: string) => {
-    setOpenDropdown(openDropdown === label ? null : label);
+  const toggleDropdown = (label: string, e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setOpenDropdown(prev => ({ ...prev, [label]: !prev[label] }));
   };
 
   return (
@@ -195,15 +208,30 @@ export default function Header() {
                 {link.submenu && <FaChevronDown size={10} className="transition-transform duration-200 group-hover:rotate-180 opacity-70" />}
               </Link>
               {link.submenu && (
-                <div className="dropdown-content absolute bg-white min-w-55 shadow-lg rounded-lg top-full left-0 p-3 hidden group-hover:block">
+                <div className="dropdown-content absolute bg-white min-w-[220px] shadow-lg rounded-lg top-full left-0 p-3 hidden group-hover:block z-[1200]">
                   {link.submenu.map((sublink) => (
-                    <Link
-                      key={sublink.label}
-                      href={sublink.href}
-                      className="block text-gray-900 px-6 py-2.5 text-base font-medium hover:bg-gray-100 rounded transition-all no-underline"
-                    >
-                      {sublink.label}
-                    </Link>
+                    <div key={sublink.label} className="relative group/sub">
+                      <Link
+                        href={sublink.href}
+                        className="flex items-center justify-between text-gray-900 px-6 py-2.5 text-base font-medium hover:bg-gray-100 rounded transition-all no-underline w-full whitespace-nowrap"
+                      >
+                        {sublink.label}
+                        {sublink.submenu && <FaChevronDown size={10} className="-rotate-90 opacity-70 ml-4" />}
+                      </Link>
+                      {sublink.submenu && (
+                        <div className="absolute bg-white min-w-[200px] shadow-lg rounded-lg top-0 left-full ml-1 p-3 hidden group-hover/sub:block z-[1300]">
+                          {sublink.submenu.map((nestedLink) => (
+                            <Link
+                              key={nestedLink.label}
+                              href={nestedLink.href}
+                              className="block text-gray-900 px-6 py-2.5 text-base font-medium hover:bg-gray-100 rounded transition-all no-underline whitespace-nowrap"
+                            >
+                              {nestedLink.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               )}
@@ -280,31 +308,56 @@ export default function Header() {
                 <Link 
                   href={link.href} 
                   className="text-black text-sm font-bold uppercase no-underline flex-1"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => !link.submenu && setIsMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
                 {link.submenu && (
                   <button 
-                    onClick={() => toggleDropdown(link.label)}
+                    onClick={(e) => toggleDropdown(link.label, e)}
                     className="p-2 text-gray-400 bg-transparent border-0 cursor-pointer"
                   >
-                    <FaChevronDown className={`transition-transform duration-300 ${openDropdown === link.label ? 'rotate-180' : ''}`} size={16} />
+                    <FaChevronDown className={`transition-transform duration-300 ${openDropdown[link.label] ? 'rotate-180' : ''}`} size={16} />
                   </button>
                 )}
               </div>
               
-              {link.submenu && openDropdown === link.label && (
+              {link.submenu && openDropdown[link.label] && (
                 <div className="bg-gray-50 animate-slideDown">
                   {link.submenu.map((sublink) => (
-                    <Link
-                      key={sublink.label}
-                      href={sublink.href}
-                      className="block text-gray-600 px-10 py-3 text-xs font-semibold border-b border-gray-100 last:border-0 hover:text-blue-600 no-underline uppercase"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {sublink.label}
-                    </Link>
+                    <div key={sublink.label} className="border-b border-gray-100 last:border-0">
+                      <div className="flex items-center justify-between px-10 py-3">
+                        <Link
+                          href={sublink.href}
+                          className="text-gray-600 text-xs font-semibold hover:text-blue-600 no-underline uppercase flex-1"
+                          onClick={() => !sublink.submenu && setIsMenuOpen(false)}
+                        >
+                          {sublink.label}
+                        </Link>
+                        {sublink.submenu && (
+                          <button 
+                            onClick={(e) => toggleDropdown(sublink.label, e)}
+                            className="p-2 text-gray-400 bg-transparent border-0 cursor-pointer"
+                          >
+                            <FaChevronDown className={`transition-transform duration-300 ${openDropdown[sublink.label] ? 'rotate-180' : ''}`} size={14} />
+                          </button>
+                        )}
+                      </div>
+                      {sublink.submenu && openDropdown[sublink.label] && (
+                        <div className="bg-gray-100 animate-slideDown">
+                          {sublink.submenu.map((nestedLink) => (
+                            <Link
+                              key={nestedLink.label}
+                              href={nestedLink.href}
+                              className="block text-gray-500 px-14 py-3 text-xs font-semibold border-b border-gray-200 last:border-0 hover:text-blue-600 no-underline uppercase"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {nestedLink.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               )}

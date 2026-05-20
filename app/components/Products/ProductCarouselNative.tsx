@@ -35,6 +35,7 @@ export function ProductCarouselSection({ title, type = 'section', value }: Produ
            // Direct category fetch
            const res = await fetch(`/api/products?category=${value}`);
            if (res.ok) data = await res.json();
+        }
         if (data.length === 0) {
           data = [
             { id: 'mock1', name: 'Auriculares Inalámbricos Pro Max', price: 45000, image: 'https://placehold.co/400x400/f3f4f6/6b7280/png?text=Auriculares', stock: 10, discount: 15 },

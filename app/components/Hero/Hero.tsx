@@ -56,10 +56,10 @@ export default function Hero() {
       setShowText(true);
     }, 100);
 
-    // Pause for 2 seconds after showing text before hiding it and showing slider
+    // Pause for 4 seconds after showing text before hiding it and showing slider
     const timer = setTimeout(() => {
       setIsTyping(false);
-    }, 2500);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, [isTyping]);
@@ -83,18 +83,25 @@ export default function Hero() {
     <section id="home" className="hero relative overflow-hidden visible">
       {/* Hero Content */}
       <div className={`hero-content max-w-4xl w-full opacity-100 transition-opacity duration-700 text-center z-10 ${!isTyping ? 'fade-out' : ''}`}>
-        <h1 
-          className={`text-5xl md:text-7xl font-bold leading-tight mb-2 md:mb-8 letter-spacing-tight min-h-0 md:min-h-64 text-gray-900 transition-all duration-1000 transform ${showText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-        >
-          <span className="text-black" style={{ fontFamily: 'var(--font-orbitron)' }}>
-            I
-          </span>
-          <span className="text-[#0066cc]" style={{ fontFamily: 'var(--font-orbitron)' }}>
-            nnovasum
+        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-2 md:mb-8 letter-spacing-tight min-h-0 md:min-h-64 text-gray-900">
+          <span className={`inline-block transition-all duration-700 transform ${showText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <span className="text-black" style={{ fontFamily: 'var(--font-orbitron)' }}>
+              I
+            </span>
+            <span className="text-[#0066cc]" style={{ fontFamily: 'var(--font-orbitron)' }}>
+              nnovasum
+            </span>
           </span>
           <br />
-          <span className="text-black mt-2 inline-block">
-            Insumos tecnológicos
+          <span className={`inline-block mt-2 transition-all duration-700 delay-300 transform ${showText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <span className="text-black">
+              Insumos&nbsp;
+            </span>
+          </span>
+          <span className={`inline-block mt-2 transition-all duration-700 delay-700 transform ${showText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <span className="text-black">
+              tecnológicos
+            </span>
           </span>
         </h1>
       </div>

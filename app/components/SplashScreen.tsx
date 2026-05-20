@@ -53,7 +53,7 @@ export default function SplashScreen() {
     >
       <div className="relative w-72 h-32 mb-8 animate-pulse">
         <Image 
-          src="/images/logoinnovasum.webp" 
+          src="/images/innovasumlogo.png" 
           alt="Innovasum Logo" 
           fill
           style={{ objectFit: 'contain' }}

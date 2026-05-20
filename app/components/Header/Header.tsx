@@ -213,10 +213,10 @@ export default function Header() {
                     <div key={sublink.label} className="relative group/sub">
                       <Link
                         href={sublink.href}
-                        className="flex items-center justify-between text-gray-900 px-6 py-2.5 text-base font-medium hover:bg-gray-100 rounded transition-all no-underline w-full whitespace-nowrap"
+                        className="flex items-center justify-between text-gray-900 px-6 py-2.5 text-base font-medium hover:bg-gray-100 rounded transition-all no-underline w-full whitespace-nowrap uppercase"
                       >
                         {sublink.label}
-                        {sublink.submenu && <FaChevronDown size={10} className="-rotate-90 opacity-70 ml-4" />}
+                        {sublink.submenu && <FaChevronDown size={10} className="-rotate-90 opacity-70 ml-4 shrink-0" />}
                       </Link>
                       {sublink.submenu && (
                         <div className="absolute bg-white min-w-[200px] shadow-lg rounded-lg top-0 left-full ml-1 p-3 hidden group-hover/sub:block z-[1300]">
@@ -224,7 +224,7 @@ export default function Header() {
                             <Link
                               key={nestedLink.label}
                               href={nestedLink.href}
-                              className="block text-gray-900 px-6 py-2.5 text-base font-medium hover:bg-gray-100 rounded transition-all no-underline whitespace-nowrap"
+                              className="block text-gray-900 px-6 py-2.5 text-base font-medium hover:bg-gray-100 rounded transition-all no-underline whitespace-nowrap uppercase"
                             >
                               {nestedLink.label}
                             </Link>

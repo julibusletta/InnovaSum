@@ -29,7 +29,7 @@ export default function Hero() {
     },
   ]);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [displayText, setDisplayText] = useState('');
+  const [showText, setShowText] = useState(false);
   const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
@@ -47,30 +47,21 @@ export default function Hero() {
     fetchSlides();
   }, []);
 
-  const fullText = 'Innovasum  Tecnologia a un solo clic';
-  const bluePart = 'Innovasum';
-  const blackPart = 'Tecnologia a un solo clic';
-
-  // Typewriter effect
+  // Fade-up effect
   useEffect(() => {
     if (!isTyping) return;
 
-    const interval = setInterval(() => {
-      setDisplayText((prev) => {
-        if (prev.length < fullText.length) {
-          return fullText.slice(0, prev.length + 1);
-        } else {
-          clearInterval(interval);
-          // Pause for 2 seconds after finishing typing before hiding text and showing slider
-          setTimeout(() => {
-            setIsTyping(false);
-          }, 2000);
-          return fullText;
-        }
-      });
-    }, 80);
+    // Trigger fade up animation shortly after mount
+    setTimeout(() => {
+      setShowText(true);
+    }, 100);
 
-    return () => clearInterval(interval);
+    // Pause for 2 seconds after showing text before hiding it and showing slider
+    const timer = setTimeout(() => {
+      setIsTyping(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
   }, [isTyping]);
 
   // Auto-rotate slides - Only start when typing is finished
@@ -92,18 +83,19 @@ export default function Hero() {
     <section id="home" className="hero relative overflow-hidden visible">
       {/* Hero Content */}
       <div className={`hero-content max-w-4xl w-full opacity-100 transition-opacity duration-700 text-center z-10 ${!isTyping ? 'fade-out' : ''}`}>
-        <h1 className="typewriter text-5xl md:text-7xl font-bold leading-tight mb-2 md:mb-8 letter-spacing-tight min-h-0 md:min-h-64 text-gray-900 transition-all duration-300">
+        <h1 
+          className={`text-5xl md:text-7xl font-bold leading-tight mb-2 md:mb-8 letter-spacing-tight min-h-0 md:min-h-64 text-gray-900 transition-all duration-1000 transform ${showText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <span className="text-black" style={{ fontFamily: 'var(--font-orbitron)' }}>
-            {displayText.slice(0, 1)}
+            I
           </span>
           <span className="text-[#0066cc]" style={{ fontFamily: 'var(--font-orbitron)' }}>
-            {displayText.slice(1, bluePart.length)}
+            nnovasum
           </span>
-          {displayText.length > bluePart.length && <br />}
-          <span className="text-black">
-            {displayText.slice(bluePart.length).trim()}
+          <br />
+          <span className="text-black mt-2 inline-block">
+            Insumos tecnológicos
           </span>
-          {isTyping && <span className="animate-pulse ml-1 text-gray-400">|</span>}
         </h1>
       </div>
 

@@ -33,12 +33,12 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "Innovasum | Tecnología a un solo clic",
+  title: "Innovasum | Insumos tecnológicos",
   description: "Los mejores productos de tecnología al mejor precio. Envíos a todo el país. Importadores directos de Xiaomi, Apple, Samsung y Notebooks.",
   keywords: ["celulares", "notebooks", "tecnología", "importadores", "cuotas", "xiaomi", "apple", "samsung", "tablets", "Innovasum", "tienda"],
   authors: [{ name: "Innovasum" }],
   openGraph: {
-    title: "Innovasum | Tecnología a un solo clic",
+    title: "Innovasum | Insumos tecnológicos",
     description: "Renová tu celular y notebook al mejor precio de Argentina. Descubrí nuestro catálogo.",
     url: "https://www.innovasum.com.ar",
     siteName: "Innovasum",

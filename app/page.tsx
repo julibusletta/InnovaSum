@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       <Benefits />
       <ProductCarouselSection 
-        title="BOMBAS EN INNOVASUM"
+        title="NUESTROS PRODUCTOS"
         value="bombas"
       />
       <Categories />

@@ -7,7 +7,7 @@ import '../../styles/Footer.css';
 export default function Footer() {
   return (
     <>
-      <footer id="footer" className="w-full bg-[#0a192f] text-white py-16 md:py-20 px-4 md:px-16">
+      <footer id="footer" className="w-full bg-[#002f6c] text-white py-16 md:py-20 px-4 md:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="content mb-8">
             <div className="flex flex-wrap gap-6 md:gap-8 mb-5">

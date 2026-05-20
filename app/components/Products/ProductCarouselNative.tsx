@@ -35,6 +35,15 @@ export function ProductCarouselSection({ title, type = 'section', value }: Produ
            // Direct category fetch
            const res = await fetch(`/api/products?category=${value}`);
            if (res.ok) data = await res.json();
+        if (data.length === 0) {
+          data = [
+            { id: 'mock1', name: 'Auriculares Inalámbricos Pro Max', price: 45000, image: 'https://placehold.co/400x400/f3f4f6/6b7280/png?text=Auriculares', stock: 10, discount: 15 },
+            { id: 'mock2', name: 'Cámara de Seguridad WiFi HD', price: 32000, image: 'https://placehold.co/400x400/f3f4f6/6b7280/png?text=Camara', stock: 5 },
+            { id: 'mock3', name: 'Soporte Articulado de Pared', price: 15000, image: 'https://placehold.co/400x400/f3f4f6/6b7280/png?text=Soporte', stock: 20 },
+            { id: 'mock4', name: 'Smartwatch Deportivo Serie 8', price: 89000, image: 'https://placehold.co/400x400/f3f4f6/6b7280/png?text=Smartwatch', stock: 8, discount: 5 },
+            { id: 'mock5', name: 'Funda Protectora Premium', price: 8500, image: 'https://placehold.co/400x400/f3f4f6/6b7280/png?text=Funda', stock: 50 },
+            { id: 'mock6', name: 'Router WiFi 6 Alta Velocidad', price: 65000, image: 'https://placehold.co/400x400/f3f4f6/6b7280/png?text=Router', stock: 12 }
+          ];
         }
         setProducts(data);
 

@@ -57,7 +57,7 @@ export default function Header() {
   const buildCategoryNav = () => {
     // Top-level categories
     const parents = dbCategories.filter(c => !c.parentId);
-    const buildSub = (parentId: string) => {
+    const buildSub = (parentId: string): NavLink[] | undefined => {
         const children = dbCategories.filter(c => c.parentId === parentId || c.parentId === dbCategories.find(p => p.slug === parentId)?.id);
         if (children.length === 0) return undefined;
         return children.map(c => ({

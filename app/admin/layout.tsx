@@ -49,7 +49,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       items: [
         { label: 'Pedidos', href: '/admin/orders', icon: <FaShoppingCart /> },
         { label: 'Auditoría de Pagos', href: '/admin/webhooks', icon: <FaHistory /> },
-        { label: 'Descuentos', href: '/admin/promotions', icon: <FaTrophy /> },
+
         { label: 'Cupones', href: '/admin/coupons', icon: <FaTags /> },
       ]
     },

@@ -35,10 +35,6 @@ export async function POST(request: Request) {
 
     await dbConnect();
     
-    // Get current settings to see if rate changed
-    const current = await db.getGlobalSettings();
-    const rateChanged = current.exchangeRate !== exchangeRate;
-
     // Update settings
     await GlobalSettings.findOneAndUpdate(
       {},
@@ -46,16 +42,9 @@ export async function POST(request: Request) {
       { upsert: true, new: true }
     );
 
-    let updatedCount = 0;
-    if (rateChanged) {
-      console.log(`Exchange rate changed from ${current.exchangeRate} to ${exchangeRate}. Recalculating all products...`);
-      updatedCount = await db.recalculateAllProducts();
-    }
-
     return NextResponse.json({ 
       success: true, 
-      message: rateChanged ? `Tasa actualizada y ${updatedCount} productos recalculados.` : 'Tasa actualizada.',
-      updatedCount 
+      message: 'Tasa actualizada.' 
     });
   } catch (error: any) {
     console.error('Error in Settings API:', error);

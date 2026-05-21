@@ -7,8 +7,7 @@ const CategorySchema = new Schema({
   isMain: { type: Boolean, default: false },
   slug: { type: String, required: true, unique: true },
   description: { type: String },
-  markupFixed: { type: String }, // e.g. "+$10,000 ARS" or "+$30 USD"
-  markupPercent: { type: Number }, // e.g. 30
+  parentId: { type: String, default: null }, // Reference to parent category slug or id
 }, { timestamps: true });
 
 export default mongoose.models.Category || mongoose.model('Category', CategorySchema);

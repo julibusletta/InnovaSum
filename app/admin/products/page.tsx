@@ -9,13 +9,7 @@ import Link from 'next/link';
 import { FaUpload, FaSave, FaInfoCircle, FaSearch, FaTable, FaTimesCircle, FaTags, FaBoxOpen, FaCogs, FaGlobe, FaPlus, FaTrash, FaExclamationTriangle, FaPercentage } from 'react-icons/fa';
 import { useCallback } from 'react';
 
-const CATEGORIES = [
-  'celulares', 'samsung', 'xiaomi', 'motorola', 'realme', 'iphone',
-  'apple', 'macbook', 'watch', 'ipad', 'airpods',
-  'jbl', 'parlantes', 'auriculares', 'sounds-bars',
-  'smart-home', 'amazon', 'google', 'xiaomi-home', 'aspiradoras-robot', 'camaras-seguridad',
-  'smart-watches', 'xiaomi-watches', 'notebooks', 'accesorios-starlink', 'ofertas-semanales', 'general'
-];
+
 
 export default function ProductsPage() {
   const [products, setProducts] = useState<{ [key: string]: Product[] }>({});
@@ -791,8 +785,9 @@ function ProductsContent({
                                  onChange={(e) => handleProductChange(p.id, p.category, 'category', e.target.value)}
                                  className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-sm font-bold text-gray-600 focus:border-[#058c8c] focus:bg-white transition appearance-none"
                                >
-                                 {CATEGORIES.map(cat => (
-                                   <option key={cat} value={cat}>{cat.charAt(0).toUpperCase() + cat.slice(1)}</option>
+                                 <option value="general">General</option>
+                                 {categories.map((cat: any) => (
+                                   cat.slug !== 'general' && <option key={cat.slug} value={cat.slug}>{cat.name}</option>
                                  ))}
                                </select>
                             </div>

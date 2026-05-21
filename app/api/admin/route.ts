@@ -90,11 +90,8 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: false, message: 'Datos de categoría incompletos' }, { status: 400 });
       }
       
-      // Save category and recalculate prices
+      // Save category
       await db.saveCategory(category);
-      
-      // We can also manually trigger it if we want to get the count
-      const count = await db.recalculateProductPrices(category.slug, category.markupPercent, category.markupFixed);
       
       // Revalidate cache to show changes in the frontend immediately
       try {
@@ -108,10 +105,27 @@ export async function POST(request: Request) {
       
       return NextResponse.json({ 
         success: true, 
-        message: count > 0 
-          ? `Categoría guardada y ${count} productos actualizados.` 
-          : 'Categoría guardada correctamente.' 
+        message: 'Categoría guardada correctamente.' 
       });
+    }
+
+    if (action === 'delete_category') {
+      const { categoryIdOrSlug } = data;
+      if (!categoryIdOrSlug) {
+        return NextResponse.json({ success: false, message: 'ID/Slug de categoría no proporcionado' }, { status: 400 });
+      }
+
+      await db.deleteCategory(categoryIdOrSlug);
+
+      try {
+        revalidatePath('/', 'layout');
+        revalidatePath('/admin/categories');
+        revalidateTag('products', 'default');
+      } catch (e) {
+        console.warn('Revalidation failed:', e);
+      }
+
+      return NextResponse.json({ success: true, message: 'Categoría eliminada correctamente' });
     }
 
     return NextResponse.json({ success: false, message: 'Acción no válida' }, { status: 400 });

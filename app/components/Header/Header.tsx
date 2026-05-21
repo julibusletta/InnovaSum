@@ -39,26 +39,49 @@ export default function Header() {
     }
   };
 
+  const [dbCategories, setDbCategories] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const resp = await fetch('/api/categories');
+        const data = await resp.json();
+        setDbCategories(Array.isArray(data) ? data : []);
+      } catch (err) {
+        console.error('Failed to load categories for nav:', err);
+      }
+    };
+    fetchCategories();
+  }, []);
+
+  const buildCategoryNav = () => {
+    // Top-level categories
+    const parents = dbCategories.filter(c => !c.parentId);
+    const buildSub = (parentId: string) => {
+        const children = dbCategories.filter(c => c.parentId === parentId || c.parentId === dbCategories.find(p => p.slug === parentId)?.id);
+        if (children.length === 0) return undefined;
+        return children.map(c => ({
+            label: c.name,
+            href: `/category/${c.slug}`,
+            submenu: buildSub(c.slug)
+        }));
+    };
+
+    return parents.map(c => ({
+        label: c.name,
+        href: `/category/${c.slug}`,
+        submenu: buildSub(c.slug)
+    }));
+  };
+
   const navLinks: NavLink[] = [
     { label: 'HOME', href: '/', id: 'home' },
     { label: 'NOSOTROS', href: '/quienes-somos', id: 'nosotros' },
     {
       label: 'PRODUCTOS',
-      href: '#',
+      href: '/#productos',
       id: 'productos',
-      submenu: [
-        { label: 'Cámaras de seguridad', href: '/category/camaras-seguridad' },
-        { label: 'Auriculares inteligentes', href: '/category/auriculares-inteligentes' },
-        {
-          label: 'Accesorios starlink',
-          href: '/category/accesorios-starlink',
-          submenu: [
-            { label: 'Inversores', href: '/category/inversores' },
-            { label: 'Soportes', href: '/category/soportes' },
-            { label: 'Fundas', href: '/category/fundas' },
-          ]
-        },
-      ],
+      submenu: dbCategories.length > 0 ? buildCategoryNav() : undefined,
     },
   ];
 

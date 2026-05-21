@@ -459,7 +459,7 @@ function ProductsContent({
   setFilterType, categoryFilter, setCategoryFilter, deletingId, selectedIds, setSelectedIds,
   exchangeRate, fetchData, handleStockChange,
   handlePriceChange, handleProductChange, handleFileUpload, saveProducts, autoSaveProductImages,
-  handleDeleteProduct,
+  handleDeleteProduct, categories, setCategories,
   handleAddNewProduct, toggleSelectProduct, toggleSelectAllInCategory, handleBulkDelete,
   handleExcelImport, setProducts
 }: any) {

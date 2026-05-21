@@ -3,7 +3,6 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import dbConnect from '@/lib/mongodb';
 import ProductModel from '@/models/Product';
-import CategoryModel from '@/models/Category';
 import { db } from '@/lib/db';
 
 export async function GET(
@@ -49,21 +48,8 @@ export async function PATCH(
       return NextResponse.json({ error: 'Product not found' }, { status: 404 });
     }
 
-    // Get current rate and category markup
-    const settings = await db.getGlobalSettings();
-    const category = await CategoryModel.findOne({ slug: product.category }).lean();
-
-    const rate = settings.exchangeRate;
-    const markupPercent = category?.markupPercent || 30; // Default to 30% if not set
-    const markupFixed = category?.markupFixed;
-
-    // Calculate new retail price
-    const newRetailPrice = db.calculatePrice(costPrice, rate, markupPercent, markupFixed);
-
-    // Update product
+    // Update product cost price
     product.costPrice = costPrice;
-    product.price = newRetailPrice;
-    product.originalPrice = newRetailPrice;
     await product.save();
 
     return NextResponse.json({ 

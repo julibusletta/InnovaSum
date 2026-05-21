@@ -110,45 +110,9 @@ export default function ProductsPage() {
     setEditingProduct(prev => {
       if (prev?.id === id) {
         const newP = { ...prev, [field]: value };
-        if (field === 'discount') {
-          const disc = Number(value);
-          const base = newP.originalPrice || newP.price;
-          if (disc > 0) {
-            newP.originalPrice = base;
-            newP.price = Math.round(base * (1 - disc / 100));
-          } else {
-            newP.price = newP.originalPrice || newP.price;
-            newP.originalPrice = undefined;
-          }
-          
-          setTimeout(() => {
-            setProducts(prevProducts => {
-              const updated = { ...prevProducts };
-              if (updated[category]) {
-                updated[category] = updated[category].map(item => item.id === id ? { ...item, price: newP.price, originalPrice: newP.originalPrice } : item);
-              }
-              return updated;
-            });
-          }, 0);
-        }
-
-        if (field === 'originalPrice') {
-          const orig = Number(value);
-          if (newP.discount && newP.discount > 0) {
-            newP.price = Math.round(orig * (1 - newP.discount / 100));
-          }
-           setTimeout(() => {
-            setProducts(prevProducts => {
-              const updated = { ...prevProducts };
-              if (updated[category]) {
-                updated[category] = updated[category].map(item => item.id === id ? { ...item, price: newP.price, originalPrice: newP.originalPrice } : item);
-              }
-              return updated;
-            });
-          }, 0);
-        }
-
-        return newP;
+        if (field === 'images' && Array.isArray(value)) {
+          newP.image = value[0] as string;
+        }return newP;
       }
       return prev;
     });
@@ -549,7 +513,6 @@ function ProductsContent({
             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236b7280'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center' }}
           >
             <option value="all">📂 Todas las categorías</option>
-            <option value="promociones">🏷️ TODAS LAS PROMOCIONES (CON DESCUENTO)</option>
             <option value="ofertas-semanales">🔥 Ofertas Semanales (Categoría)</option>
             {products && Object.keys(products).sort().filter(c => c !== 'ofertas-semanales').map(cat => (
               <option key={cat} value={cat}>
@@ -590,10 +553,7 @@ function ProductsContent({
         {products && Object.entries(products)
           .filter(([category, items]) => {
             if (categoryFilter === 'all') return true;
-            if (categoryFilter === 'promociones') {
-               // Special case: show this category group if ANY item in it has a discount
-               return (items as Product[]).some(p => (p.discount && p.discount > 0) || (p.originalPrice && p.originalPrice > p.price));
-            }
+
             return category === categoryFilter;
           })
           .map(([category, items]: [any, any]) => {
@@ -601,10 +561,7 @@ function ProductsContent({
             const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) || p.id.toLowerCase().includes(searchTerm.toLowerCase());
             if (!matchesSearch) return false;
 
-            if (categoryFilter === 'promociones') {
-              const hasDiscount = (p.discount && p.discount > 0) || (p.originalPrice && p.originalPrice > p.price);
-              if (!hasDiscount) return false;
-            }
+
 
             if (filterType === 'no-image') return !p.image || p.image.includes('placeholder');
             if (filterType === 'low-stock') return p.stock <= 5;
@@ -791,36 +748,7 @@ function ProductsContent({
                                  ))}
                                </select>
                             </div>
-                             <div className="col-span-2 bg-orange-50/30 p-8 border border-orange-100 rounded-2xl flex items-center justify-between">
-                               <div>
-                                  <label className="block text-[10px] font-black text-orange-600 uppercase tracking-widest mb-2">Descuento (%)</label>
-                                  <div className="flex items-center gap-2">
-                                    <input
-                                      type="number"
-                                      value={p.discount || 0}
-                                      onChange={(e) => handleProductChange(p.id, p.category, 'discount', Number(e.target.value))}
-                                      className="bg-transparent text-2xl font-black text-gray-900 outline-none w-20 border-b-2 border-transparent focus:border-orange-500 transition-all"
-                                    />
-                                    <FaPercentage className="text-orange-400" />
-                                  </div>
-                               </div>
-                                <div className="text-right">
-                                  <label className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">Precio de Lista (Original)</label>
-                                  <div className="flex items-center justify-end gap-2 text-gray-400">
-                                    <span className="text-2xl font-black">$</span>
-                                    <input
-                                      type="number"
-                                      value={p.originalPrice || 0}
-                                      onChange={(e) => handleProductChange(p.id, p.category, 'originalPrice', Number(e.target.value))}
-                                      className="bg-transparent text-2xl font-black text-right outline-none w-48 border-b-2 border-transparent focus:border-gray-300 transition-all line-through"
-                                      placeholder="-"
-                                    />
-                                  </div>
-                                  <p className="text-[10px] text-orange-500 font-bold mt-1 italic uppercase tracking-tighter">
-                                    {p.discount && p.discount > 0 ? `Este producto aparecerá en sección Ofertas` : 'Sin descuento activo'}
-                                  </p>
-                               </div>
-                             </div>
+
 
                              <div className="flex items-center justify-between p-4 bg-gray-50 border border-[#e1e3e5] rounded">
                                <div>

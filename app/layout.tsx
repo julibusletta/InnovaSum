@@ -5,7 +5,6 @@ import { CartProvider } from "./context/CartContext";
 import ViewportHandler from "./components/ViewportHandler/ViewportHandler";
 import { AnimationInitializer } from "./components/AnimationInitializer/AnimationInitializer";
 import Header from "./components/Header/Header";
-import LogosMarquee from "./components/LogosMarquee/LogosMarquee";
 import Footer from "./components/Footer/Footer";
 import { AuthProvider } from "./components/AuthProvider/AuthProvider";
 import ConditionalLayout from "./components/ConditionalLayout";

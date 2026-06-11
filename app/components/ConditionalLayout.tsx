@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation';
 import Header from './Header/Header';
-import LogosMarquee from './LogosMarquee/LogosMarquee';
 import Footer from './Footer/Footer';
 import WhatsAppButton from './WhatsAppButton/WhatsAppButton';
 
@@ -19,7 +18,6 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
     <>
       <Header />
       {children}
-      <LogosMarquee />
       <Footer />
       <WhatsAppButton />
     </>

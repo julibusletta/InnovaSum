@@ -45,11 +45,6 @@ export const metadata: Metadata = {
     locale: "es_AR",
     type: "website",
   },
-  icons: {
-    icon: "/images/logoinnovasum.webp",
-    shortcut: "/images/logoinnovasum.webp",
-    apple: "/images/logoinnovasum.webp",
-  },
 };
 
 export default function RootLayout({

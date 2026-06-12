@@ -244,9 +244,11 @@
     "name": "CABLE INVERSOR 12V-30V STARLINK MINI AUTO",
     "price": 51100,
     "category": "inversores-12-30v",
-    "image": "/images/products/starlink-mini-cable.webp",
+    "image": "/images/Productos/inversorauto1.webp",
     "images": [
-      "/images/products/starlink-mini-cable.webp"
+      "/images/Productos/inversorauto1.webp",
+      "/images/Productos/inversorauto2.webp",
+      "/images/Productos/inversorauto3.webp"
     ],
     "description": "Cable adaptador conversor para Starlink MINI de 12v a 30V. Ideal para vehículos (autos, camionetas, motorhomes). Conexión directa al encendedor, 3 metros de largo, ficha original e impermeable (IP67). 90W de potencia.",
     "stock": 10
@@ -258,9 +260,12 @@
     "category": "inversores-12-30v",
     "description": "Conversor DC-DC para auto 12/24V a 30V 3A. Ideal para utilizar tu antena Starlink Mini en el auto de forma segura y eficiente.",
     "stock": 10,
-    "image": "/images/products/starlink-mini-cable.webp",
+    "image": "/images/Productos/inversorbat1.webp",
     "images": [
-      "/images/products/starlink-mini-cable.webp"
+      "/images/Productos/inversorbat1.webp",
+      "/images/Productos/inversorbat2.webp",
+      "/images/Productos/inversorbat3.webp",
+      "/images/Productos/inversorbat4.webp"
     ]
   },
   {
@@ -270,9 +275,11 @@
     "category": "inversores-12-30v",
     "description": "Cable Inversor 12v-30v para Starlink Mini Auto. Longitud de 5 Metros para mayor comodidad.",
     "stock": 15,
-    "image": "/images/products/starlink-mini-cable.webp",
+    "image": "/images/Productos/inversorauto1.webp",
     "images": [
-      "/images/products/starlink-mini-cable.webp"
+      "/images/Productos/inversorauto1.webp",
+      "/images/Productos/inversorauto2.webp",
+      "/images/Productos/inversorauto3.webp"
     ]
   },
   {
@@ -282,9 +289,11 @@
     "category": "detectores-monoxido",
     "description": "Detector de Monóxido de Carbono (CO) Inalámbrico. Alarma sonora de 85dB, pantalla LCD, funciona a pilas. Color Blanco.",
     "stock": 20,
-    "image": "/images/products/starlink-mini-cable.webp",
+    "image": "/images/Productos/detectormonox.webp",
     "images": [
-      "/images/products/starlink-mini-cable.webp"
+      "/images/Productos/detectormonox.webp",
+      "/images/Productos/detectormonox2.webp",
+      "/images/Productos/detectormonox3.webp"
     ]
   },
   {
@@ -294,9 +303,11 @@
     "category": "soportes",
     "description": "Soporte para techo diseñado especialmente para Antena Starlink Mini. Cuenta con 4 imanes de alta potencia.",
     "stock": 5,
-    "image": "/images/products/starlink-mini-cable.webp",
+    "image": "/images/Productos/soportetecho1.webp",
     "images": [
-      "/images/products/starlink-mini-cable.webp"
+      "/images/Productos/soportetecho1.webp",
+      "/images/Productos/soportetecho2.webp",
+      "/images/Productos/soportetecho3.webp"
     ]
   },
   {
@@ -306,9 +317,11 @@
     "category": "inversores-12-30v",
     "description": "Cable Inversor 12v-30v Starlink Míni Auto 5 Metros con botón de encendido/apagado integrado.",
     "stock": 12,
-    "image": "/images/products/starlink-mini-cable.webp",
+    "image": "/images/Productos/inversorautoesp1.webp",
     "images": [
-      "/images/products/starlink-mini-cable.webp"
+      "/images/Productos/inversorautoesp1.webp",
+      "/images/Productos/inversorautoesp2.webp",
+      "/images/Productos/inversorautoesp3.webp"
     ]
   },
   {
@@ -318,9 +331,13 @@
     "category": "smarthome",
     "description": "Interruptor De Luz Tecla Táctil Smart Wifi 3 Canales. Color Blanco. Corriente Nominal 10A Voltaje Nominal 240v 220v. Compatible con Alexa y Google Home.",
     "stock": 25,
-    "image": "/images/products/starlink-mini-cable.webp",
+    "image": "/images/Productos/interruptorluz1.webp",
     "images": [
-      "/images/products/starlink-mini-cable.webp"
+      "/images/Productos/interruptorluz1.webp",
+      "/images/Productos/interruptorluz2.webp",
+      "/images/Productos/interruptorluz3.webp",
+      "/images/Productos/interruptorluz4.webp",
+      "/images/Productos/interruptorluz5.webp"
     ]
   },
   {
@@ -330,9 +347,10 @@
     "category": "soportes",
     "description": "Soporte magnético premium para techo de auto. Accesorio indispensable para tu Starlink Mini en movimiento. Color Negro.",
     "stock": 3,
-    "image": "/images/products/starlink-mini-cable.webp",
+    "image": "/images/Productos/sopmagnetico1.webp",
     "images": [
-      "/images/products/starlink-mini-cable.webp"
+      "/images/Productos/sopmagnetico1.webp",
+      "/images/Productos/sopmagnetico2.webp"
     ]
   },
   {
@@ -342,9 +360,9 @@
     "category": "auriculares",
     "description": "Auriculares Inalámbricos con Traductor en tiempo real para 150 Idiomas. Inteligencia Artificial y Cancelación de Ruido. Color Negro.",
     "stock": 8,
-    "image": "/images/products/starlink-mini-cable.webp",
+    "image": "/images/Productos/auriculares.webp",
     "images": [
-      "/images/products/starlink-mini-cable.webp"
+      "/images/Productos/auriculares.webp"
     ]
   },
   {
@@ -354,9 +372,11 @@
     "category": "soportes",
     "description": "Soporte para tablero con ventosa de alta succión y nano-adhesivo para Starlink Mini. Ajustable 360 grados.",
     "stock": 18,
-    "image": "/images/products/starlink-mini-cable.webp",
+    "image": "/images/Productos/soportetablero1.webp",
     "images": [
-      "/images/products/starlink-mini-cable.webp"
+      "/images/Productos/soportetablero1.webp",
+      "/images/Productos/soportetablero2.webp",
+      "/images/Productos/soportetablero3.webp"
     ]
   },
   {
@@ -366,9 +386,10 @@
     "category": "soportes",
     "description": "Soporte Magnético con Imán Super Reforzado para Starlink Mini. Agarre extremo para condiciones difíciles. Color Negro.",
     "stock": 5,
-    "image": "/images/products/starlink-mini-cable.webp",
+    "image": "/images/Productos/sopmagnetico3.webp",
     "images": [
-      "/images/products/starlink-mini-cable.webp"
+      "/images/Productos/sopmagnetico3.webp",
+      "/images/Productos/sopmagnetico4.webp"
     ]
   }
 ]

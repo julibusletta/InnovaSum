@@ -16,11 +16,12 @@ export async function GET(request: Request) {
       'celulares': ['celulares', 'samsung', 'xiaomi', 'motorola', 'realme', 'iphone'],
       'apple': ['apple', 'iphone', 'macbook', 'watch', 'ipad', 'airpods'],
       'jbl': ['jbl', 'parlantes', 'auriculares', 'sounds-bars'],
-      'smart-home': ['smart-home', 'amazon', 'google', 'xiaomi-home', 'aspiradoras-robot', 'camaras-seguridad'],
+      'smart-home': ['smart-home', 'amazon', 'google', 'xiaomi-home', 'aspiradoras-robot', 'camaras-seguridad', 'smarthome'],
       'smart-watches': ['smart-watches', 'xiaomi-watches', 'watch'],
       'notebooks': ['notebooks', 'macbook'],
       'notebooks-y-tablets': ['notebooks', 'macbook', 'tablets'],
-      'starlink': ['starlink', 'accesorios-starlink']
+      'starlink': ['starlink', 'accesorios-starlink', 'inversores-12-30v', 'soportes'],
+      'accesorios-starlink': ['starlink', 'accesorios-starlink', 'inversores-12-30v', 'soportes']
     };
 
     const cleanCategory = category?.toLowerCase().trim();

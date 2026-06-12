@@ -250,5 +250,125 @@
     ],
     "description": "Cable adaptador conversor para Starlink MINI de 12v a 30V. Ideal para vehículos (autos, camionetas, motorhomes). Conexión directa al encendedor, 3 metros de largo, ficha original e impermeable (IP67). 90W de potencia.",
     "stock": 10
+  },
+  {
+    "id": "ml-01",
+    "name": "Conversor Dc-dc P/auto 12/24a30v 3a Mini Starlink -prontoluz",
+    "price": 55450,
+    "category": "starlink",
+    "description": "Conversor DC-DC para auto 12/24V a 30V 3A. Ideal para utilizar tu antena Starlink Mini en el auto de forma segura y eficiente.",
+    "stock": 10,
+    "image": "/images/products/starlink-mini-cable.webp",
+    "images": [
+      "/images/products/starlink-mini-cable.webp"
+    ]
+  },
+  {
+    "id": "ml-02",
+    "name": "Cable Inversor 12v-30v Starlink Míni Auto 5 Metros",
+    "price": 60450,
+    "category": "starlink",
+    "description": "Cable Inversor 12v-30v para Starlink Mini Auto. Longitud de 5 Metros para mayor comodidad.",
+    "stock": 15,
+    "image": "/images/products/starlink-mini-cable.webp",
+    "images": [
+      "/images/products/starlink-mini-cable.webp"
+    ]
+  },
+  {
+    "id": "ml-03",
+    "name": "Detector Monóxido Carbono Co Series Inalámbrico Sonido 85db Lcd Pilas Blanco",
+    "price": 23850,
+    "category": "seguridad",
+    "description": "Detector de Monóxido de Carbono (CO) Inalámbrico. Alarma sonora de 85dB, pantalla LCD, funciona a pilas. Color Blanco.",
+    "stock": 20,
+    "image": "/images/products/starlink-mini-cable.webp",
+    "images": [
+      "/images/products/starlink-mini-cable.webp"
+    ]
+  },
+  {
+    "id": "ml-04",
+    "name": "Soporte Para Techo Con 4 Imanes Para Antena Starlink Mini",
+    "price": 82500,
+    "category": "starlink",
+    "description": "Soporte para techo diseñado especialmente para Antena Starlink Mini. Cuenta con 4 imanes de alta potencia.",
+    "stock": 5,
+    "image": "/images/products/starlink-mini-cable.webp",
+    "images": [
+      "/images/products/starlink-mini-cable.webp"
+    ]
+  },
+  {
+    "id": "ml-05",
+    "name": "Cable Inversor 12v-30v Starlink Míni Auto 5 Metros Con Botón",
+    "price": 63500,
+    "category": "starlink",
+    "description": "Cable Inversor 12v-30v Starlink Míni Auto 5 Metros con botón de encendido/apagado integrado.",
+    "stock": 12,
+    "image": "/images/products/starlink-mini-cable.webp",
+    "images": [
+      "/images/products/starlink-mini-cable.webp"
+    ]
+  },
+  {
+    "id": "ml-06",
+    "name": "Interruptor De Luz Tecla Táctil Smart Wifi 3 Canales Color Blanco",
+    "price": 37272,
+    "category": "smarthome",
+    "description": "Interruptor De Luz Tecla Táctil Smart Wifi 3 Canales. Color Blanco. Corriente Nominal 10A Voltaje Nominal 240v 220v. Compatible con Alexa y Google Home.",
+    "stock": 25,
+    "image": "/images/products/starlink-mini-cable.webp",
+    "images": [
+      "/images/products/starlink-mini-cable.webp"
+    ]
+  },
+  {
+    "id": "ml-07",
+    "name": "Soporte Magnético Para Techo De Auto Starlink Mini Accesorio Color Negro",
+    "price": 156525,
+    "category": "starlink",
+    "description": "Soporte magnético premium para techo de auto. Accesorio indispensable para tu Starlink Mini en movimiento. Color Negro.",
+    "stock": 3,
+    "image": "/images/products/starlink-mini-cable.webp",
+    "images": [
+      "/images/products/starlink-mini-cable.webp"
+    ]
+  },
+  {
+    "id": "ml-08",
+    "name": "Auriculares Inalambrico Traductor 150 Idiomas Ia Canc Ruido Negro",
+    "price": 47228,
+    "category": "tecnologia",
+    "description": "Auriculares Inalámbricos con Traductor en tiempo real para 150 Idiomas. Inteligencia Artificial y Cancelación de Ruido. Color Negro.",
+    "stock": 8,
+    "image": "/images/products/starlink-mini-cable.webp",
+    "images": [
+      "/images/products/starlink-mini-cable.webp"
+    ]
+  },
+  {
+    "id": "ml-09",
+    "name": "Soporte Para Tablero Con Ventosa Y Nano-adhesivo Para Starlink Mini Ajustable 360°",
+    "price": 45000,
+    "category": "starlink",
+    "description": "Soporte para tablero con ventosa de alta succión y nano-adhesivo para Starlink Mini. Ajustable 360 grados.",
+    "stock": 18,
+    "image": "/images/products/starlink-mini-cable.webp",
+    "images": [
+      "/images/products/starlink-mini-cable.webp"
+    ]
+  },
+  {
+    "id": "ml-10",
+    "name": "Soporte Magnético Imán Super Reforzado Para Starlink Mini Negro",
+    "price": 154500,
+    "category": "starlink",
+    "description": "Soporte Magnético con Imán Super Reforzado para Starlink Mini. Agarre extremo para condiciones difíciles. Color Negro.",
+    "stock": 5,
+    "image": "/images/products/starlink-mini-cable.webp",
+    "images": [
+      "/images/products/starlink-mini-cable.webp"
+    ]
   }
 ]

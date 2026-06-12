@@ -294,18 +294,7 @@ export default function ProductDetailsPage() {
               )}
             </div>
 
-            {/* Installments Box */}
-            <div className="flex items-center gap-4 bg-white border border-[#e0e0e0] rounded-md p-4 mb-3">
-              <FaCreditCard className="text-[32px] text-[#333]" />
-              <div className="flex flex-col flex-1">
-                <div className="flex items-center gap-2">
-                  <span className="font-bold text-[18px] text-[#333]">${cuotasPrice.toLocaleString()}</span>
-                  <span className="text-[#0066cc] text-[18px] font-bold">¡12 cuotas simples!</span>
-                </div>
-                <div className="flex items-center gap-1 text-[11px] text-[#666]">
-                  Precio 12 cuotas <FaInfoCircle className="text-gray-400" />
-                </div>
-              </div>
+            <div className="flex justify-end mb-3 pr-2">
               <button
                 onClick={(e) => toggleFavorite(e, product.id, product.name)}
                 className="flex items-center justify-center transition-all hover:scale-110 active:scale-95"
@@ -315,6 +304,7 @@ export default function ProductDetailsPage() {
                   cursor: 'pointer',
                   color: userFavorites.includes(product.id) ? '#ffc107' : '#0066cc'
                 }}
+                aria-label="Agregar a favoritos"
               >
                 {userFavorites.includes(product.id) ? <FaStar size={28} /> : <FaRegStar size={28} />}
               </button>

@@ -13,10 +13,6 @@ export default function Home() {
         value="bombas"
       />
       <Categories />
-      <ProductCarouselSection 
-        title="NUEVAS LLEGADAS"
-        value="nuevas"
-      />
     </main>
   );
 }

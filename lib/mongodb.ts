@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 
 // MONGODB_URI is checked inside dbConnect to avoid build-time errors
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://admin:3CRVzt8trnHkhRkG@admin.j2yvyqi.mongodb.net/?appName=admin";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://admin:3CRVzt8trnHkhRkG@admin.j2yvyqi.mongodb.net/innovasum?appName=admin";
+
 
 /**
  * Global is used here to maintain a cached connection across hot reloads

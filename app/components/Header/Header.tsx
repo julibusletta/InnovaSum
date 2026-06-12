@@ -91,7 +91,8 @@ export default function Header() {
           ]
         },
         { label: 'Detectores de monóxido de carbono', href: '/category/detectores-monoxido' },
-        { label: 'Auriculares', href: '/category/auriculares' }
+        { label: 'Auriculares', href: '/category/auriculares' },
+        { label: 'Smart Home', href: '/category/smarthome' }
       ]
       // submenu: dbCategories.length > 0 ? buildCategoryNav() : undefined, // Comentado para usar menú estático temporalmente
     },

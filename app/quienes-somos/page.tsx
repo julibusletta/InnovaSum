@@ -52,10 +52,6 @@ export default function QuienesSomos() {
           </p>
         </section>
 
-        <footer className="about-signature">
-          <div className="signature-text">Julian Busletta</div>
-          <div className="signature-name">Fundador - Innovasum</div>
-        </footer>
       </div>
       
       {/* Import font for signature */}

@@ -8,24 +8,16 @@ import '../../styles/Hero.css';
 export default function Hero() {
   const [heroSlides, setHeroSlides] = useState<any[]>([
     {
-      image: 'https://placehold.co/1920x600/000000/FFFFFF/png?text=EJEMPLO+1',
-      alt: 'EJEMPLO 1',
+      image: '/images/slider_starlink.png',
+      alt: 'Conectividad Starlink',
     },
     {
-      image: 'https://placehold.co/1920x600/333333/FFFFFF/png?text=EJEMPLO+2',
-      alt: 'EJEMPLO 2',
+      image: '/images/slider_port.png',
+      alt: 'Importaciones y Logística',
     },
     {
-      image: 'https://placehold.co/1920x600/666666/FFFFFF/png?text=EJEMPLO+3',
-      alt: 'EJEMPLO 3',
-    },
-    {
-      image: 'https://placehold.co/1920x600/999999/FFFFFF/png?text=EJEMPLO+4',
-      alt: 'EJEMPLO 4',
-    },
-    {
-      image: 'https://placehold.co/1920x600/CCCCCC/000000/png?text=EJEMPLO+5',
-      alt: 'EJEMPLO 5',
+      image: '/images/slider_satellite.png',
+      alt: 'Tecnología Satelital',
     },
   ]);
   const [currentSlide, setCurrentSlide] = useState(0);

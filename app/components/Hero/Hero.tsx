@@ -8,16 +8,16 @@ import '../../styles/Hero.css';
 export default function Hero() {
   const [heroSlides, setHeroSlides] = useState<any[]>([
     {
-      image: '/images/slider_starlink.png',
-      alt: 'Conectividad Starlink',
+      image: '/images/inversor_starlink.png',
+      alt: 'Inversor para Starlink',
     },
     {
-      image: '/images/slider_port.png',
-      alt: 'Importaciones y Logística',
+      image: '/images/protector_magnetico.png',
+      alt: 'Protector Magnético para Auto',
     },
     {
-      image: '/images/slider_satellite.png',
-      alt: 'Tecnología Satelital',
+      image: '/images/interruptor_tactil.png',
+      alt: 'Interruptor Táctil Inteligente',
     },
   ]);
   const [currentSlide, setCurrentSlide] = useState(0);

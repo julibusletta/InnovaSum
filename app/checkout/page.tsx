@@ -72,7 +72,7 @@ function CheckoutContent() {
     phone: ''
   });
 
-  const [paymentMethod, setPaymentMethod] = useState<'nave' | 'transfer'>('nave');
+  const [paymentMethod, setPaymentMethod] = useState<'mercadopago' | 'transfer'>('mercadopago');
   const [error, setError] = useState<string | null>(null);
 
   const [couponCode, setCouponCode] = useState('');
@@ -192,7 +192,7 @@ function CheckoutContent() {
       finalTotal = subtotalWithShipping * 0.9;
     }
 
-    const endpoint = paymentMethod.startsWith('nave') ? '/api/checkout/nave' : '/api/checkout/transfer';
+    const endpoint = paymentMethod.startsWith('mercadopago') ? '/api/checkout/mercadopago' : '/api/checkout/transfer';
 
     try {
       const response = await fetch(endpoint, {
@@ -348,13 +348,13 @@ function CheckoutContent() {
                   
                   {/* Tarjeta 1 Pago */}
                   <div 
-                    className={`payment-card ${paymentMethod === 'nave' ? 'selected' : ''}`}
-                    onClick={() => setPaymentMethod('nave')}
+                    className={`payment-card ${paymentMethod === 'mercadopago' ? 'selected' : ''}`}
+                    onClick={() => setPaymentMethod('mercadopago')}
                   >
                     <div className="payment-radio" />
                     <FaCreditCard className="payment-icon text-xl" />
                     <div className="payment-info">
-                      <span className="payment-name uppercase">Tarjeta Crédito / Débito</span>
+                      <span className="payment-name uppercase">Mercado Pago (Tarjetas, Saldo, Efectivo)</span>
                     </div>
                     <span className="payment-price-tag">${(subtotalAfterCoupon).toLocaleString('es-AR')}</span>
                   </div>
@@ -409,7 +409,7 @@ function CheckoutContent() {
                   <div>
                     <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">Método de Pago</label>
                     <p className="font-bold text-slate-900 uppercase">
-                      {paymentMethod === 'nave' ? 'Tarjeta Crédito / Débito' : 'Transferencia Bancaria'}
+                      {paymentMethod === 'mercadopago' ? 'Mercado Pago' : 'Transferencia Bancaria'}
                     </p>
                   </div>
                 </div>

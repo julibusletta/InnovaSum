@@ -7,6 +7,7 @@ import { getProductsBySection } from '@/lib/api/productService';
 import { useSession } from 'next-auth/react';
 import '../../styles/Categories.css';
 import '../../styles/ProductCarousel.css';
+import { useCart } from '@/app/context/CartContext';
 
 interface ProductCarouselSectionProps {
   title: string;
@@ -130,15 +131,12 @@ export function ProductCarouselSection({ title, type = 'section', value }: Produ
     return () => clearInterval(interval);
   }, [loading, products, isPaused]);
 
+  const { addToCart } = useCart();
+
   const handleAddToCart = (e: React.MouseEvent, product: any) => {
     e.preventDefault();
     e.stopPropagation();
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    const idx = cart.findIndex((p: any) => p.id === product.id);
-    if (idx > -1) cart[idx].quantity += 1;
-    else cart.push({ ...product, quantity: 1 });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    window.dispatchEvent(new Event('cartUpdated'));
+    addToCart({ ...product, quantity: 1 });
     setAddedProductId(product.id);
     setTimeout(() => setAddedProductId(null), 2000);
   };

@@ -13,6 +13,7 @@ function SignInContent() {
   const [loading, setLoading] = useState(false);
   
   const callbackUrl = searchParams.get('callbackUrl') || "/mi-cuenta";
+  const isAdminLogin = callbackUrl?.includes('/admin');
 
   const handleCredentialsLogin = async () => {
     const emailInput = document.getElementById('email') as HTMLInputElement;
@@ -59,10 +60,10 @@ function SignInContent() {
       <div className="max-w-md w-full space-y-8 bg-white p-8 sm:p-10 rounded-2xl shadow-xl border border-gray-100">
         <div className="text-center">
           <h2 className="text-2xl font-black text-gray-900 tracking-tight leading-tight">
-            Registrate para poder continuar con tu compra!
+            {isAdminLogin ? "Panel de Administración" : "Registrate para poder continuar con tu compra!"}
           </h2>
           <p className="mt-4 text-[11px] text-gray-400 font-bold uppercase tracking-[0.2em]">
-            Ingresá a tu cuenta para gestionar tus pedidos
+            {isAdminLogin ? "Ingreso Exclusivo Autorizado" : "Ingresá a tu cuenta para gestionar tus pedidos"}
           </p>
         </div>
 
@@ -72,34 +73,38 @@ function SignInContent() {
           </div>
         )}
 
-        <div className="mt-8 space-y-4">
-          <button
-            onClick={() => signIn("google", { callbackUrl })}
-            disabled={loading}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-bold text-gray-700 hover:bg-gray-50 transition-all cursor-pointer disabled:opacity-50"
-          >
-            <FaGoogle className="text-red-500 text-lg" />
-            Continuar con Google
-          </button>
+        {!isAdminLogin && (
+          <>
+            <div className="mt-8 space-y-4">
+              <button
+                onClick={() => signIn("google", { callbackUrl })}
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-bold text-gray-700 hover:bg-gray-50 transition-all cursor-pointer disabled:opacity-50"
+              >
+                <FaGoogle className="text-red-500 text-lg" />
+                Continuar con Google
+              </button>
 
-          <button
-            onClick={() => signIn("facebook", { callbackUrl })}
-            disabled={loading}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-transparent rounded-xl shadow-sm bg-[#1877F2] text-sm font-bold text-white hover:bg-[#166fe5] transition-all cursor-pointer disabled:opacity-50"
-          >
-            <FaFacebookF className="text-lg" />
-            Continuar con Facebook
-          </button>
-        </div>
+              <button
+                onClick={() => signIn("facebook", { callbackUrl })}
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-transparent rounded-xl shadow-sm bg-[#1877F2] text-sm font-bold text-white hover:bg-[#166fe5] transition-all cursor-pointer disabled:opacity-50"
+              >
+                <FaFacebookF className="text-lg" />
+                Continuar con Facebook
+              </button>
+            </div>
 
-        <div className="relative my-8">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-200"></div>
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-white text-gray-400 uppercase tracking-widest text-[10px] font-bold">O también</span>
-          </div>
-        </div>
+            <div className="relative my-8">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-200"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-white text-gray-400 uppercase tracking-widest text-[10px] font-bold">O también</span>
+              </div>
+            </div>
+          </>
+        )}
 
         <div className="space-y-4">
           <input
@@ -125,14 +130,16 @@ function SignInContent() {
           </button>
         </div>
 
-        <div className="text-center mt-6">
-          <p className="text-xs text-gray-500">
-            ¿No tenés cuenta?
-            <Link href="/auth/register" className="ml-1 text-blue-600 font-bold hover:underline">
-              Crear cuenta
-            </Link>
-          </p>
-        </div>
+        {!isAdminLogin && (
+          <div className="text-center mt-6">
+            <p className="text-xs text-gray-500">
+              ¿No tenés cuenta?
+              <Link href="/auth/register" className="ml-1 text-blue-600 font-bold hover:underline">
+                Crear cuenta
+              </Link>
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

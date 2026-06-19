@@ -14,6 +14,7 @@ export async function middleware(req: NextRequest) {
       if (!token || token.role !== 'ADMIN') {
         const url = req.nextUrl.clone();
         url.pathname = '/auth/signin';
+        url.searchParams.set('callbackUrl', req.nextUrl.pathname);
         return NextResponse.redirect(url);
       }
     } catch (error) {

@@ -224,7 +224,7 @@ function CheckoutContent() {
 
       const data = await response.json();
       if (data.success) {
-        if (paymentMethod.startsWith('nave') && data.url) {
+        if (paymentMethod.startsWith('mercadopago') && data.url) {
           window.location.href = data.url;
         } else if (paymentMethod === 'transfer') {
           router.push(`/checkout/transfer/${data.orderId}`);

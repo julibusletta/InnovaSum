@@ -543,7 +543,7 @@ function ProductsContent({
       </div>
 
       {message && (
-        <div className={`p-4 mb-8 rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-3 animate-slideDown ${message.includes('Error') ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-600'}`}>
+        <div className={`fixed top-4 right-4 z-[9999] shadow-2xl p-4 rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-3 animate-slideDown ${message.includes('Error') ? 'bg-red-50 text-red-600 border border-red-200' : 'bg-green-50 text-green-600 border border-green-200'}`}>
           <div className={`w-2 h-2 rounded-full ${message.includes('Error') ? 'bg-red-500' : 'bg-green-500'}`}></div>
           {message}
         </div>

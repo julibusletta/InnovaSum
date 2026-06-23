@@ -33,6 +33,15 @@ export async function POST(req: NextRequest) {
     });
   } catch (error: any) {
     console.error('Error en upload:', error);
+    
+    // Mejorar el mensaje de error para Vercel Blob
+    if (error.message && error.message.includes('BLOB_READ_WRITE_TOKEN')) {
+      return NextResponse.json({ 
+        success: false, 
+        message: 'Falta configurar Vercel Blob. Por favor crea el Storage en tu panel de Vercel.' 
+      }, { status: 500 });
+    }
+
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }
 }

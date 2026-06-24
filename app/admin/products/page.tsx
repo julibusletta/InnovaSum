@@ -447,7 +447,7 @@ function ProductsContent({
   const allFlatProducts = products ? (Object.values(products).flat().filter(Boolean) as Product[]) : [];
 
   return (
-    <>
+    <div className="w-full">
     <div className={`pb-20 ${editingProduct ? 'hidden' : ''}`}>
       <div className="flex justify-between items-center mb-10">
         <div>
@@ -1053,6 +1053,6 @@ function ProductsContent({
           animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
       `}</style>
-    </>
+    </div>
   );
 }

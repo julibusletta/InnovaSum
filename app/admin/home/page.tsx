@@ -176,7 +176,13 @@ export default function HomeAdminPage() {
         {activeTab === 'slider' && (
           <div className="space-y-6 animate-fadeIn">
             <div className="flex justify-between items-center border-b border-gray-100 pb-4 mb-6">
-              <h3 className="font-black text-gray-900 uppercase tracking-widest text-lg">Gestionar Banners del Hero</h3>
+              <div>
+                <h3 className="font-black text-gray-900 uppercase tracking-widest text-lg mb-2">Gestionar Banners del Hero</h3>
+                <p className="text-gray-500 font-medium">
+                  <span className="text-amber-500 font-black mr-2">*</span> 
+                  Tamaño recomendado: <strong>1300x400 píxeles</strong>. Si subes imágenes de otro tamaño, el sistema las centrará y recortará automáticamente (cover) para que se adapten a la perfección sin distorsionarse.
+                </p>
+              </div>
               <button onClick={addSlide} className="px-4 py-2 bg-gray-900 text-white rounded text-lg font-black uppercase tracking-widest">+ Añadir Slide</button>
             </div>
             

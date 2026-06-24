@@ -30,7 +30,7 @@ export default function Hero() {
         const res = await fetch('/api/home-settings');
         const data = await res.json();
         if (data.heroSlides && data.heroSlides.length > 0) {
-          // setHeroSlides(data.heroSlides); // Comentado temporalmente para forzar las imágenes de ejemplo
+          setHeroSlides(data.heroSlides);
         }
       } catch (err) {
         console.error('Error fetching hero slides:', err);

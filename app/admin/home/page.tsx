@@ -26,7 +26,17 @@ export default function HomeAdminPage() {
       setLoading(true);
       const res = await fetch('/api/admin/home-settings');
       const data = await res.json();
-      setHeroSlides(data.heroSlides || []);
+      if (data.heroSlides && data.heroSlides.length > 0) {
+        setHeroSlides(data.heroSlides);
+      } else {
+        // Cargar valores por defecto para que el usuario pueda visualizarlos y editarlos
+        setHeroSlides([
+          { image: '/images/inversor_starlink.png', alt: 'Inversor para Starlink', link: '', order: 0 },
+          { image: '/images/protector_magnetico.png', alt: 'Protector Magnético para Auto', link: '', order: 1 },
+          { image: '/images/interruptor_tactil.png', alt: 'Interruptor Táctil Inteligente', link: '', order: 2 }
+        ]);
+      }
+      
       setProductCarousels(data.productCarousels || []);
       if (data.weeklyOffers && data.weeklyOffers.length > 0) {
         setWeeklyOffers(data.weeklyOffers);

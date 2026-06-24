@@ -161,8 +161,8 @@ export default function AdminDashboard() {
       <div className="flex justify-between items-center mb-8">
         <h1 className="admin-v2-page-title mb-0">Dashboard</h1>
         <div className="flex gap-3">
-           <button className="px-4 py-2 bg-white border border-[#e1e3e5] rounded text-sm font-bold text-gray-600 hover:bg-gray-50 transition">Exportar</button>
-           <button className="px-4 py-2 bg-[#058c8c] text-white rounded text-sm font-bold hover:shadow-lg hover:bg-[#047a7a] transition">Nueva Venta</button>
+           <button className="px-4 py-2 bg-white border border-[#e1e3e5] rounded text-lg font-bold text-gray-600 hover:bg-gray-50 transition">Exportar</button>
+           <button className="px-4 py-2 bg-[#058c8c] text-white rounded text-lg font-bold hover:shadow-lg hover:bg-[#047a7a] transition">Nueva Venta</button>
         </div>
       </div>
 
@@ -174,7 +174,7 @@ export default function AdminDashboard() {
               <div className="p-3 bg-gray-50 rounded-lg text-[#058c8c] text-lg">
                 {card.icon}
               </div>
-              <div className={`text-xs font-bold px-2 py-0.5 rounded-full ${card.trendUp ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>
+              <div className={`text-base font-bold px-2 py-0.5 rounded-full ${card.trendUp ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>
                 {card.trend}
               </div>
             </div>
@@ -192,7 +192,7 @@ export default function AdminDashboard() {
           <div className="admin-v2-card">
             <div className="p-6 border-b border-[#e1e3e5] flex justify-between items-center">
               <h3 className="font-bold text-gray-900">Visitas Diarias</h3>
-              <div className="text-xs font-bold text-[#058c8c] bg-[#058c8c]/10 px-3 py-1 rounded-full">
+              <div className="text-base font-bold text-[#058c8c] bg-[#058c8c]/10 px-3 py-1 rounded-full">
                 Hoy: {stats.totalVisitsToday} Visitas
               </div>
             </div>
@@ -206,13 +206,13 @@ export default function AdminDashboard() {
                       <div key={i} className="flex-1 flex flex-col items-center gap-2 group">
                         <div className="w-full bg-gray-50 rounded-t-lg relative overflow-hidden h-full">
                           <div 
-                            className="absolute bottom-0 left-0 w-full bg-[#058c8c]/20 group-hover:bg-[#058c8c]/40 transition-all rounded-t-lg flex items-end justify-center pb-1 text-[9px] font-bold text-[#058c8c]/70" 
+                            className="absolute bottom-0 left-0 w-full bg-[#058c8c]/20 group-hover:bg-[#058c8c]/40 transition-all rounded-t-lg flex items-end justify-center pb-1 text-base font-bold text-[#058c8c]/70" 
                             style={{ height: `${heightPercent}%` }}
                           >
                             {item.count > 0 ? item.count : ''}
                           </div>
                         </div>
-                        <span className="text-[10px] font-bold text-gray-400 capitalize">{item.label}</span>
+                        <span className="text-lg font-bold text-gray-400 capitalize">{item.label}</span>
                       </div>
                     );
                   })}
@@ -224,12 +224,12 @@ export default function AdminDashboard() {
           <div className="admin-v2-card">
             <div className="p-6 border-b border-[#e1e3e5] flex justify-between items-center">
               <h3 className="font-bold text-gray-900">Pedidos Recientes</h3>
-              <Link href="/admin/orders" className="text-xs font-bold text-[#058c8c] hover:underline">Ver todos</Link>
+              <Link href="/admin/orders" className="text-base font-bold text-[#058c8c] hover:underline">Ver todos</Link>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-gray-50 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                  <tr className="bg-gray-50 text-lg font-bold text-gray-400 uppercase tracking-widest">
                     <th className="px-6 py-4">ID</th>
                     <th className="px-6 py-4">Cliente</th>
                     <th className="px-6 py-4">Estado</th>
@@ -239,14 +239,14 @@ export default function AdminDashboard() {
                 <tbody className="divide-y divide-[#e1e3e5]">
                   {stats.recentOrders.length === 0 ? (
                     <tr>
-                      <td colSpan={4} className="px-6 py-8 text-center text-gray-400 font-bold uppercase tracking-widest text-[10px]">Sin pedidos</td>
+                      <td colSpan={4} className="px-6 py-8 text-center text-gray-400 font-bold uppercase tracking-widest text-lg">Sin pedidos</td>
                     </tr>
                   ) : stats.recentOrders.map((order, i) => (
-                    <tr key={i} className="hover:bg-gray-50 transition-colors text-sm">
+                    <tr key={i} className="hover:bg-gray-50 transition-colors text-lg">
                       <td className="px-6 py-4 font-bold text-gray-900">#{order.id.slice(-8).toUpperCase()}</td>
                       <td className="px-6 py-4 text-gray-600">{order.userName || order.userEmail}</td>
                       <td className="px-6 py-4">
-                        <span className={`px-2 py-1 rounded-full text-[10px] font-bold ${
+                        <span className={`px-2 py-1 rounded-full text-lg font-bold ${
                           order.status === 'PENDING' || order.status === 'PENDING_REVIEW' ? 'bg-amber-50 text-amber-600' : 
                           order.status === 'SHIPPED' ? 'bg-blue-50 text-blue-600' : 
                           order.status === 'CANCELLED' || order.status === 'REJECTED' ? 'bg-red-50 text-red-600' :
@@ -276,8 +276,8 @@ export default function AdminDashboard() {
                  <FaTrophy className="text-6xl rotate-12" />
               </div>
               <h4 className="font-bold mb-2">Ofertas Activas</h4>
-              <p className="text-xs text-gray-400 mb-6 leading-relaxed">Tienes 3 promociones de temporada activas que vencen este viernes.</p>
-              <button className="w-full py-2 bg-white/10 hover:bg-white/20 text-white rounded text-xs font-bold transition">Gestionar Ofertas</button>
+              <p className="text-base text-gray-400 mb-6 leading-relaxed">Tienes 3 promociones de temporada activas que vencen este viernes.</p>
+              <button className="w-full py-2 bg-white/10 hover:bg-white/20 text-white rounded text-base font-bold transition">Gestionar Ofertas</button>
            </div>
 
            <div className="admin-v2-card p-6">
@@ -287,7 +287,7 @@ export default function AdminDashboard() {
                    <div key={i} className="flex flex-col gap-1.5">
                       <div className="flex justify-between items-end">
                          <span className="text-[11px] font-bold text-gray-700 uppercase tracking-tight">{region.name}</span>
-                         <span className="text-[10px] font-black text-[#058c8c]">{region.count}</span>
+                         <span className="text-lg font-black text-[#058c8c]">{region.count}</span>
                       </div>
                       <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
                          <div 
@@ -297,7 +297,7 @@ export default function AdminDashboard() {
                       </div>
                    </div>
                  )) : (
-                   <div className="py-4 text-center text-[10px] font-bold text-gray-400 uppercase tracking-widest">Calculando datos...</div>
+                   <div className="py-4 text-center text-lg font-bold text-gray-400 uppercase tracking-widest">Calculando datos...</div>
                  )}
               </div>
            </div>
@@ -313,8 +313,8 @@ export default function AdminDashboard() {
                    <div key={i} className="flex gap-3">
                       <div className={`mt-1.5 w-2 h-2 rounded-full shrink-0 ${item.status === 'online' ? 'bg-green-500' : 'bg-red-500'}`}></div>
                       <div>
-                         <div className="text-xs font-bold text-gray-900">{item.title}</div>
-                         <div className="text-[10px] text-gray-400 mt-0.5">{item.desc}</div>
+                         <div className="text-base font-bold text-gray-900">{item.title}</div>
+                         <div className="text-lg text-gray-400 mt-0.5">{item.desc}</div>
                       </div>
                    </div>
                  ))}

@@ -69,9 +69,9 @@ export default function AnalyticsPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-800">Panel de Analíticas</h1>
-          <p className="text-gray-500 text-sm">Resumen del tráfico y comportamiento en los últimos 30 días</p>
+          <p className="text-gray-500 text-lg">Resumen del tráfico y comportamiento en los últimos 30 días</p>
         </div>
-        <div className="bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100 flex items-center gap-2 text-sm text-gray-600">
+        <div className="bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100 flex items-center gap-2 text-lg text-gray-600">
           <FaCalendarAlt className="text-blue-500" />
           <span>Últimos 30 días</span>
         </div>
@@ -114,7 +114,7 @@ export default function AnalyticsPage() {
             <h3 className="font-bold text-gray-800">Tráfico Cronológico</h3>
             <div className="flex gap-2">
               <span className="w-3 h-3 rounded-full bg-blue-500"></span>
-              <span className="text-[10px] text-gray-500 uppercase font-bold">Visitas Diarias</span>
+              <span className="text-lg text-gray-500 uppercase font-bold">Visitas Diarias</span>
             </div>
           </div>
           <div className="h-[300px] w-full">
@@ -185,7 +185,7 @@ export default function AnalyticsPage() {
                 </div>
                 <div className="w-full mt-6 space-y-3">
                   {deviceData.map((d, i) => (
-                    <div key={i} className="flex items-center justify-between text-sm">
+                    <div key={i} className="flex items-center justify-between text-lg">
                       <div className="flex items-center gap-2">
                         <div className="w-3 h-3 rounded-full" style={{ backgroundColor: d.color }}></div>
                         <span className="text-gray-600">{d.name}</span>
@@ -196,7 +196,7 @@ export default function AnalyticsPage() {
                 </div>
               </>
             ) : (
-              <div className="text-gray-400 text-sm italic">Sin datos de dispositivos</div>
+              <div className="text-gray-400 text-lg italic">Sin datos de dispositivos</div>
             )}
           </div>
         </div>
@@ -208,26 +208,26 @@ export default function AnalyticsPage() {
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="p-6 border-b border-gray-50 flex items-center justify-between">
             <h3 className="font-bold text-gray-800">Top Productos Visitados</h3>
-            <button className="text-xs text-blue-500 font-bold hover:underline">Ver todos</button>
+            <button className="text-base text-blue-500 font-bold hover:underline">Ver todos</button>
           </div>
           <div className="divide-y divide-gray-50">
             {data.topProducts.map((p, i) => (
               <div key={i} className="p-4 flex items-center gap-4 hover:bg-gray-50 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 font-bold text-xs">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 font-bold text-base">
                   #{i+1}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-sm text-gray-800 truncate">{p.name}</p>
+                  <p className="font-medium text-lg text-gray-800 truncate">{p.name}</p>
                   <p className="text-[11px] text-gray-400 uppercase tracking-tight">{p.id}</p>
                 </div>
                 <div className="text-right">
                   <p className="font-bold text-gray-800">{p.count}</p>
-                  <p className="text-[10px] text-gray-400">Vistas</p>
+                  <p className="text-lg text-gray-400">Vistas</p>
                 </div>
               </div>
             ))}
             {data.topProducts.length === 0 && (
-              <div className="p-8 text-center text-gray-400 italic text-sm">No hay registros de productos aún</div>
+              <div className="p-8 text-center text-gray-400 italic text-lg">No hay registros de productos aún</div>
             )}
           </div>
         </div>
@@ -239,7 +239,7 @@ export default function AnalyticsPage() {
             <div className="space-y-4">
               {data.topReferrers.map((r, i) => (
                 <div key={i} className="space-y-1">
-                  <div className="flex justify-between text-xs">
+                  <div className="flex justify-between text-base">
                     <span className="font-medium text-gray-600">{r.domain}</span>
                     <span className="text-gray-400">{r.count} visitas</span>
                   </div>
@@ -252,7 +252,7 @@ export default function AnalyticsPage() {
                 </div>
               ))}
               {data.topReferrers.length === 0 && (
-                <div className="text-gray-400 text-sm italic">Directo / Otros</div>
+                <div className="text-gray-400 text-lg italic">Directo / Otros</div>
               )}
             </div>
           </div>
@@ -262,12 +262,12 @@ export default function AnalyticsPage() {
             <div className="grid grid-cols-2 gap-4">
               {data.topCities.slice(0, 6).map((c, i) => (
                 <div key={i} className="flex flex-col p-3 rounded-xl bg-gray-50 border border-gray-200/50">
-                  <span className="text-[10px] text-gray-400 uppercase font-bold">{c.name}</span>
+                  <span className="text-lg text-gray-400 uppercase font-bold">{c.name}</span>
                   <span className="text-lg font-bold text-blue-600">{c.count}</span>
                 </div>
               ))}
               {data.topCities.length === 0 && (
-                <div className="col-span-2 text-gray-400 text-sm italic">Sin datos de ubicación</div>
+                <div className="col-span-2 text-gray-400 text-lg italic">Sin datos de ubicación</div>
               )}
             </div>
           </div>
@@ -291,7 +291,7 @@ function StatCard({ title, value, icon, color, trend }: any) {
         {React.cloneElement(icon, { size: 20 })}
       </div>
       <div>
-        <p className="text-gray-500 text-xs font-medium mb-1 uppercase tracking-wider">{title}</p>
+        <p className="text-gray-500 text-base font-medium mb-1 uppercase tracking-wider">{title}</p>
         <h3 className="text-2xl font-bold text-gray-800">{value}</h3>
       </div>
       {trend && (

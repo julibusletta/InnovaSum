@@ -53,7 +53,7 @@ export default function SettingsPage() {
     <div className="space-y-8 max-w-4xl">
       <div>
         <h1 className="text-2xl font-bold text-slate-900">Configuración</h1>
-        <p className="text-sm text-slate-500 mt-1">Ajusta las preferencias globales de la tienda.</p>
+        <p className="text-lg text-slate-500 mt-1">Ajusta las preferencias globales de la tienda.</p>
       </div>
 
       {/* Dolar Blue Section */}
@@ -64,13 +64,13 @@ export default function SettingsPage() {
           </div>
           <div>
             <h3 className="font-bold text-slate-800 text-lg">Dólar Blue</h3>
-            <p className="text-sm text-slate-400">Tasa de cambio aplicada automáticamente a todos los precios.</p>
+            <p className="text-lg text-slate-400">Tasa de cambio aplicada automáticamente a todos los precios.</p>
           </div>
         </div>
 
         <div className="flex flex-col sm:flex-row items-end gap-4">
           <div className="flex-1 w-full sm:w-auto">
-            <label className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wider">Valor Actual (ARS)</label>
+            <label className="block text-base font-bold text-slate-400 mb-2 uppercase tracking-wider">Valor Actual (ARS)</label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">$</span>
               <input
@@ -102,18 +102,18 @@ export default function SettingsPage() {
         </div>
 
         {success && (
-          <div className="mt-4 p-4 bg-emerald-50 text-emerald-600 rounded-2xl text-sm font-medium border border-emerald-100 animate-in fade-in slide-in-from-top-2">
+          <div className="mt-4 p-4 bg-emerald-50 text-emerald-600 rounded-2xl text-lg font-medium border border-emerald-100 animate-in fade-in slide-in-from-top-2">
             {success}
           </div>
         )}
         {error && (
-          <div className="mt-4 p-4 bg-rose-50 text-rose-600 rounded-2xl text-sm font-medium border border-rose-100">
+          <div className="mt-4 p-4 bg-rose-50 text-rose-600 rounded-2xl text-lg font-medium border border-rose-100">
             {error}
           </div>
         )}
 
         <div className="mt-6 p-4 bg-blue-50/50 rounded-2xl border border-blue-100/50">
-          <p className="text-xs text-blue-600 leading-relaxed font-medium">
+          <p className="text-base text-blue-600 leading-relaxed font-medium">
             <span className="font-bold">Nota:</span> Al cambiar este valor, el sistema recalculará automáticamente los precios de venta de <b>todos</b> los productos basándose en sus precios de costo y márgenes por categoría.
           </p>
         </div>
@@ -128,7 +128,7 @@ export default function SettingsPage() {
               </div>
               <div>
                 <h3 className="font-bold text-slate-800">{group.title}</h3>
-                <p className="text-sm text-slate-400 mt-1">{group.desc}</p>
+                <p className="text-lg text-slate-400 mt-1">{group.desc}</p>
               </div>
             </div>
           </div>

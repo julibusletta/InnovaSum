@@ -447,7 +447,7 @@ function ProductsContent({
       <div className="flex justify-between items-center mb-10">
         <div>
           <h1 className="admin-v2-page-title mb-1">Productos</h1>
-          <nav className="text-[10px] items-center gap-2 text-gray-400 font-bold uppercase tracking-widest flex">
+          <nav className="text-lg items-center gap-2 text-gray-400 font-bold uppercase tracking-widest flex">
             <Link href="/admin" className="hover:text-[#058c8c]">Home</Link>
             <span className="opacity-30">/</span>
             <span className="text-gray-900">Catálogo</span>
@@ -456,13 +456,13 @@ function ProductsContent({
         <div className="flex flex-wrap gap-4 items-center">
           <button
             onClick={() => handleAddNewProduct()}
-            className="flex-1 sm:flex-none px-10 py-5 bg-[#058c8c] text-white rounded-2xl shadow-2xl shadow-[#058c8c]/30 hover:bg-[#047a7a] hover:scale-[1.05] active:scale-[0.98] transition-all flex items-center justify-center gap-3 font-black text-sm uppercase tracking-[0.2em] animate-pulse-subtle z-50 border-4 border-white"
+            className="flex-1 sm:flex-none px-10 py-5 bg-[#058c8c] text-white rounded-2xl shadow-2xl shadow-[#058c8c]/30 hover:bg-[#047a7a] hover:scale-[1.05] active:scale-[0.98] transition-all flex items-center justify-center gap-3 font-black text-lg uppercase tracking-[0.2em] animate-pulse-subtle z-50 border-4 border-white"
           >
             <FaPlus size={16} /> NUEVO PRODUCTO
           </button>
           <button
             onClick={saveProducts}
-            className="flex-1 sm:flex-none px-8 py-5 bg-white border-2 border-gray-100 text-gray-900 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-gray-50 transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-200/50"
+            className="flex-1 sm:flex-none px-8 py-5 bg-white border-2 border-gray-100 text-gray-900 rounded-2xl text-lg font-black uppercase tracking-widest hover:bg-gray-50 transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-200/50"
           >
             <FaSave /> Guardar Cambios Globales
           </button>
@@ -473,21 +473,21 @@ function ProductsContent({
         <div className="admin-v2-card p-6 flex items-center gap-5">
           <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-xl"><FaBoxOpen /></div>
           <div>
-             <div className="text-[10px] font-bold text-gray-400 uppercase">Total Items</div>
+             <div className="text-lg font-bold text-gray-400 uppercase">Total Items</div>
              <div className="text-xl font-black text-gray-900">{allFlatProducts.length}</div>
           </div>
         </div>
         <div className="admin-v2-card p-6 flex items-center gap-5 border-l-4 border-l-red-500">
           <div className="w-12 h-12 bg-red-50 text-red-600 rounded-lg flex items-center justify-center text-xl"><FaExclamationTriangle /></div>
           <div>
-             <div className="text-[10px] font-bold text-gray-400 uppercase">Stock Crítico</div>
+             <div className="text-lg font-bold text-gray-400 uppercase">Stock Crítico</div>
              <div className="text-xl font-black text-gray-900">{allFlatProducts.filter((p: any) => p.stock <= 5).length}</div>
           </div>
         </div>
         <div className="admin-v2-card p-6 flex items-center gap-5 border-l-4 border-l-orange-400">
            <div className="w-12 h-12 bg-orange-50 text-orange-600 rounded-lg flex items-center justify-center text-xl"><FaTable /></div>
           <div>
-             <div className="text-[10px] font-bold text-gray-400 uppercase">Faltantes</div>
+             <div className="text-lg font-bold text-gray-400 uppercase">Faltantes</div>
              <div className="text-xl font-black text-gray-900">
                {allFlatProducts.filter((p: any) => !p.image || p.image.includes('placeholder') || p.image.includes('default')).length}
              </div>
@@ -500,7 +500,7 @@ function ProductsContent({
           <button
             key={tab}
             onClick={() => setFilterType(tab)}
-            className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest transition-all whitespace-nowrap border ${filterType === tab ? 'bg-gray-900 text-white border-gray-900' : 'bg-white text-gray-500 border-gray-200 hover:border-gray-300'}`}
+            className={`px-4 py-2 rounded-full text-base font-black uppercase tracking-widest transition-all whitespace-nowrap border ${filterType === tab ? 'bg-gray-900 text-white border-gray-900' : 'bg-white text-gray-500 border-gray-200 hover:border-gray-300'}`}
           >
             {tab === 'all' ? 'Todos' : tab === 'no-image' ? 'Sin Foto' : tab === 'no-description' ? 'Sin Desc.' : 'Stock Bajo'}
           </button>
@@ -509,7 +509,7 @@ function ProductsContent({
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest border border-gray-200 bg-white text-gray-600 outline-none cursor-pointer hover:border-gray-400 transition-all appearance-none pr-8"
+            className="px-4 py-2 rounded-full text-base font-black uppercase tracking-widest border border-gray-200 bg-white text-gray-600 outline-none cursor-pointer hover:border-gray-400 transition-all appearance-none pr-8"
             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236b7280'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center' }}
           >
             <option value="all">📂 Todas las categorías</option>
@@ -532,18 +532,18 @@ function ProductsContent({
                placeholder="Buscar por ID o nombre..."
                value={searchTerm}
                onChange={(e) => setSearchTerm(e.target.value)}
-               className="bg-transparent border-none outline-none text-sm font-bold text-gray-900 w-full"
+               className="bg-transparent border-none outline-none text-lg font-bold text-gray-900 w-full"
              />
           </div>
           <div className="flex items-center gap-4">
-             <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest pr-4 border-r border-gray-200">Importar Excel</span>
-             <input type="file" accept=".xlsx, .xls" onChange={handleExcelImport} className="text-xs text-gray-400 cursor-pointer" />
+             <span className="text-lg font-black text-gray-400 uppercase tracking-widest pr-4 border-r border-gray-200">Importar Excel</span>
+             <input type="file" accept=".xlsx, .xls" onChange={handleExcelImport} className="text-base text-gray-400 cursor-pointer" />
           </div>
         </div>
       </div>
 
       {message && (
-        <div className={`fixed top-4 right-4 z-[9999] shadow-2xl p-4 rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-3 animate-slideDown ${message.includes('Error') ? 'bg-red-50 text-red-600 border border-red-200' : 'bg-green-50 text-green-600 border border-green-200'}`}>
+        <div className={`fixed top-4 right-4 z-[9999] shadow-2xl p-4 rounded-xl text-base font-black uppercase tracking-widest flex items-center gap-3 animate-slideDown ${message.includes('Error') ? 'bg-red-50 text-red-600 border border-red-200' : 'bg-green-50 text-green-600 border border-green-200'}`}>
           <div className={`w-2 h-2 rounded-full ${message.includes('Error') ? 'bg-red-500' : 'bg-green-500'}`}></div>
           {message}
         </div>
@@ -572,7 +572,7 @@ function ProductsContent({
           return (
             <div key={category} className="admin-v2-card overflow-hidden">
               <div className="p-5 border-b border-gray-100 bg-gray-50/20 flex items-center justify-between">
-                <h3 className="text-[10px] font-black uppercase tracking-widest text-gray-400">{category}</h3>
+                <h3 className="text-lg font-black uppercase tracking-widest text-gray-400">{category}</h3>
                 <input 
                   type="checkbox" 
                   checked={filteredItems.length > 0 && filteredItems.every((p: any) => selectedIds.includes(p.id))}
@@ -586,23 +586,23 @@ function ProductsContent({
                     {filteredItems.map((p: Product) => (
                       <tr key={p.id} className={`hover:bg-gray-50/50 transition-colors ${selectedIds.includes(p.id) ? 'bg-blue-50/30' : ''}`}>
                         <td className="px-6 py-4 w-12"><input type="checkbox" checked={selectedIds.includes(p.id)} onChange={() => toggleSelectProduct(p.id)} /></td>
-                        <td className="px-6 py-4 w-16 text-[10px] font-bold text-gray-300">#{p.id}</td>
+                        <td className="px-6 py-4 w-16 text-lg font-bold text-gray-300">#{p.id}</td>
                         <td className="px-6 py-4">
                           <div className="flex items-center gap-4 cursor-pointer group" onClick={() => setEditingProduct(p)}>
                             <div className="w-10 h-10 bg-white rounded border border-gray-100 overflow-hidden group-hover:border-[#058c8c] transition-colors">
                               <img src={p.image} className="w-full h-full object-contain" />
                             </div>
-                            <span className="font-bold text-gray-900 text-xs group-hover:text-[#058c8c] transition-colors">{p.name}</span>
+                            <span className="font-bold text-gray-900 text-base group-hover:text-[#058c8c] transition-colors">{p.name}</span>
                           </div>
                         </td>
                         <td className="px-6 py-4 w-40">
                           <div className="flex items-center gap-2">
-                             <span className="text-[10px] font-bold text-gray-400">$</span>
-                             <input type="number" value={p.price} onChange={(e) => handlePriceChange(category, p.id, Number(e.target.value))} className="w-24 bg-transparent border-b border-transparent hover:border-gray-100 focus:border-[#058c8c] outline-none text-xs font-black" />
+                             <span className="text-lg font-bold text-gray-400">$</span>
+                             <input type="number" value={p.price} onChange={(e) => handlePriceChange(category, p.id, Number(e.target.value))} className="w-24 bg-transparent border-b border-transparent hover:border-gray-100 focus:border-[#058c8c] outline-none text-base font-black" />
                           </div>
                         </td>
                         <td className="px-6 py-4 w-28 text-center">
-                           <input type="number" value={p.stock} onChange={(e) => handleStockChange(category, p.id, Number(e.target.value))} className={`w-12 bg-transparent text-center font-bold text-xs ${p.stock <= 5 ? 'text-red-500' : 'text-gray-900'}`} />
+                           <input type="number" value={p.stock} onChange={(e) => handleStockChange(category, p.id, Number(e.target.value))} className={`w-12 bg-transparent text-center font-bold text-base ${p.stock <= 5 ? 'text-red-500' : 'text-gray-900'}`} />
                         </td>
                         <td className="px-6 py-4 w-20 text-center">
                            <label className="relative inline-flex items-center cursor-pointer">
@@ -647,8 +647,8 @@ function ProductsContent({
                     <div>
                       <h3 className="text-lg font-black text-gray-900 leading-tight">{p.name || 'Nuevo Producto'}</h3>
                       <div className="flex items-center gap-2 mt-0.5">
-                        <span className="text-[9px] bg-gray-100 text-gray-500 font-bold px-2 py-0.5 rounded uppercase tracking-widest">{p.category}</span>
-                        <span className="text-[9px] text-gray-300 font-bold">#{p.id}</span>
+                        <span className="text-base bg-gray-100 text-gray-500 font-bold px-2 py-0.5 rounded uppercase tracking-widest">{p.category}</span>
+                        <span className="text-base text-gray-300 font-bold">#{p.id}</span>
                       </div>
                     </div>
                   </div>
@@ -656,7 +656,7 @@ function ProductsContent({
                   <div className="flex items-center gap-4">
                     <button
                       onClick={() => setEditingProduct(null)}
-                      className="px-8 py-2 bg-gray-100 text-gray-700 rounded h-10 font-bold text-xs uppercase tracking-widest hover:bg-gray-200 transition-colors shadow-sm"
+                      className="px-8 py-2 bg-gray-100 text-gray-700 rounded h-10 font-bold text-base uppercase tracking-widest hover:bg-gray-200 transition-colors shadow-sm"
                     >
                       Cerrar editor
                     </button>
@@ -665,7 +665,7 @@ function ProductsContent({
 
                 <div className="flex-1 flex overflow-hidden">
                   <aside className="w-64 bg-white border-r border-[#e1e3e5] flex flex-col p-6 gap-1 shrink-0">
-                    <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-4 px-2">Navegación</h4>
+                    <h4 className="text-base font-black text-gray-400 uppercase tracking-widest mb-4 px-2">Navegación</h4>
                     {[
                       { id: 'general', label: 'Información', icon: <FaTags />, desc: 'Básicos y Precio' },
                       { id: 'media', label: 'Imágenes', icon: <FaBoxOpen />, desc: 'Galería visual' },
@@ -678,16 +678,16 @@ function ProductsContent({
                         className={`flex flex-col items-start gap-0.5 p-3 rounded transition-all text-left ${activeTab === tab.id ? 'bg-[#edeeef] text-[#058c8c]' : 'text-gray-500 hover:bg-gray-50'}`}
                       >
                         <div className="flex items-center gap-3">
-                          <span className="text-sm">{tab.icon}</span>
-                          <span className="text-xs font-bold leading-none">{tab.label}</span>
+                          <span className="text-lg">{tab.icon}</span>
+                          <span className="text-base font-bold leading-none">{tab.label}</span>
                         </div>
-                        <span className="text-[10px] opacity-60 font-medium ml-7">{tab.desc}</span>
+                        <span className="text-lg opacity-60 font-medium ml-7">{tab.desc}</span>
                       </button>
                     ))}
                     <div className="mt-auto pt-6 border-t border-gray-100">
                       <div className="bg-gray-50 rounded p-4 border border-gray-100">
-                        <h5 className="text-[9px] font-black text-gray-500 uppercase tracking-widest mb-2">Cambios Locales</h5>
-                        <p className="text-[10px] text-gray-400 leading-relaxed font-medium">Recuerda guardar los cambios al final.</p>
+                        <h5 className="text-base font-black text-gray-500 uppercase tracking-widest mb-2">Cambios Locales</h5>
+                        <p className="text-lg text-gray-400 leading-relaxed font-medium">Recuerda guardar los cambios al final.</p>
                       </div>
                     </div>
                   </aside>
@@ -696,21 +696,21 @@ function ProductsContent({
                     <div className="max-w-4xl mx-auto admin-v2-card bg-white p-10">
                       {activeTab === 'general' && (
                         <div className="space-y-8 animate-fadeIn">
-                          <h4 className="text-sm font-black text-gray-900 uppercase tracking-widest border-b border-gray-100 pb-4 mb-6">Información General</h4>
+                          <h4 className="text-lg font-black text-gray-900 uppercase tracking-widest border-b border-gray-100 pb-4 mb-6">Información General</h4>
                           <div className="grid grid-cols-2 gap-8">
                             <div className="col-span-2">
-                              <label className="block text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2 px-1">Nombre</label>
+                              <label className="block text-base font-black text-gray-400 uppercase tracking-widest mb-2 px-1">Nombre</label>
                               <input
                                 type="text"
                                 value={p.name}
                                 onChange={(e) => handleProductChange(p.id, p.category, 'name', e.target.value)}
-                                className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-sm font-bold text-gray-900 focus:border-[#058c8c] focus:bg-white transition"
+                                className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-lg font-bold text-gray-900 focus:border-[#058c8c] focus:bg-white transition"
                               />
                             </div>
                             
                             <div className="col-span-2 bg-[#058c8c]/[0.02] p-8 border border-[#058c8c]/10 rounded-2xl flex items-center justify-start">
                                <div>
-                                 <label className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">Precio Minorista (ARS)</label>
+                                 <label className="block text-lg font-black text-gray-400 uppercase tracking-widest mb-2">Precio Minorista (ARS)</label>
                                  <div className="flex items-center justify-start gap-2 text-[#058c8c]">
                                    <span className="text-2xl font-black">$</span>
                                    <input
@@ -720,27 +720,27 @@ function ProductsContent({
                                      className="bg-transparent text-2xl font-black text-left outline-none w-48 border-b-2 border-transparent focus:border-[#058c8c] transition-all"
                                    />
                                  </div>
-                                 <p className="text-[10px] text-gray-400 font-bold mt-1 italic uppercase tracking-tighter">
+                                 <p className="text-lg text-gray-400 font-bold mt-1 italic uppercase tracking-tighter">
                                     Precio establecido manualmente
                                  </p>
                               </div>
                             </div>
 
                             <div>
-                              <label className="block text-[9px] font-black text-gray-400 uppercase mb-2">Stock Actual</label>
+                              <label className="block text-base font-black text-gray-400 uppercase mb-2">Stock Actual</label>
                               <input
                                 type="number"
                                 value={p.stock}
                                 onChange={(e) => handleProductChange(p.id, p.category, 'stock', Number(e.target.value))}
-                                className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-sm font-bold"
+                                className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-lg font-bold"
                               />
                             </div>
                             <div>
-                               <label className="block text-[9px] font-black text-gray-400 uppercase mb-2">Categoría</label>
+                               <label className="block text-base font-black text-gray-400 uppercase mb-2">Categoría</label>
                                <select
                                  value={p.category}
                                  onChange={(e) => handleProductChange(p.id, p.category, 'category', e.target.value)}
-                                 className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-sm font-bold text-gray-600 focus:border-[#058c8c] focus:bg-white transition appearance-none"
+                                 className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-lg font-bold text-gray-600 focus:border-[#058c8c] focus:bg-white transition appearance-none"
                                >
                                  <option value="general">General</option>
                                  {categories.map((cat: any) => (
@@ -752,8 +752,8 @@ function ProductsContent({
 
                              <div className="flex items-center justify-between p-4 bg-gray-50 border border-[#e1e3e5] rounded">
                                <div>
-                                 <label className="block text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">Visibilidad</label>
-                                 <p className="text-[10px] text-gray-400 font-medium">{p.published !== false ? 'Público en el catálogo' : 'Oculto (Borrador)'}</p>
+                                 <label className="block text-base font-black text-gray-400 uppercase tracking-widest mb-1">Visibilidad</label>
+                                 <p className="text-lg text-gray-400 font-medium">{p.published !== false ? 'Público en el catálogo' : 'Oculto (Borrador)'}</p>
                                </div>
                                <label className="relative inline-flex items-center cursor-pointer">
                                  <input
@@ -767,12 +767,12 @@ function ProductsContent({
                              </div>
                           </div>
                           <div>
-                            <label className="block text-[9px] font-black text-gray-400 uppercase mb-2">Descripción</label>
+                            <label className="block text-base font-black text-gray-400 uppercase mb-2">Descripción</label>
                             <textarea
                               rows={5}
                               value={p.description || ''}
                               onChange={(e) => handleProductChange(p.id, p.category, 'description', e.target.value)}
-                              className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-sm text-gray-600 leading-relaxed"
+                              className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-lg text-gray-600 leading-relaxed"
                             />
                           </div>
                         </div>
@@ -780,7 +780,7 @@ function ProductsContent({
 
                       {activeTab === 'media' && (
                         <div className="space-y-8 animate-fadeIn">
-                          <h4 className="text-sm font-black text-gray-900 uppercase tracking-widest border-b border-gray-100 pb-4 mb-6">Galería de Imágenes</h4>
+                          <h4 className="text-lg font-black text-gray-900 uppercase tracking-widest border-b border-gray-100 pb-4 mb-6">Galería de Imágenes</h4>
                           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                             {[0, 1, 2, 3, 4, 5, 6, 7].map((index) => {
                               const currentImg = (p.images || [])[index] || '';
@@ -818,7 +818,7 @@ function ProductsContent({
                                        const imgs = newImgs.filter(Boolean);
                                        if (imgs.length > 0) autoSaveProductImages(p.id, p.category, imgs);
                                      }}
-                                    className="w-full text-[10px] px-2 py-1 bg-white border border-[#e1e3e5] rounded outline-none"
+                                    className="w-full text-lg px-2 py-1 bg-white border border-[#e1e3e5] rounded outline-none"
                                   />
                                 </div>
                               );
@@ -830,7 +830,7 @@ function ProductsContent({
                       {activeTab === 'specs' && (
                         <div className="space-y-8 animate-fadeIn">
                           <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-6">
-                            <h4 className="text-sm font-black text-gray-900 uppercase tracking-widest">Especificaciones</h4>
+                            <h4 className="text-lg font-black text-gray-900 uppercase tracking-widest">Especificaciones</h4>
                             <button
                               onClick={(e) => {
                                 e.preventDefault();
@@ -838,7 +838,7 @@ function ProductsContent({
                                 newSpecs.push({ label: '', value: '' });
                                 handleProductChange(p.id, p.category, 'specifications', newSpecs);
                               }}
-                              className="px-6 py-2.5 bg-[#058c8c] text-white rounded-lg text-xs font-black uppercase tracking-widest shadow-lg hover:bg-[#047a7a] transition-all flex items-center gap-2"
+                              className="px-6 py-2.5 bg-[#058c8c] text-white rounded-lg text-base font-black uppercase tracking-widest shadow-lg hover:bg-[#047a7a] transition-all flex items-center gap-2"
                             >
                               <FaPlus size={12} /> Añadir Especificación
                             </button>
@@ -846,10 +846,10 @@ function ProductsContent({
                           <div className="space-y-3">
                             {(p.specifications || []).length === 0 && (
                               <div className="text-center py-6 bg-gray-50 border border-dashed border-gray-200 rounded">
-                                <p className="text-xs text-gray-400 font-medium mb-4">No hay especificaciones agregadas.</p>
+                                <p className="text-base text-gray-400 font-medium mb-4">No hay especificaciones agregadas.</p>
                                 <button
                                   onClick={() => handleProductChange(p.id, p.category, 'specifications', [{ label: '', value: '' }])}
-                                  className="px-4 py-2 bg-white border border-gray-200 text-gray-600 rounded text-[10px] font-black uppercase tracking-widest hover:bg-gray-50 transition"
+                                  className="px-4 py-2 bg-white border border-gray-200 text-gray-600 rounded text-lg font-black uppercase tracking-widest hover:bg-gray-50 transition"
                                 >
                                   Agregar Primer Campo
                                 </button>
@@ -866,7 +866,7 @@ function ProductsContent({
                                     newSpecs[idx].label = e.target.value;
                                     handleProductChange(p.id, p.category, 'specifications', newSpecs);
                                   }}
-                                  className="w-1/3 px-3 py-2 bg-white border border-[#e1e3e5] rounded text-xs font-bold outline-none focus:border-[#058c8c]"
+                                  className="w-1/3 px-3 py-2 bg-white border border-[#e1e3e5] rounded text-base font-bold outline-none focus:border-[#058c8c]"
                                 />
                                 <input
                                   type="text"
@@ -877,7 +877,7 @@ function ProductsContent({
                                     newSpecs[idx].value = e.target.value;
                                     handleProductChange(p.id, p.category, 'specifications', newSpecs);
                                   }}
-                                  className="flex-1 px-3 py-2 bg-white border border-[#e1e3e5] rounded text-xs outline-none focus:border-[#058c8c]"
+                                  className="flex-1 px-3 py-2 bg-white border border-[#e1e3e5] rounded text-base outline-none focus:border-[#058c8c]"
                                 />
                                 <button
                                   onClick={() => {
@@ -901,7 +901,7 @@ function ProductsContent({
                                   newSpecs.push({ label: '', value: '' });
                                   handleProductChange(p.id, p.category, 'specifications', newSpecs);
                                 }}
-                                className="px-6 py-3 bg-gray-100 text-gray-600 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-gray-200 transition-all border-2 border-dashed border-gray-300 flex items-center gap-2"
+                                className="px-6 py-3 bg-gray-100 text-gray-600 rounded-xl text-lg font-black uppercase tracking-widest hover:bg-gray-200 transition-all border-2 border-dashed border-gray-300 flex items-center gap-2"
                               >
                                 <FaPlus size={12} /> Agregar otra especificación
                               </button>
@@ -912,24 +912,24 @@ function ProductsContent({
 
                       {activeTab === 'seo' && (
                         <div className="space-y-8 animate-fadeIn">
-                          <h4 className="text-sm font-black text-gray-900 uppercase tracking-widest border-b border-gray-100 pb-4 mb-6">SEO y Logística</h4>
+                          <h4 className="text-lg font-black text-gray-900 uppercase tracking-widest border-b border-gray-100 pb-4 mb-6">SEO y Logística</h4>
                           <div className="grid grid-cols-2 gap-8">
                             <div>
-                               <label className="block text-[9px] font-black text-gray-400 uppercase mb-2">Peso (kg)</label>
+                               <label className="block text-base font-black text-gray-400 uppercase mb-2">Peso (kg)</label>
                                <input
                                  type="text"
                                  value={p.properties?.weight || ''}
                                  onChange={(e) => handleProductChange(p.id, p.category, 'properties', { ...p.properties, weight: e.target.value })}
-                                 className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-sm font-bold"
+                                 className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-lg font-bold"
                                />
                             </div>
                             <div>
-                               <label className="block text-[9px] font-black text-gray-400 uppercase mb-2">Dimensiones</label>
+                               <label className="block text-base font-black text-gray-400 uppercase mb-2">Dimensiones</label>
                                <input
                                  type="text"
                                  value={p.properties?.dimensions || ''}
                                  onChange={(e) => handleProductChange(p.id, p.category, 'properties', { ...p.properties, dimensions: e.target.value })}
-                                 className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-sm font-bold"
+                                 className="w-full px-4 py-3 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-lg font-bold"
                                />
                             </div>
                           </div>
@@ -941,7 +941,7 @@ function ProductsContent({
                         <button
                           onClick={() => handleDeleteProduct(p.id)}
                           disabled={deletingId === p.id}
-                          className="flex items-center gap-2 text-red-400 hover:text-red-500 font-bold text-[10px] uppercase tracking-widest transition-colors px-4 py-2 rounded hover:bg-red-50"
+                          className="flex items-center gap-2 text-red-400 hover:text-red-500 font-bold text-lg uppercase tracking-widest transition-colors px-4 py-2 rounded hover:bg-red-50"
                         >
                           <FaTrash size={12} />
                           {deletingId === p.id ? 'Eliminando...' : 'Eliminar Producto'}
@@ -950,14 +950,14 @@ function ProductsContent({
                         <div className="flex gap-4">
                           <button
                             onClick={() => setEditingProduct(null)}
-                            className="px-6 py-3 text-gray-400 font-bold text-[10px] uppercase tracking-widest hover:text-gray-600 transition"
+                            className="px-6 py-3 text-gray-400 font-bold text-lg uppercase tracking-widest hover:text-gray-600 transition"
                           >
                             Cancelar
                           </button>
                         <button
                           onClick={() => saveProducts(true)}
                           disabled={isSaving}
-                          className={`px-10 py-3 bg-[#058c8c] text-white rounded font-black text-[10px] uppercase tracking-widest shadow-xl hover:bg-[#047a7a] transition-all flex items-center gap-3 ${isSaving ? 'opacity-70 cursor-not-allowed' : 'hover:scale-[1.02]'}`}
+                          className={`px-10 py-3 bg-[#058c8c] text-white rounded font-black text-lg uppercase tracking-widest shadow-xl hover:bg-[#047a7a] transition-all flex items-center gap-3 ${isSaving ? 'opacity-70 cursor-not-allowed' : 'hover:scale-[1.02]'}`}
                         >
                           {isSaving ? (
                             <>
@@ -986,14 +986,14 @@ function ProductsContent({
       {selectedIds.length > 0 && (
         <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-[110] bg-gray-900 text-white px-8 py-4 rounded-full shadow-2xl border border-gray-800 flex items-center gap-10 animate-slideUp">
            <div className="flex items-center gap-4 border-r border-gray-700 pr-10">
-              <span className="text-[10px] font-black uppercase tracking-widest opacity-60">Seleccionados</span>
+              <span className="text-lg font-black uppercase tracking-widest opacity-60">Seleccionados</span>
               <span className="text-xl font-black">{selectedIds.length}</span>
            </div>
            
            <div className="flex items-center gap-4">
               <button
                 onClick={() => setSelectedIds([])}
-                className="text-[10px] font-bold uppercase tracking-widest hover:text-gray-400 transition"
+                className="text-lg font-bold uppercase tracking-widest hover:text-gray-400 transition"
               >
                 Cancelar
               </button>
@@ -1001,7 +1001,7 @@ function ProductsContent({
               <button
                 onClick={handleBulkDelete}
                 disabled={isSaving}
-                className="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-2 transition-all hover:scale-105 disabled:opacity-50"
+                className="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-full text-lg font-black uppercase tracking-widest flex items-center gap-2 transition-all hover:scale-105 disabled:opacity-50"
               >
                 <FaTrash size={12} />
                 Eliminar Seleccionados

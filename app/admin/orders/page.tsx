@@ -152,7 +152,7 @@ export default function OrdersPage() {
   };
 
   const getStatusBadge = (status: string) => {
-    const base = "px-2 py-1 rounded text-[9px] font-black uppercase tracking-tighter flex items-center gap-1.5 w-fit";
+    const base = "px-2 py-1 rounded text-base font-black uppercase tracking-tighter flex items-center gap-1.5 w-fit";
     const s = (status || 'pending').toLowerCase();
     
     if (s === 'pagado' || s === 'approved' || s === 'paid') 
@@ -197,9 +197,9 @@ export default function OrdersPage() {
               {/* Modal Header */}
               <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50/80">
                  <div>
-                    <h3 className="text-sm font-black uppercase tracking-widest text-gray-900 leading-none">Orden #{selectedOrder.id?.slice(-8).toUpperCase() || '---'}</h3>
-                    <p className="text-[10px] font-bold text-gray-400 uppercase mt-2 tracking-widest">Detalle Operativo del Pedido</p>
-                    <p className="text-[9px] font-bold text-[#058c8c] uppercase mt-1.5 tracking-[0.15em]">
+                    <h3 className="text-lg font-black uppercase tracking-widest text-gray-900 leading-none">Orden #{selectedOrder.id?.slice(-8).toUpperCase() || '---'}</h3>
+                    <p className="text-lg font-bold text-gray-400 uppercase mt-2 tracking-widest">Detalle Operativo del Pedido</p>
+                    <p className="text-base font-bold text-[#058c8c] uppercase mt-1.5 tracking-[0.15em]">
                        Realizado el: {selectedOrder.createdAt ? new Date(selectedOrder.createdAt).toLocaleString('es-AR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '---'} HS
                     </p>
                  </div>
@@ -217,18 +217,18 @@ export default function OrdersPage() {
                     
                     {/* Bloque 1: Cliente y Pago */}
                     <div className="bg-gray-50 rounded-xl p-5 border border-gray-100">
-                       <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4 border-b border-gray-200 pb-2">Información de Venta</h4>
+                       <h4 className="text-base font-black text-gray-400 uppercase tracking-[0.2em] mb-4 border-b border-gray-200 pb-2">Información de Venta</h4>
                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
                           <div className="flex flex-col">
                              <span className="text-[8px] text-gray-500 font-bold uppercase mb-0.5">Cliente:</span>
-                             <span className="text-sm font-black text-gray-800">{selectedOrder.userName || 'No especificado'}</span>
+                             <span className="text-lg font-black text-gray-800">{selectedOrder.userName || 'No especificado'}</span>
                              <div className="flex items-center gap-2">
                                 <span className="text-[11px] font-medium text-[#058c8c]">{selectedOrder.userEmail || 'Sin email'}</span>
                                 {selectedOrder.userPhone && (
                                    <a 
                                       href={`https://wa.me/${selectedOrder.userPhone.replace(/\D/g, '')}`} 
                                       target="_blank" 
-                                      className="flex items-center gap-1.5 bg-emerald-100 text-emerald-600 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-tighter hover:bg-emerald-200 transition-colors no-underline"
+                                      className="flex items-center gap-1.5 bg-emerald-100 text-emerald-600 px-2 py-0.5 rounded-full text-base font-black uppercase tracking-tighter hover:bg-emerald-200 transition-colors no-underline"
                                    >
                                       <FaWhatsapp size={10} />
                                       WhatsApp
@@ -236,14 +236,14 @@ export default function OrdersPage() {
                                 )}
                              </div>
                              {selectedOrder.userPhone && (
-                                <span className="text-[10px] font-bold text-gray-400 mt-1 uppercase">Tel: {selectedOrder.userPhone}</span>
+                                <span className="text-lg font-bold text-gray-400 mt-1 uppercase">Tel: {selectedOrder.userPhone}</span>
                              )}
                           </div>
                           <div className="flex flex-col">
                              <span className="text-[8px] text-gray-500 font-bold uppercase mb-0.5">Medio de Pago:</span>
-                             <span className="text-sm font-black text-gray-800 uppercase">{selectedOrder.paymentMethod || 'NAVE'}</span>
+                             <span className="text-lg font-black text-gray-800 uppercase">{selectedOrder.paymentMethod || 'NAVE'}</span>
                              {selectedOrder.navePaymentId && (
-                                <span className="text-[9px] font-mono text-gray-400 break-all leading-tight mt-1">ID: {selectedOrder.navePaymentId}</span>
+                                <span className="text-base font-mono text-gray-400 break-all leading-tight mt-1">ID: {selectedOrder.navePaymentId}</span>
                              )}
                           </div>
                        </div>
@@ -251,18 +251,18 @@ export default function OrdersPage() {
 
                     {/* Bloque 2: Logística */}
                     <div className="bg-amber-50/40 rounded-xl p-5 border border-amber-100">
-                       <h4 className="text-[9px] font-black text-amber-600/80 uppercase tracking-[0.2em] mb-4 border-b border-amber-200/40 pb-2">Envío / Entrega</h4>
+                       <h4 className="text-base font-black text-amber-600/80 uppercase tracking-[0.2em] mb-4 border-b border-amber-200/40 pb-2">Envío / Entrega</h4>
                        {selectedOrder.shippingAddress ? (
                           <div className="space-y-3">
                              <div>
-                                <p className="text-sm font-black text-gray-800 uppercase m-0 leading-tight">{selectedOrder.shippingAddress?.street || 'Sin dirección registrada'}</p>
+                                <p className="text-lg font-black text-gray-800 uppercase m-0 leading-tight">{selectedOrder.shippingAddress?.street || 'Sin dirección registrada'}</p>
                                 <p className="text-[11px] font-bold text-gray-500 uppercase mt-1">
                                    {selectedOrder.shippingAddress?.city || '---'}, {selectedOrder.shippingAddress?.state || '---'} ({selectedOrder.shippingAddress?.zip || '---'})
                                 </p>
                              </div>
                              <div className="flex justify-between items-center pt-3 border-t border-amber-200/60 mt-3">
-                                <span className="text-[10px] font-black text-amber-600 uppercase tracking-widest">{selectedOrder.shippingAddress?.shippingMethod || 'ENVÍO'}</span>
-                                <span className="text-sm font-black text-gray-800">
+                                <span className="text-lg font-black text-amber-600 uppercase tracking-widest">{selectedOrder.shippingAddress?.shippingMethod || 'ENVÍO'}</span>
+                                <span className="text-lg font-black text-gray-800">
                                    {typeof selectedOrder.shippingAddress?.shippingCost === 'number' 
                                       ? (selectedOrder.shippingAddress.shippingCost === 0 ? 'GRATIS' : `$${selectedOrder.shippingAddress.shippingCost.toLocaleString()}`) 
                                       : '---'}
@@ -270,30 +270,30 @@ export default function OrdersPage() {
                              </div>
                           </div>
                        ) : (
-                          <p className="text-[10px] text-gray-400 font-bold italic uppercase m-0">No se especificó dirección de envío.</p>
+                          <p className="text-lg text-gray-400 font-bold italic uppercase m-0">No se especificó dirección de envío.</p>
                        )}
                     </div>
 
                     {/* Bloque 3: Productos */}
                     <div>
-                       <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4 border-b border-gray-100 pb-2">Artículos y Totales</h4>
+                       <h4 className="text-base font-black text-gray-400 uppercase tracking-[0.2em] mb-4 border-b border-gray-100 pb-2">Artículos y Totales</h4>
                        <div className="space-y-1.5 mb-5">
                           {selectedOrder.items?.map((item: any, idx: number) => (
                              <div key={idx} className="flex justify-between items-center bg-gray-50/50 p-3 rounded border border-gray-100 group transition-colors hover:bg-gray-100/50">
                                 <div className="flex-1">
                                    <p className="text-[11px] font-black text-gray-900 uppercase leading-none mb-1.5">{item?.name || 'Item Desconocido'}</p>
-                                   <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">CANTIDAD: {item?.quantity || 1} • PRECIO: ${item?.price?.toLocaleString() || '0'}</span>
+                                   <span className="text-base font-bold text-gray-400 uppercase tracking-widest">CANTIDAD: {item?.quantity || 1} • PRECIO: ${item?.price?.toLocaleString() || '0'}</span>
                                 </div>
-                                <span className="text-xs font-black text-gray-900">${((item?.price || 0) * (item?.quantity || 1)).toLocaleString()}</span>
+                                <span className="text-base font-black text-gray-900">${((item?.price || 0) * (item?.quantity || 1)).toLocaleString()}</span>
                              </div>
                           ))}
                           {(!selectedOrder.items || selectedOrder.items.length === 0) && (
-                            <p className="text-[10px] text-gray-300 italic text-center py-4 uppercase font-bold tracking-widest">Sin productos registrados</p>
+                            <p className="text-lg text-gray-300 italic text-center py-4 uppercase font-bold tracking-widest">Sin productos registrados</p>
                           )}
                        </div>
                        
                        <div className="bg-[#058c8c] p-5 text-white rounded-xl shadow-xl shadow-[#058c8c]/20 flex justify-between items-center border border-[#047777]">
-                          <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Total de la Orden</span>
+                          <span className="text-lg font-black uppercase tracking-[0.2em] opacity-80">Total de la Orden</span>
                           <span className="text-3xl font-black tracking-tighter leading-none">${(selectedOrder.total || 0).toLocaleString()}</span>
                        </div>
                     </div>
@@ -301,13 +301,13 @@ export default function OrdersPage() {
                     {/* Bloque 4: Comprobante (Si existe) */}
                     {selectedOrder.proofUrl && (
                        <div className="mt-4">
-                          <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4 border-b border-gray-100 pb-2">Comprobante de Pago</h4>
+                          <h4 className="text-base font-black text-gray-400 uppercase tracking-[0.2em] mb-4 border-b border-gray-100 pb-2">Comprobante de Pago</h4>
                           <div className="relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 group h-64 border-dashed border-2">
                              <img src={selectedOrder.proofUrl} className="w-full h-full object-contain" alt="Comprobante" />
                              <a 
                                 href={selectedOrder.proofUrl} 
                                 target="_blank" 
-                                className="absolute bottom-4 right-4 px-5 py-2.5 bg-black text-white font-black text-[9px] uppercase tracking-widest rounded-lg opacity-0 group-hover:opacity-100 transition-all shadow-2xl hover:scale-105"
+                                className="absolute bottom-4 right-4 px-5 py-2.5 bg-black text-white font-black text-base uppercase tracking-widest rounded-lg opacity-0 group-hover:opacity-100 transition-all shadow-2xl hover:scale-105"
                              >
                                 Ver Pantalla Completa
                              </a>
@@ -317,14 +317,14 @@ export default function OrdersPage() {
 
                     {/* Bloque 5: Envío y Seguimiento */}
                     <div className="bg-blue-50/40 rounded-xl p-5 border border-blue-100 mt-4">
-                       <h4 className="text-[9px] font-black text-blue-600/80 uppercase tracking-[0.2em] mb-4 border-b border-blue-200/40 pb-2 flex items-center gap-2">
+                       <h4 className="text-base font-black text-blue-600/80 uppercase tracking-[0.2em] mb-4 border-b border-blue-200/40 pb-2 flex items-center gap-2">
                           <FaTruck /> Código de Seguimiento
                        </h4>
                        <div className="flex gap-3">
                           <input 
                              type="text"
                              placeholder="Ej: AR123456789"
-                             className="flex-1 px-4 py-2 bg-white border border-gray-200 rounded text-xs font-bold uppercase tracking-widest outline-none focus:border-blue-500 transition-all"
+                             className="flex-1 px-4 py-2 bg-white border border-gray-200 rounded text-base font-bold uppercase tracking-widest outline-none focus:border-blue-500 transition-all"
                              value={selectedOrder.trackingCode || ''}
                              onChange={(e) => {
                                 const val = e.target.value;
@@ -333,7 +333,7 @@ export default function OrdersPage() {
                           />
                           <button 
                              onClick={() => updateTrackingCode(selectedOrder.id, selectedOrder.trackingCode || '')}
-                             className="px-4 py-2 bg-blue-600 text-white rounded text-[9px] font-black uppercase tracking-widest hover:bg-blue-700 transition active:scale-95 shadow-lg shadow-blue-100"
+                             className="px-4 py-2 bg-blue-600 text-white rounded text-base font-black uppercase tracking-widest hover:bg-blue-700 transition active:scale-95 shadow-lg shadow-blue-100"
                           >
                              Guardar
                           </button>
@@ -348,7 +348,7 @@ export default function OrdersPage() {
                  <div className="flex gap-3">
                     <button 
                       onClick={() => updateStatus(selectedOrder.id, 'APPROVED')}
-                      className="px-6 py-3 bg-emerald-600 text-white rounded font-black text-[10px] uppercase tracking-[0.2em] shadow-lg shadow-emerald-100 hover:bg-emerald-700 transition active:scale-95"
+                      className="px-6 py-3 bg-emerald-600 text-white rounded font-black text-lg uppercase tracking-[0.2em] shadow-lg shadow-emerald-100 hover:bg-emerald-700 transition active:scale-95"
                     >
                       Aprobar Pago
                     </button>
@@ -356,7 +356,7 @@ export default function OrdersPage() {
                       <button 
                         onClick={() => handleSendRecoveryEmail(selectedOrder.id)}
                         disabled={isRecoveringEmail}
-                        className="px-6 py-3 bg-[#405D99] text-white rounded font-black text-[10px] uppercase tracking-[0.2em] shadow-lg shadow-blue-100 hover:bg-[#344e82] transition flex items-center gap-2 disabled:opacity-50 active:scale-95"
+                        className="px-6 py-3 bg-[#405D99] text-white rounded font-black text-lg uppercase tracking-[0.2em] shadow-lg shadow-blue-100 hover:bg-[#344e82] transition flex items-center gap-2 disabled:opacity-50 active:scale-95"
                       >
                         <FaEnvelope size={12} />
                         {isRecoveringEmail ? 'ENVIANDO...' : 'ENVIAR RECORDATORIO'}
@@ -364,7 +364,7 @@ export default function OrdersPage() {
                     )}
                     <button 
                       onClick={() => updateStatus(selectedOrder.id, 'CANCELLED')}
-                      className="px-6 py-3 bg-white border border-red-100 text-red-500 rounded font-black text-[10px] uppercase tracking-[0.2em] hover:bg-red-50 transition active:scale-95"
+                      className="px-6 py-3 bg-white border border-red-100 text-red-500 rounded font-black text-lg uppercase tracking-[0.2em] hover:bg-red-50 transition active:scale-95"
                     >
                       Cancelar
                     </button>
@@ -374,7 +374,7 @@ export default function OrdersPage() {
                     <select 
                       value={selectedOrder.status?.toLowerCase()}
                       onChange={(e) => updateStatus(selectedOrder.id, e.target.value)}
-                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded font-bold text-[10px] uppercase tracking-widest text-gray-600 focus:border-[#058c8c] outline-none shadow-sm transition-all"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded font-bold text-lg uppercase tracking-widest text-gray-600 focus:border-[#058c8c] outline-none shadow-sm transition-all"
                     >
                        <option value="pending">Pendiente</option>
                        <option value="pending_review">En Revisión</option>
@@ -393,13 +393,13 @@ export default function OrdersPage() {
         <div className="flex justify-between items-center">
           <div>
             <h1 className="admin-v2-page-title mb-1">Pedidos</h1>
-            <nav className="text-[10px] items-center gap-2 text-gray-400 font-bold uppercase tracking-widest flex">
+            <nav className="text-lg items-center gap-2 text-gray-400 font-bold uppercase tracking-widest flex">
               <Link href="/admin" className="hover:text-[#058c8c]">Home</Link>
               <span>/</span>
               <span className="text-gray-900">Ventas</span>
             </nav>
           </div>
-          <button className="px-5 py-2.5 bg-gray-900 text-white rounded text-xs font-bold hover:shadow-lg transition flex items-center gap-2 uppercase tracking-widest border-0 cursor-pointer">
+          <button className="px-5 py-2.5 bg-gray-900 text-white rounded text-base font-bold hover:shadow-lg transition flex items-center gap-2 uppercase tracking-widest border-0 cursor-pointer">
             <FaFileInvoiceDollar /> Exportar CSV
           </button>
         </div>
@@ -413,7 +413,7 @@ export default function OrdersPage() {
               placeholder="Buscar por ID, Email o Nombre..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-sm transition focus:border-[#058c8c] focus:bg-white font-medium"
+              className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-lg transition focus:border-[#058c8c] focus:bg-white font-medium"
             />
           </div>
           <div className="w-full md:w-64 relative">
@@ -421,7 +421,7 @@ export default function OrdersPage() {
             <select 
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.8 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-xs font-bold text-gray-600 appearance-none cursor-pointer focus:border-[#058c8c] uppercase tracking-widest"
+              className="w-full pl-10 pr-4 py-2.8 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-base font-bold text-gray-600 appearance-none cursor-pointer focus:border-[#058c8c] uppercase tracking-widest"
             >
               <option value="todos">Todos los estados</option>
               <option value="pendiente">Pendientes</option>
@@ -438,7 +438,7 @@ export default function OrdersPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
-                <tr className="bg-gray-50/80 text-gray-400 text-[9px] font-black uppercase tracking-[0.2em] border-b border-gray-100">
+                <tr className="bg-gray-50/80 text-gray-400 text-base font-black uppercase tracking-[0.2em] border-b border-gray-100">
                   <th className="px-6 py-5">Pedido / Fecha</th>
                   <th className="px-6 py-5">Cliente</th>
                   <th className="px-6 py-5 w-40">Total</th>
@@ -452,7 +452,7 @@ export default function OrdersPage() {
                     <td className="px-6 py-6">
                       <div className="flex flex-col">
                         <span className="text-[11px] font-black text-gray-900 tracking-tight">#{order.id?.slice(-8).toUpperCase() || '---'}</span>
-                        <span className="text-[9px] text-gray-400 font-bold uppercase mt-1 tracking-widest">
+                        <span className="text-base text-gray-400 font-bold uppercase mt-1 tracking-widest">
                           {order.createdAt ? new Date(order.createdAt).toLocaleDateString('es-AR', { day: '2-digit', month: 'short', year: 'numeric' }) : '---'}
                         </span>
                       </div>
@@ -460,11 +460,11 @@ export default function OrdersPage() {
                     <td className="px-6 py-6">
                       <div className="flex flex-col">
                          <span className="text-[11px] font-black text-gray-800 uppercase leading-none mb-1.5">{order.userName || 'No especificado'}</span>
-                         <span className="text-[10px] font-medium text-[#058c8c] lowercase">{order.userEmail || '---'}</span>
+                         <span className="text-lg font-medium text-[#058c8c] lowercase">{order.userEmail || '---'}</span>
                       </div>
                     </td>
                     <td className="px-6 py-6">
-                      <span className="text-sm font-black text-gray-900 tracking-tighter">${order.total?.toLocaleString() || '0'}</span>
+                      <span className="text-lg font-black text-gray-900 tracking-tighter">${order.total?.toLocaleString() || '0'}</span>
                     </td>
                     <td className="px-6 py-6">
                       {getStatusBadge(order.status)}
@@ -486,7 +486,7 @@ export default function OrdersPage() {
                   </tr>
                 )) : (
                   <tr>
-                    <td colSpan={5} className="px-6 py-24 text-center text-gray-300 font-black uppercase tracking-[0.4em] text-[10px]">
+                    <td colSpan={5} className="px-6 py-24 text-center text-gray-300 font-black uppercase tracking-[0.4em] text-lg">
                       No se encontraron resultados.
                     </td>
                   </tr>

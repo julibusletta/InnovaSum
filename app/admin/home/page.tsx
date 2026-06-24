@@ -128,7 +128,7 @@ export default function HomeAdminPage() {
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="admin-v2-page-title mb-1">Gestor de Inicio</h1>
-          <nav className="text-[10px] items-center gap-2 text-gray-400 font-bold uppercase tracking-widest flex">
+          <nav className="text-lg items-center gap-2 text-gray-400 font-bold uppercase tracking-widest flex">
             <Link href="/admin" className="hover:text-[#058c8c]">Home</Link>
             <span>/</span>
             <span className="text-gray-900">Configuración Sitio</span>
@@ -137,14 +137,14 @@ export default function HomeAdminPage() {
         <button
           onClick={handleSave}
           disabled={isSaving}
-          className="px-6 py-2.5 bg-[#058c8c] text-white rounded text-sm font-bold hover:shadow-lg hover:bg-[#047a7a] transition flex items-center gap-2"
+          className="px-6 py-2.5 bg-[#058c8c] text-white rounded text-lg font-bold hover:shadow-lg hover:bg-[#047a7a] transition flex items-center gap-2"
         >
           {isSaving ? 'Guardando...' : <><FaSave /> Guardar Todo</>}
         </button>
       </div>
 
       {message && (
-        <div className={`p-4 mb-6 rounded-xl text-sm font-semibold flex items-center gap-3 animate-slideDown ${message.includes('Error') ? 'bg-red-50 text-red-700 border border-red-100' : 'bg-green-50 text-green-700 border border-green-100'}`}>
+        <div className={`p-4 mb-6 rounded-xl text-lg font-semibold flex items-center gap-3 animate-slideDown ${message.includes('Error') ? 'bg-red-50 text-red-700 border border-red-100' : 'bg-green-50 text-green-700 border border-green-100'}`}>
           <div className={`w-2 h-2 rounded-full ${message.includes('Error') ? 'bg-red-500' : 'bg-green-500'}`}></div>
           {message}
         </div>
@@ -154,19 +154,19 @@ export default function HomeAdminPage() {
       <div className="flex gap-4 mb-8 bg-white p-1 rounded-xl border border-gray-100 w-fit">
         <button
           onClick={() => setActiveTab('slider')}
-          className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all ${activeTab === 'slider' ? 'bg-[#058c8c] text-white shadow-md' : 'text-gray-400 hover:bg-gray-50'}`}
+          className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-base font-black uppercase tracking-wider transition-all ${activeTab === 'slider' ? 'bg-[#058c8c] text-white shadow-md' : 'text-gray-400 hover:bg-gray-50'}`}
         >
           <FaImage /> Slider Principal (Hero)
         </button>
         <button
           onClick={() => setActiveTab('carousels')}
-          className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all ${activeTab === 'carousels' ? 'bg-[#058c8c] text-white shadow-md' : 'text-gray-400 hover:bg-gray-50'}`}
+          className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-base font-black uppercase tracking-wider transition-all ${activeTab === 'carousels' ? 'bg-[#058c8c] text-white shadow-md' : 'text-gray-400 hover:bg-gray-50'}`}
         >
           <FaList /> Carruseles de Productos
         </button>
         <button
           onClick={() => setActiveTab('offers')}
-          className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all ${activeTab === 'offers' ? 'bg-[#058c8c] text-white shadow-md' : 'text-gray-400 hover:bg-gray-50'}`}
+          className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-base font-black uppercase tracking-wider transition-all ${activeTab === 'offers' ? 'bg-[#058c8c] text-white shadow-md' : 'text-gray-400 hover:bg-gray-50'}`}
         >
           <FaTrophy /> Ofertas Semanales
         </button>
@@ -176,8 +176,8 @@ export default function HomeAdminPage() {
         {activeTab === 'slider' && (
           <div className="space-y-6 animate-fadeIn">
             <div className="flex justify-between items-center border-b border-gray-100 pb-4 mb-6">
-              <h3 className="font-black text-gray-900 uppercase tracking-widest text-sm">Gestionar Banners del Hero</h3>
-              <button onClick={addSlide} className="px-4 py-2 bg-gray-900 text-white rounded text-[10px] font-black uppercase tracking-widest">+ Añadir Slide</button>
+              <h3 className="font-black text-gray-900 uppercase tracking-widest text-lg">Gestionar Banners del Hero</h3>
+              <button onClick={addSlide} className="px-4 py-2 bg-gray-900 text-white rounded text-lg font-black uppercase tracking-widest">+ Añadir Slide</button>
             </div>
             
             <div className="grid grid-cols-1 gap-6">
@@ -195,7 +195,7 @@ export default function HomeAdminPage() {
                          {slide.image ? <img src={slide.image} className="w-full h-full object-contain" alt="" /> : <FaImage size={30} className="text-gray-200" />}
                       </div>
                       <div className="flex justify-between items-end mb-1.5 px-1">
-                        <label className="block text-[9px] font-black text-gray-400 uppercase tracking-widest">URL de Imagen</label>
+                        <label className="block text-base font-black text-gray-400 uppercase tracking-widest">URL de Imagen</label>
                         <div className="relative">
                           <input 
                             type="file" 
@@ -217,27 +217,27 @@ export default function HomeAdminPage() {
                         value={slide.image} 
                         onChange={(e) => updateSlide(idx, 'image', e.target.value)}
                         placeholder="/images/banner1.png"
-                        className="w-full px-3 py-2 text-xs bg-white border border-gray-200 rounded outline-none font-medium text-gray-600"
+                        className="w-full px-3 py-2 text-base bg-white border border-gray-200 rounded outline-none font-medium text-gray-600"
                       />
                     </div>
                     <div className="md:col-span-2 space-y-4">
                       <div>
-                        <label className="block text-[9px] font-black text-gray-400 uppercase mb-1.5 px-1">Texto Alternativo (SEO)</label>
+                        <label className="block text-base font-black text-gray-400 uppercase mb-1.5 px-1">Texto Alternativo (SEO)</label>
                         <input 
                           type="text" 
                           value={slide.alt} 
                           onChange={(e) => updateSlide(idx, 'alt', e.target.value)}
-                          className="w-full px-4 py-2 text-xs bg-white border border-gray-200 rounded outline-none"
+                          className="w-full px-4 py-2 text-base bg-white border border-gray-200 rounded outline-none"
                         />
                       </div>
                       <div>
-                        <label className="block text-[9px] font-black text-gray-400 uppercase mb-1.5 px-1">Link de Destino</label>
+                        <label className="block text-base font-black text-gray-400 uppercase mb-1.5 px-1">Link de Destino</label>
                         <input 
                           type="text" 
                           value={slide.link} 
                           onChange={(e) => updateSlide(idx, 'link', e.target.value)}
                           placeholder="/category/celulares"
-                          className="w-full px-4 py-2 text-xs bg-white border border-gray-200 rounded outline-none"
+                          className="w-full px-4 py-2 text-base bg-white border border-gray-200 rounded outline-none"
                         />
                       </div>
                       <div className="flex items-center gap-4 pt-2">
@@ -248,7 +248,7 @@ export default function HomeAdminPage() {
                             onChange={(e) => updateSlide(idx, 'isCustom', e.target.checked)}
                             className="w-4 h-4 rounded text-[#058c8c]"
                           />
-                          <span className="text-[10px] font-bold text-gray-600 uppercase">Slide con Texto (Custom)</span>
+                          <span className="text-lg font-bold text-gray-600 uppercase">Slide con Texto (Custom)</span>
                         </label>
                       </div>
                     </div>
@@ -256,7 +256,7 @@ export default function HomeAdminPage() {
                 </div>
               ))}
               {heroSlides.length === 0 && (
-                <div className="text-center py-20 bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 text-gray-400 text-xs font-bold uppercase tracking-widest">
+                <div className="text-center py-20 bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 text-gray-400 text-base font-bold uppercase tracking-widest">
                    No hay slides configurados. El sistema usará los valores por defecto.
                 </div>
               )}
@@ -267,8 +267,8 @@ export default function HomeAdminPage() {
         {activeTab === 'carousels' && (
           <div className="space-y-6 animate-fadeIn">
             <div className="flex justify-between items-center border-b border-gray-100 pb-4 mb-6">
-              <h3 className="font-black text-gray-900 uppercase tracking-widest text-sm">Configuración de Secciones en Home</h3>
-              <button onClick={addCarousel} className="px-4 py-2 bg-gray-900 text-white rounded text-[10px] font-black uppercase tracking-widest">+ Añadir Sección</button>
+              <h3 className="font-black text-gray-900 uppercase tracking-widest text-lg">Configuración de Secciones en Home</h3>
+              <button onClick={addCarousel} className="px-4 py-2 bg-gray-900 text-white rounded text-lg font-black uppercase tracking-widest">+ Añadir Sección</button>
             </div>
 
             <div className="grid grid-cols-1 gap-4">
@@ -280,27 +280,27 @@ export default function HomeAdminPage() {
                     >
                       <FaTrash size={10} />
                     </button>
-                    <div className="w-8 h-8 bg-white border border-gray-200 rounded flex items-center justify-center text-gray-300 font-black text-xs">
+                    <div className="w-8 h-8 bg-white border border-gray-200 rounded flex items-center justify-center text-gray-300 font-black text-base">
                        {idx + 1}
                     </div>
                     <div className="flex-1 space-y-4">
                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-[9px] font-black text-gray-400 uppercase mb-1.5 px-1">Título de la Sección</label>
+                            <label className="block text-base font-black text-gray-400 uppercase mb-1.5 px-1">Título de la Sección</label>
                             <input 
                               type="text" 
                               value={carousel.title}
                               onChange={(e) => updateCarousel(idx, 'title', e.target.value)}
-                              className="w-full px-4 py-2 text-xs bg-white border border-gray-200 rounded outline-none font-bold text-gray-800"
+                              className="w-full px-4 py-2 text-base bg-white border border-gray-200 rounded outline-none font-bold text-gray-800"
                               placeholder="Ej: NUEVAS LLEGADAS"
                             />
                           </div>
                           <div>
-                            <label className="block text-[9px] font-black text-gray-400 uppercase mb-1.5 px-1">Tipo de Filtrado</label>
+                            <label className="block text-base font-black text-gray-400 uppercase mb-1.5 px-1">Tipo de Filtrado</label>
                             <select
                               value={carousel.type}
                               onChange={(e) => updateCarousel(idx, 'type', e.target.value)}
-                              className="w-full px-4 py-2 text-xs bg-white border border-gray-200 rounded outline-none font-bold"
+                              className="w-full px-4 py-2 text-base bg-white border border-gray-200 rounded outline-none font-bold"
                             >
                                <option value="section">Por Sección (Badge)</option>
                                <option value="category">Por Categoría</option>
@@ -308,12 +308,12 @@ export default function HomeAdminPage() {
                           </div>
                        </div>
                        <div>
-                          <label className="block text-[9px] font-black text-gray-400 uppercase mb-1.5 px-1">Valor del Filtro (Slug)</label>
+                          <label className="block text-base font-black text-gray-400 uppercase mb-1.5 px-1">Valor del Filtro (Slug)</label>
                           <input 
                             type="text" 
                             value={carousel.value}
                             onChange={(e) => updateCarousel(idx, 'value', e.target.value)}
-                            className="w-full px-4 py-2 text-xs bg-white border border-gray-200 rounded outline-none text-gray-500"
+                            className="w-full px-4 py-2 text-base bg-white border border-gray-200 rounded outline-none text-gray-500"
                             placeholder="Ej: bombas, nuevas, celulares, smart-home"
                           />
                        </div>
@@ -326,7 +326,7 @@ export default function HomeAdminPage() {
                             onChange={(e) => updateCarousel(idx, 'active', e.target.checked)}
                             className="w-4 h-4 rounded text-[#058c8c]"
                           />
-                          <span className="text-[10px] font-bold text-gray-600 uppercase">Activo</span>
+                          <span className="text-lg font-bold text-gray-600 uppercase">Activo</span>
                         </label>
                     </div>
                  </div>
@@ -338,8 +338,8 @@ export default function HomeAdminPage() {
                   <FaArrowsAltV />
                </div>
                <div>
-                  <h4 className="text-xs font-bold text-blue-800 mb-1">Orden de aparición</h4>
-                  <p className="text-[10px] text-blue-600 leading-relaxed font-medium">Las secciones se mostrarán en la Home en el mismo orden que aparecen en esta lista. Asegúrate de que las categorías correspondan con lo definido en el mapeo de la API.</p>
+                  <h4 className="text-base font-bold text-blue-800 mb-1">Orden de aparición</h4>
+                  <p className="text-lg text-blue-600 leading-relaxed font-medium">Las secciones se mostrarán en la Home en el mismo orden que aparecen en esta lista. Asegúrate de que las categorías correspondan con lo definido en el mapeo de la API.</p>
                </div>
             </div>
           </div>
@@ -348,14 +348,14 @@ export default function HomeAdminPage() {
         {activeTab === 'offers' && (
           <div className="space-y-8 animate-fadeIn">
             <div className="flex justify-between items-center border-b border-gray-100 pb-4 mb-6">
-              <h3 className="font-black text-gray-900 uppercase tracking-widest text-sm">Gestionar Ofertas Semanales (Banners)</h3>
+              <h3 className="font-black text-gray-900 uppercase tracking-widest text-lg">Gestionar Ofertas Semanales (Banners)</h3>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {weeklyOffers.map((offer, idx) => (
                 <div key={idx} className={`p-8 rounded-2xl border-2 ${idx === 0 ? 'bg-blue-50/30 border-blue-100' : 'bg-green-50/30 border-green-100'}`}>
                   <div className="flex items-center justify-between mb-6">
-                    <span className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${idx === 0 ? 'bg-blue-600 text-white' : 'bg-green-600 text-white'}`}>
+                    <span className={`px-4 py-1 rounded-full text-lg font-black uppercase tracking-widest ${idx === 0 ? 'bg-blue-600 text-white' : 'bg-green-600 text-white'}`}>
                       Banner {idx + 1}
                     </span>
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -365,59 +365,59 @@ export default function HomeAdminPage() {
                         onChange={(e) => updateOffer(idx, 'active', e.target.checked)}
                         className="w-4 h-4 rounded text-[#058c8c]"
                       />
-                      <span className="text-[10px] font-bold text-gray-600 uppercase">Activo</span>
+                      <span className="text-lg font-bold text-gray-600 uppercase">Activo</span>
                     </label>
                   </div>
 
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-[9px] font-black text-gray-400 uppercase mb-1.5 px-1">ID del Producto (Base para Precio/Link)</label>
+                      <label className="block text-base font-black text-gray-400 uppercase mb-1.5 px-1">ID del Producto (Base para Precio/Link)</label>
                       <input 
                         type="text" 
                         value={offer.productId}
                         onChange={(e) => updateOffer(idx, 'productId', e.target.value)}
-                        className="w-full px-4 py-2.5 text-xs bg-white border border-gray-200 rounded-xl outline-none font-bold"
+                        className="w-full px-4 py-2.5 text-base bg-white border border-gray-200 rounded-xl outline-none font-bold"
                         placeholder="Ej: 378"
                       />
                     </div>
                     <div>
-                      <label className="block text-[9px] font-black text-gray-400 uppercase mb-1.5 px-1">Título Personalizado</label>
+                      <label className="block text-base font-black text-gray-400 uppercase mb-1.5 px-1">Título Personalizado</label>
                       <input 
                         type="text" 
                         value={offer.title}
                         onChange={(e) => updateOffer(idx, 'title', e.target.value)}
-                        className="w-full px-4 py-2.5 text-xs bg-white border border-gray-200 rounded-xl outline-none font-bold"
+                        className="w-full px-4 py-2.5 text-base bg-white border border-gray-200 rounded-xl outline-none font-bold"
                         placeholder="Ej: JBL CHARGE 6"
                       />
                     </div>
                     <div>
-                      <label className="block text-[9px] font-black text-gray-400 uppercase mb-1.5 px-1">Subtítulo / Promo Detalle</label>
+                      <label className="block text-base font-black text-gray-400 uppercase mb-1.5 px-1">Subtítulo / Promo Detalle</label>
                       <input 
                         type="text" 
                         value={offer.subtitle}
                         onChange={(e) => updateOffer(idx, 'subtitle', e.target.value)}
-                        className="w-full px-4 py-2.5 text-xs bg-white border border-gray-200 rounded-xl outline-none"
+                        className="w-full px-4 py-2.5 text-base bg-white border border-gray-200 rounded-xl outline-none"
                         placeholder="Ej: * 10% de descuento abonando por transferencia"
                       />
                     </div>
                     <div>
-                      <label className="block text-[9px] font-black text-gray-400 uppercase mb-1.5 px-1">Link de Destino</label>
+                      <label className="block text-base font-black text-gray-400 uppercase mb-1.5 px-1">Link de Destino</label>
                       <input 
                         type="text" 
                         value={offer.link}
                         onChange={(e) => updateOffer(idx, 'link', e.target.value)}
-                        className="w-full px-4 py-2.5 text-xs bg-white border border-gray-200 rounded-xl outline-none text-gray-500"
+                        className="w-full px-4 py-2.5 text-base bg-white border border-gray-200 rounded-xl outline-none text-gray-500"
                         placeholder="Ej: /product/378"
                       />
                     </div>
                     <div>
-                      <label className="block text-[9px] font-black text-gray-400 uppercase mb-1.5 px-1">Enlace de la Imagen (O subir imagen)</label>
+                      <label className="block text-base font-black text-gray-400 uppercase mb-1.5 px-1">Enlace de la Imagen (O subir imagen)</label>
                       <div className="flex gap-2">
                         <input 
                           type="text" 
                           value={offer.image || ''}
                           onChange={(e) => updateOffer(idx, 'image', e.target.value)}
-                          className="w-full px-4 py-2 text-xs bg-white border border-gray-200 rounded-xl outline-none"
+                          className="w-full px-4 py-2 text-base bg-white border border-gray-200 rounded-xl outline-none"
                           placeholder="/images/productos/mi-oferta.png"
                         />
                         <div className="relative shrink-0 flex items-center">
@@ -445,7 +445,7 @@ export default function HomeAdminPage() {
                           />
                           <label 
                             htmlFor={`offer-upload-${idx}`}
-                            className="px-3 py-2 bg-gray-100 border border-gray-200 rounded-xl text-xs font-bold cursor-pointer hover:bg-gray-200 whitespace-nowrap"
+                            className="px-3 py-2 bg-gray-100 border border-gray-200 rounded-xl text-base font-bold cursor-pointer hover:bg-gray-200 whitespace-nowrap"
                           >
                              {isUploading === 100 + idx ? 'Subiendo...' : '📁 Subir'}
                           </label>
@@ -467,8 +467,8 @@ export default function HomeAdminPage() {
                 <FaTrophy />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-orange-800 mb-1">Información Importante</h4>
-                <p className="text-[10px] text-orange-600 leading-relaxed font-medium">
+                <h4 className="text-base font-bold text-orange-800 mb-1">Información Importante</h4>
+                <p className="text-lg text-orange-600 leading-relaxed font-medium">
                   Los banners de ofertas semanales están optimizados para productos específicos. 
                   El Banner 1 tiene fondo azul y el Banner 2 fondo verde para conservar el diseño actual.
                   Si dejas el campo de "Link" vacío, el sistema usará /product/[ID] automáticamente.

@@ -83,11 +83,11 @@ export default function CouponsAdminPage() {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-black text-slate-800 uppercase tracking-tight">Cupones de Descuento</h1>
-          <p className="text-sm text-slate-500 mt-1">Gestiona códigos promocionales para los clientes.</p>
+          <p className="text-lg text-slate-500 mt-1">Gestiona códigos promocionales para los clientes.</p>
         </div>
         <button 
           onClick={() => setShowModal(true)}
-          className="bg-black text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-gray-800 transition-colors"
+          className="bg-black text-white px-4 py-2 rounded-lg text-base font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-gray-800 transition-colors"
         >
           <FaPlus /> Nuevo Cupón
         </button>
@@ -96,7 +96,7 @@ export default function CouponsAdminPage() {
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-slate-50 border-b border-slate-200 text-[10px] uppercase font-black text-slate-500 tracking-widest">
+            <tr className="bg-slate-50 border-b border-slate-200 text-lg uppercase font-black text-slate-500 tracking-widest">
               <th className="p-4">Código</th>
               <th className="p-4">Descuento</th>
               <th className="p-4">Tipo</th>
@@ -109,10 +109,10 @@ export default function CouponsAdminPage() {
               <tr key={coupon._id} className="border-b border-slate-100 last:border-0 hover:bg-slate-50">
                 <td className="p-4 font-bold text-slate-800">{coupon.code}</td>
                 <td className="p-4">${coupon.discount}</td>
-                <td className="p-4 text-xs font-bold text-slate-500">
+                <td className="p-4 text-base font-bold text-slate-500">
                   {coupon.type === 'PERCENTAGE' ? 'Porcentaje (%)' : 'Monto Fijo ($)'}
                 </td>
-                <td className="p-4 text-center text-xs text-slate-500">{coupon.currentUses} {coupon.maxUses ? `/ ${coupon.maxUses}` : ''}</td>
+                <td className="p-4 text-center text-base text-slate-500">{coupon.currentUses} {coupon.maxUses ? `/ ${coupon.maxUses}` : ''}</td>
                 <td className="p-4 text-center">
                   <button onClick={() => handleDelete(coupon._id)} className="text-red-500 hover:text-red-700">
                     <FaTrash />
@@ -133,29 +133,29 @@ export default function CouponsAdminPage() {
         <div className="fixed inset-0 bg-black/50 z-50 flex justify-center items-center p-4">
           <div className="bg-white rounded-xl max-w-md w-full shadow-2xl overflow-hidden">
             <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
-              <h2 className="text-sm font-black uppercase tracking-widest text-slate-800">Crear Cupón</h2>
+              <h2 className="text-lg font-black uppercase tracking-widest text-slate-800">Crear Cupón</h2>
               <button onClick={() => setShowModal(false)} className="text-slate-400 hover:text-slate-800 text-xl leading-none">&times;</button>
             </div>
             
             <form onSubmit={handleSave} className="p-6 space-y-4">
               <div>
-                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 block mb-2">Código (Ej: JB10)</label>
+                <label className="text-lg font-black uppercase tracking-widest text-slate-500 block mb-2">Código (Ej: JB10)</label>
                 <input 
                   type="text" 
                   required
                   value={code}
                   onChange={e => setCode(e.target.value.toUpperCase())}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm focus:outline-none focus:border-black uppercase"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-lg focus:outline-none focus:border-black uppercase"
                   placeholder="NAVIDAD2026"
                 />
               </div>
 
               <div>
-                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 block mb-2">Tipo de Descuento</label>
+                <label className="text-lg font-black uppercase tracking-widest text-slate-500 block mb-2">Tipo de Descuento</label>
                 <select 
                   value={type}
                   onChange={e => setType(e.target.value as any)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm focus:outline-none focus:border-black"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-lg focus:outline-none focus:border-black"
                 >
                   <option value="PERCENTAGE">Porcentaje (%)</option>
                   <option value="FIXED">Monto Fijo ($AR)</option>
@@ -163,14 +163,14 @@ export default function CouponsAdminPage() {
               </div>
 
               <div>
-                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 block mb-2">Valor de Descuento</label>
+                <label className="text-lg font-black uppercase tracking-widest text-slate-500 block mb-2">Valor de Descuento</label>
                 <input 
                   type="number" 
                   required
                   min="0"
                   value={discount}
                   onChange={e => setDiscount(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm focus:outline-none focus:border-black"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-lg focus:outline-none focus:border-black"
                   placeholder="10"
                 />
               </div>
@@ -179,14 +179,14 @@ export default function CouponsAdminPage() {
                 <button 
                   type="button"
                   onClick={() => setShowModal(false)}
-                  className="flex-1 bg-white border border-slate-200 text-slate-600 font-bold uppercase tracking-widest text-xs py-3 rounded-lg hover:bg-slate-50"
+                  className="flex-1 bg-white border border-slate-200 text-slate-600 font-bold uppercase tracking-widest text-base py-3 rounded-lg hover:bg-slate-50"
                 >
                   Cancelar
                 </button>
                 <button 
                   type="submit"
                   disabled={saving}
-                  className="flex-1 bg-black text-white font-bold uppercase tracking-widest text-xs py-3 rounded-lg hover:bg-gray-800 disabled:opacity-50 flex justify-center items-center"
+                  className="flex-1 bg-black text-white font-bold uppercase tracking-widest text-base py-3 rounded-lg hover:bg-gray-800 disabled:opacity-50 flex justify-center items-center"
                 >
                   {saving ? <FaSpinner className="animate-spin" /> : 'Guardar Cupón'}
                 </button>

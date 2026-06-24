@@ -54,13 +54,13 @@ export default function CustomersPage() {
         <div className="flex justify-between items-center">
           <div>
             <h1 className="admin-v2-page-title mb-1">Clientes</h1>
-            <p className="text-[10px] items-center gap-2 text-gray-400 font-bold uppercase tracking-widest flex">
+            <p className="text-lg items-center gap-2 text-gray-400 font-bold uppercase tracking-widest flex">
                Base de datos de usuarios registrados y compradores
             </p>
           </div>
           <div className="bg-white px-4 py-2 rounded-lg border border-gray-100 shadow-sm flex items-center gap-3">
              <div className="text-right">
-                <p className="text-[9px] font-black text-gray-400 uppercase leading-none">Total Clientes</p>
+                <p className="text-base font-black text-gray-400 uppercase leading-none">Total Clientes</p>
                 <p className="text-xl font-black text-gray-900 leading-none mt-1">{customers.length}</p>
              </div>
              <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center">
@@ -78,7 +78,7 @@ export default function CustomersPage() {
               placeholder="Buscar por nombre, email o teléfono..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-sm transition focus:border-[#058c8c] focus:bg-white font-medium"
+              className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-[#e1e3e5] rounded outline-none text-lg transition focus:border-[#058c8c] focus:bg-white font-medium"
             />
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function CustomersPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
-                <tr className="bg-gray-50/80 text-gray-400 text-[9px] font-black uppercase tracking-[0.2em] border-b border-gray-100">
+                <tr className="bg-gray-50/80 text-gray-400 text-base font-black uppercase tracking-[0.2em] border-b border-gray-100">
                   <th className="px-6 py-5">Cliente</th>
                   <th className="px-6 py-5">Contacto</th>
                   <th className="px-6 py-5">DNI</th>
@@ -102,7 +102,7 @@ export default function CustomersPage() {
                   <tr key={customer._id} className="hover:bg-gray-50/30 transition-all group">
                     <td className="px-6 py-6">
                       <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 font-black text-xs uppercase">
+                        <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 font-black text-base uppercase">
                           {customer.firstName[0]}{customer.lastName[0]}
                         </div>
                         <div className="flex flex-col">
@@ -112,19 +112,19 @@ export default function CustomersPage() {
                                 {customer.type}
                              </span>
                           </div>
-                          <span className="text-[10px] font-medium text-gray-400">{customer.email}</span>
+                          <span className="text-lg font-medium text-gray-400">{customer.email}</span>
                         </div>
                       </div>
                     </td>
                     <td className="px-6 py-6">
                       <div className="flex flex-col gap-1">
-                        <div className="flex items-center gap-2 text-[10px] text-gray-500 font-bold uppercase">
+                        <div className="flex items-center gap-2 text-lg text-gray-500 font-bold uppercase">
                           <FaEnvelope className="text-gray-300" size={10} />
                           {customer.email}
                         </div>
                         {customer.phone && (
                           <div className="flex items-center gap-2">
-                             <span className="text-[10px] text-gray-500 font-bold uppercase flex items-center gap-2">
+                             <span className="text-lg text-gray-500 font-bold uppercase flex items-center gap-2">
                                <FaPhone className="text-gray-300" size={10} />
                                {customer.phone}
                              </span>
@@ -141,33 +141,33 @@ export default function CustomersPage() {
                       </div>
                     </td>
                     <td className="px-6 py-6">
-                      <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">{customer.dni || '---'}</span>
+                      <span className="text-lg font-bold text-gray-600 uppercase tracking-widest">{customer.dni || '---'}</span>
                     </td>
                     <td className="px-6 py-6">
                       <div className="flex items-center gap-2">
-                        <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-[10px] font-black ${customer.orderCount > 0 ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-400'}`}>
+                        <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-lg font-black ${customer.orderCount > 0 ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-400'}`}>
                           {customer.orderCount}
                         </span>
-                        <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Pedidos</span>
+                        <span className="text-base font-bold text-gray-400 uppercase tracking-widest">Pedidos</span>
                       </div>
                     </td>
                     <td className="px-6 py-6">
                       <div className="flex flex-col">
-                        <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">
+                        <span className="text-lg font-bold text-gray-600 uppercase tracking-widest">
                           {new Date(customer.createdAt).toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit', year: 'numeric' })}
                         </span>
-                        <span className="text-[9px] text-gray-400 font-medium lowercase">hace {Math.floor((new Date().getTime() - new Date(customer.createdAt).getTime()) / (1000 * 60 * 60 * 24))} días</span>
+                        <span className="text-base text-gray-400 font-medium lowercase">hace {Math.floor((new Date().getTime() - new Date(customer.createdAt).getTime()) / (1000 * 60 * 60 * 24))} días</span>
                       </div>
                     </td>
                     <td className="px-6 py-6 text-center">
-                       <button className="px-3 py-1.5 bg-gray-50 border border-gray-100 text-gray-400 rounded text-[9px] font-black uppercase tracking-widest hover:border-blue-500 hover:text-blue-500 transition-all active:scale-95">
+                       <button className="px-3 py-1.5 bg-gray-50 border border-gray-100 text-gray-400 rounded text-base font-black uppercase tracking-widest hover:border-blue-500 hover:text-blue-500 transition-all active:scale-95">
                           Ver Perfil
                        </button>
                     </td>
                   </tr>
                 )) : (
                   <tr>
-                    <td colSpan={6} className="px-6 py-24 text-center text-gray-300 font-black uppercase tracking-[0.4em] text-[10px]">
+                    <td colSpan={6} className="px-6 py-24 text-center text-gray-300 font-black uppercase tracking-[0.4em] text-lg">
                       No se encontraron clientes.
                     </td>
                   </tr>

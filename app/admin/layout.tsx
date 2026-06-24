@@ -107,7 +107,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="p-4 border-t border-[#e1e3e5] space-y-2">
           <Link 
             href="/" 
-            className="flex items-center justify-between gap-2 px-3 py-2 text-xs font-bold text-gray-500 hover:bg-gray-100 rounded-lg transition-colors group"
+            className="flex items-center justify-between gap-2 px-3 py-2 text-base font-bold text-gray-500 hover:bg-gray-100 rounded-lg transition-colors group"
           >
             <span className="flex items-center gap-2">
                <FaExternalLinkAlt className="text-gray-400" />
@@ -117,7 +117,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           <button
             onClick={() => signOut({ callbackUrl: '/' })}
-            className="w-full flex items-center gap-2 px-3 py-2 text-xs font-bold text-red-500 hover:bg-red-50 rounded-lg transition-colors border-none bg-transparent cursor-pointer"
+            className="w-full flex items-center gap-2 px-3 py-2 text-base font-bold text-red-500 hover:bg-red-50 rounded-lg transition-colors border-none bg-transparent cursor-pointer"
           >
             <FaExternalLinkAlt className="rotate-180" />
             Cerrar Sesión
@@ -130,10 +130,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <header className="admin-v2-header">
            <div className="flex items-center gap-4 text-gray-400">
               <FaSearch />
-              <input type="text" placeholder="Buscar..." className="bg-transparent border-none outline-none text-sm text-gray-600 w-64" />
+              <input type="text" placeholder="Buscar..." className="bg-transparent border-none outline-none text-lg text-gray-600 w-64" />
            </div>
            <div className="flex items-center gap-4">
-              <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-[10px] font-bold text-gray-500">AD</div>
+              <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-lg font-bold text-gray-500">AD</div>
            </div>
         </header>
         

@@ -3,6 +3,9 @@ import { v4 as uuidv4 } from 'uuid';
 import { put } from '@vercel/blob';
 
 export async function POST(req: NextRequest) {
+  // Inyectar el token manualmente para evitar el bug de variables de entorno de Vercel
+  process.env.BLOB_READ_WRITE_TOKEN = "vercel_blob_rw_tneYuJRlqhI8TUZC_n6qLtYIEEVc6yzYve39hTON93Rz8ft";
+
   try {
     const formData = await req.formData();
     const file = formData.get('file') as File;

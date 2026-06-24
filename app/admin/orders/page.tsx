@@ -189,7 +189,7 @@ export default function OrdersPage() {
   if (loading) return <div className="flex items-center justify-center h-64 text-gray-400 animate-pulse font-medium">Cargando pedidos...</div>;
 
   return (
-    <div className="animate-fadeIn relative">
+    <div className="relative">
       {/* Detail Modal */}
       {selectedOrder && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md overflow-hidden">

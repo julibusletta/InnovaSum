@@ -134,7 +134,7 @@ export default function HomeAdminPage() {
   if (loading) return <div className="p-10 text-center animate-pulse font-bold text-gray-400">Cargando configuración de la Home...</div>;
 
   return (
-    <div className="animate-fadeIn pb-20">
+    <div className="pb-20">
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="admin-v2-page-title mb-1">Gestor de Inicio</h1>

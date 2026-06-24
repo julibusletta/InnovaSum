@@ -147,7 +147,7 @@ export default function CategoriesPage() {
   const parentCategories = categories.filter(c => !c.parentId);
   
   return (
-    <div className="animate-fadeIn pb-20">
+    <div className="pb-20">
       {/* Header */}
       <div className="flex justify-between items-center mb-10">
         <div>

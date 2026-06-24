@@ -48,7 +48,7 @@ export default function WebhookAuditPage() {
   if (loading) return <div className="flex items-center justify-center h-64 text-gray-400 animate-pulse font-medium">Cargando auditoría...</div>;
 
   return (
-    <div className="animate-fadeIn">
+    <div>
       <div className="flex flex-col gap-8">
         <div>
           <h1 className="admin-v2-page-title mb-1">Auditoría de Pagos</h1>

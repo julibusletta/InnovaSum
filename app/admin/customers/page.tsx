@@ -49,7 +49,7 @@ export default function CustomersPage() {
   if (loading) return <div className="flex items-center justify-center h-64 text-gray-400 animate-pulse font-medium">Cargando clientes...</div>;
 
   return (
-    <div className="animate-fadeIn">
+    <div>
       <div className="flex flex-col gap-8">
         <div className="flex justify-between items-center">
           <div>

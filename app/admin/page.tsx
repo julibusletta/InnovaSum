@@ -157,7 +157,7 @@ export default function AdminDashboard() {
   if (loading) return <div className="flex items-center justify-center min-h-[400px] text-gray-400 font-medium animate-pulse">Cargando...</div>;
 
   return (
-    <div className="animate-fadeIn">
+    <div>
       <div className="flex justify-between items-center mb-8">
         <h1 className="admin-v2-page-title mb-0">Dashboard</h1>
         <div className="flex gap-3">

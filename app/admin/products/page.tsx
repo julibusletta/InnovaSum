@@ -447,7 +447,7 @@ function ProductsContent({
   const allFlatProducts = products ? (Object.values(products).flat().filter(Boolean) as Product[]) : [];
 
   return (
-    <div className="animate-fadeIn pb-20">
+    <div className="pb-20">
       <div className="flex justify-between items-center mb-10">
         <div>
           <h1 className="admin-v2-page-title mb-1">Productos</h1>
@@ -634,7 +634,7 @@ function ProductsContent({
 
       {/* Product Editor Full-Screen Overlay */}
       {editingProduct && (
-        <div className="fixed top-0 right-0 bottom-0 left-[250px] z-[100] bg-[#f8fafb] flex flex-col animate-fadeIn border-l border-[#e1e3e5] shadow-2xl">
+        <div className="fixed top-[60px] right-0 bottom-0 left-[250px] z-[100] bg-[#f8fafb] flex flex-col animate-fadeIn border-l border-[#e1e3e5] shadow-2xl">
           {(() => {
             const p = editingProduct;
             return (

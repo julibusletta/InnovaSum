@@ -237,7 +237,9 @@ export default function AnalyticsPage() {
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
             <h3 className="font-bold text-gray-800 mb-4">Fuentes de Tráfico</h3>
             <div className="space-y-4">
-              {data.topReferrers.map((r, i) => (
+              {data.topReferrers
+                .filter(r => r.domain === 'innovasum.ar' || r.domain === 'innovasum.com.ar')
+                .map((r, i, arr) => (
                 <div key={i} className="space-y-1">
                   <div className="flex justify-between text-base">
                     <span className="font-medium text-gray-600">{r.domain}</span>
@@ -246,7 +248,7 @@ export default function AnalyticsPage() {
                   <div className="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
                     <div 
                       className="bg-blue-500 h-full rounded-full" 
-                      style={{ width: `${(r.count / (data.topReferrers[0]?.count || 1)) * 100}%` }}
+                      style={{ width: `${(r.count / (arr[0]?.count || 1)) * 100}%` }}
                     ></div>
                   </div>
                 </div>

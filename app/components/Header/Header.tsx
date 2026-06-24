@@ -81,20 +81,7 @@ export default function Header() {
       label: 'PRODUCTOS',
       href: '/#productos',
       id: 'productos',
-      submenu: [
-        {
-          label: 'StarLink',
-          href: '/category/starlink',
-          submenu: [
-            { label: 'Inversores 12-30V', href: '/category/inversores-12-30v' },
-            { label: 'Soportes', href: '/category/soportes' }
-          ]
-        },
-        { label: 'Detectores de monóxido de carbono', href: '/category/detectores-monoxido' },
-        { label: 'Auriculares', href: '/category/auriculares' },
-        { label: 'Smart Home', href: '/category/smarthome' }
-      ]
-      // submenu: dbCategories.length > 0 ? buildCategoryNav() : undefined, // Comentado para usar menú estático temporalmente
+      submenu: dbCategories.length > 0 ? buildCategoryNav() : undefined,
     },
   ];
 

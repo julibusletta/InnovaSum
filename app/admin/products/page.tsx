@@ -632,6 +632,7 @@ function ProductsContent({
           );
         })}
       </div>
+    </div>
       
       {/* Product Editor View (Replaces list when active) */}
       {editingProduct && (

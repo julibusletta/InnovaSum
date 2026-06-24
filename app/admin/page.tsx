@@ -276,8 +276,10 @@ export default function AdminDashboard() {
                  <FaTrophy className="text-6xl rotate-12" />
               </div>
               <h4 className="font-bold mb-2">Ofertas Activas</h4>
-              <p className="text-base text-gray-400 mb-6 leading-relaxed">Tienes 3 promociones de temporada activas que vencen este viernes.</p>
-              <button className="w-full py-2 bg-white/10 hover:bg-white/20 text-white rounded text-base font-bold transition">Gestionar Ofertas</button>
+              <p className="text-base text-gray-400 mb-6 leading-relaxed">Gestiona las ofertas semanales y los banners promocionales que se muestran en el sitio web.</p>
+              <Link href="/admin/home">
+                <button className="w-full py-2 bg-white/10 hover:bg-white/20 text-white rounded text-base font-bold transition">Gestionar Ofertas</button>
+              </Link>
            </div>
 
            <div className="admin-v2-card p-6">

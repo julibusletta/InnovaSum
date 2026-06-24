@@ -935,9 +935,15 @@ function ProductsContent({
                           </div>
                         </div>
                       )}
-
                       {/* DELETE AND SAVE BUTTONS AT THE BOTTOM */}
-                      <div className="mt-12 pt-8 border-t border-gray-100 flex justify-between items-center">
+                      <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col">
+                        {message && message.includes('Error') && (
+                          <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded text-red-700 font-bold flex items-center gap-3 w-full animate-slideDown">
+                            <span className="text-xl">⚠️</span>
+                            {message}
+                          </div>
+                        )}
+                        <div className="flex justify-between items-center">
                         <button
                           onClick={() => handleDeleteProduct(p.id)}
                           disabled={deletingId === p.id}
@@ -974,7 +980,8 @@ function ProductsContent({
                       </div>
                     </div>
                   </div>
-                </main>
+                </div>
+              </main>
                 </div>
               </>
             );

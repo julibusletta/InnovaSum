@@ -102,7 +102,7 @@ function SearchContent() {
                 {/* Product Image */}
                 <Link href={`/product/${product.id}`} className="block relative aspect-square bg-gray-50 p-6 overflow-hidden">
                   <img
-                    src={product.image || (product.imageUrls && product.imageUrls[0]) || '/images/placeholder.png'}
+                    src={product.image || (product.imageUrls && product.imageUrls[0]) || '/images/no-image.svg'}
                     alt={product.name}
                     className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                   />

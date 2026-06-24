@@ -92,7 +92,7 @@ export default function ProductsPage() {
           if (p.id === id) {
              const newP = { ...p, [field]: value };
              if (field === 'images' && Array.isArray(value)) {
-               newP.image = (value[0] as string) || '/images/placeholder.jpg';
+               newP.image = (value[0] as string) || '/images/no-image.svg';
              }
              return newP;
           }
@@ -100,7 +100,7 @@ export default function ProductsPage() {
         });
       } else {
         const newProduct: any = { 
-          id, category, name: '', price: 0, image: '/images/placeholder.jpg', stock: 0, [field]: value 
+          id, category, name: '', price: 0, image: '/images/no-image.svg', stock: 0, [field]: value 
         };
         updated[category].push(newProduct);
       }
@@ -259,8 +259,8 @@ export default function ProductsPage() {
       name: '',
       price: 0,
       costPrice: 0,
-      image: '/images/placeholder.jpg',
-      images: ['/images/placeholder.jpg'],
+      image: '/images/no-image.svg',
+      images: ['/images/no-image.svg'],
       category: categoryOverride || 'general',
       stock: 0,
       description: '',
@@ -368,7 +368,7 @@ export default function ProductsPage() {
           const finalPrice = priceDiscount ? Number(priceDiscount) : priceOriginal;
           const imagesRaw = String(getVal(row, 'Imágenes', 'imagen', 'image') || '');
           const allImages = imagesRaw.split(/[,\s+]/).map(s => s.trim()).filter(Boolean).slice(0, 8);
-          const firstImage = allImages[0] || '/images/placeholder.jpg';
+          const firstImage = allImages[0] || '/images/no-image.svg';
           const rawCategory = String(getVal(row, 'Categoría', 'category') || 'general');
           return {
             id: String(rawId).trim(),

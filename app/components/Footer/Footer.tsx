@@ -128,11 +128,7 @@ export default function Footer() {
       {/* Footer Badges Section */}
       <div className="footer-badges-section w-full bg-gray-100 flex flex-col items-center justify-center py-5 px-4 border-t border-gray-300">
         <div className="badges-container flex gap-5 items-center justify-center flex-wrap mb-3 w-full">
-          <img
-            src="/images/nave.jpg"
-            alt="Nave Logo"
-            className="badge-img w-12 h-12 md:w-20 md:h-20 flex-shrink-0 object-contain"
-          />
+
           <img
             src="/images/compra_segura_footer.png"
             alt="Compra Segura"

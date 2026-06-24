@@ -179,7 +179,7 @@ export function ProductCarouselSection({ title, type = 'section', value }: Produ
               onMouseLeave={() => setIsPaused(false)}
             >
               {products.map((product, index) => {
-                const displayImage = product.image || (product.imageUrls?.[0]) || '/images/placeholder.png';
+                const displayImage = product.image || (product.imageUrls?.[0]) || '/images/no-image.svg';
                 const discountPct = product.discount || product.discountPercentage || 0;
 
                 return (

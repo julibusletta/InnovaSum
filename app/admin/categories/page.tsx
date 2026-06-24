@@ -130,7 +130,7 @@ export default function CategoriesPage() {
     setEditingCategory({
         name: '',
         slug: '',
-        image: '/images/placeholder.jpg',
+        image: '/images/no-image.svg',
         description: '',
         parentId: ''
     });
@@ -325,7 +325,7 @@ export default function CategoriesPage() {
                     <label className="block text-lg font-black text-gray-500 uppercase tracking-widest mb-2">Imagen</label>
                     <div className="flex gap-4 items-center">
                         <div className="w-20 h-20 bg-gray-50 rounded-lg border border-gray-200 flex items-center justify-center p-2">
-                           <img src={editingCategory.image || '/images/placeholder.jpg'} className="w-full h-full object-contain" />
+                           <img src={editingCategory.image || '/images/no-image.svg'} className="w-full h-full object-contain" />
                         </div>
                         <div className="flex-1">
                             <label className="cursor-pointer bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded text-base font-bold flex items-center gap-2 justify-center hover:bg-gray-50 transition w-full">

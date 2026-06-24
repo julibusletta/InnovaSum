@@ -595,11 +595,11 @@ export default function CategoryPage() {
             }}
           >
             <img
-              src={product.image || '/images/products/xiaomi-vacuum.png'}
+              src={product.image || '/images/no-image.svg'}
               alt={product.name}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = '/images/products/xiaomi-vacuum.png';
+                target.src = '/images/no-image.svg';
               }}
               style={{
                 maxHeight: '230px',

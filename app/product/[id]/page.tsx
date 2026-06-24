@@ -197,6 +197,7 @@ export default function ProductDetailsPage() {
   
   // Deduplicate images and limit to 8
   const allImages = Array.from(new Set([product.image, ...(product.images || [])].filter(Boolean))).slice(0, 8);
+  if (allImages.length === 0) allImages.push('/images/no-image.svg');
 
   return (
     <div className="bg-white flex flex-col items-center min-h-screen pt-8">

@@ -132,8 +132,8 @@ export default function ProductsPage() {
         newImages[index] = res.url;
         const cleanImages = newImages.filter(Boolean);
         handleProductChange(editingProduct.id, editingProduct.category, 'images', cleanImages);
-        // Auto-guardar inmediatamente tras subir la imagen
-        await autoSaveProductImages(editingProduct.id, editingProduct.category, cleanImages);
+        // NOTA: Se eliminó el auto-guardado a petición del usuario.
+        // Ahora el usuario debe hacer clic explícitamente en Guardar para confirmar la imagen.
       } else {
         alert(res.message || 'Error al subir archivo');
       }
@@ -965,6 +965,14 @@ function ProductsContent({
                             Cancelar
                           </button>
                         <button
+                          onClick={() => saveProducts(false)}
+                          disabled={isSaving}
+                          className={`px-6 py-3 bg-white text-[#058c8c] border-2 border-[#058c8c] rounded font-black text-lg uppercase tracking-widest hover:bg-[#058c8c]/10 transition-all flex items-center gap-2 ${isSaving ? 'opacity-70 cursor-not-allowed' : 'hover:scale-[1.02]'}`}
+                        >
+                          <FaSave size={14} />
+                          Guardar sin salir
+                        </button>
+                        <button
                           onClick={() => saveProducts(true)}
                           disabled={isSaving}
                           className={`px-10 py-3 bg-[#058c8c] text-white rounded font-black text-lg uppercase tracking-widest shadow-xl hover:bg-[#047a7a] transition-all flex items-center gap-3 ${isSaving ? 'opacity-70 cursor-not-allowed' : 'hover:scale-[1.02]'}`}
@@ -977,7 +985,7 @@ function ProductsContent({
                           ) : (
                             <>
                               <FaSave size={14} />
-                              Guardar cambios del producto
+                              Guardar y cerrar
                             </>
                           )}
                         </button>

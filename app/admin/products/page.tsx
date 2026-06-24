@@ -165,18 +165,22 @@ export default function ProductsPage() {
       }
     }
 
-    const allProducts = Object.values(products).flat() as Product[];
-    const invalidProduct = allProducts.find((p) => !p.name || p.name.trim() === '');
-    if (invalidProduct) {
-      setMessage(`Error: El producto con ID ${invalidProduct.id} no tiene nombre.`);
-      setIsSaving(false);
-      return;
+    // Limpiar productos "fantasma" que quedaron vacíos por cancelaciones
+    const cleanProducts: { [key: string]: Product[] } = {};
+    for (const [cat, items] of Object.entries(products)) {
+      const validItems = (items as Product[]).filter(p => p.name && p.name.trim() !== '');
+      if (validItems.length > 0) {
+        cleanProducts[cat] = validItems;
+      }
     }
+    
+    // Actualizar estado local si limpiamos fantasmas
+    setProducts(cleanProducts);
 
     try {
       const resp = await fetch('/api/admin', {
         method: 'POST',
-        body: JSON.stringify({ action: 'save_products', data: products }),
+        body: JSON.stringify({ action: 'save_products', data: cleanProducts }),
         headers: { 'Content-Type': 'application/json' }
       });
       const res = await resp.json();

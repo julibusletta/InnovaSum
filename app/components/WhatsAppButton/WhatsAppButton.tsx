@@ -3,7 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton = () => {
   // Reemplazar con el número real del comercio (agrega código de país sin el símbolo +)
-  const phoneNumber = "5491151457720"; 
+  const phoneNumber = "5491130535973"; 
   const message = "Hola! Vengo de la tienda web y necesito ayuda.";
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

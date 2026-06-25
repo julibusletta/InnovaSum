@@ -103,7 +103,7 @@ export default function Footer() {
                     <FaInstagram size={22} />
                   </a>
                   <a
-                    href="https://wa.me/5491151457720"
+                    href="https://wa.me/5491130535973"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white transition-all hover:bg-green-500"

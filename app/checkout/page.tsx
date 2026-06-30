@@ -143,6 +143,15 @@ function CheckoutContent() {
 
   const subtotalAfterCoupon = Math.max(0, cartTotal - couponDiscountAmount);
 
+  const dynamicShippingOptions = ANDREANI_OPTIONS.map(option => ({
+    ...option,
+    price: cartTotal >= 50000 ? 0 : (option.type === 'DOMICILIO' ? 10000 : 8500)
+  }));
+
+  const shippingCost = selectedRate 
+    ? (cartTotal >= 50000 ? 0 : (selectedRate.type === 'DOMICILIO' ? 10000 : 8500))
+    : 0;
+
   const handleNextStep = () => {
     if (currentStep === 1) {
       if (formData.zipCode.length < 4) {
@@ -186,7 +195,7 @@ function CheckoutContent() {
     setLoading(true);
     setError(null);
 
-    const subtotalWithShipping = subtotalAfterCoupon + (selectedRate?.price || 0);
+    const subtotalWithShipping = subtotalAfterCoupon + shippingCost;
     let finalTotal = subtotalWithShipping;
     if (paymentMethod === 'transfer') {
       finalTotal = subtotalWithShipping * 0.9;
@@ -210,7 +219,7 @@ function CheckoutContent() {
           paymentMode: 'NORMAL',
           shipping: {
             method: selectedRate?.name,
-            cost: 0, // Siempre sin cargo según pedido
+            cost: shippingCost,
             address: {
               street: formData.street,
               number: formData.number,
@@ -318,7 +327,7 @@ function CheckoutContent() {
               <fieldset className="form-fieldset">
                 <h2 className="checkout-title">Método de Envío</h2>
                 <div className="shipping-options-grid mt-8">
-                  {ANDREANI_OPTIONS.map((option) => (
+                  {dynamicShippingOptions.map((option) => (
                     <div 
                       key={option.id}
                       onClick={() => handleShippingRateSelect(option)}
@@ -327,7 +336,7 @@ function CheckoutContent() {
                       <img src={option.image} alt={option.name} />
                       <span className="shipping-name">{option.name}</span>
                       <span className="shipping-desc">Lo recibís en 3-5 días hábiles</span>
-                      <span className="shipping-price">SIN CARGO</span>
+                      <span className="shipping-price">{option.price === 0 ? 'SIN CARGO' : `$${option.price.toLocaleString('es-AR')}`}</span>
                     </div>
                   ))}
                 </div>
@@ -501,7 +510,9 @@ function CheckoutContent() {
               )}
               <div className="total-row">
                 <span className="total-label">Costo de Envío</span>
-                <span className="total-value text-green-600">SIN CARGO</span>
+                <span className={`total-value ${selectedRate && shippingCost === 0 ? 'text-green-600' : ''}`}>
+                  {!selectedRate ? '-' : (shippingCost === 0 ? 'SIN CARGO' : `$${shippingCost.toLocaleString('es-AR')}`)}
+                </span>
               </div>
               {paymentMethod === 'transfer' && (
                 <div className="total-row">

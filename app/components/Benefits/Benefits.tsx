@@ -43,8 +43,8 @@ export default function Benefits() {
     },
     {
       icon: <FaTruck size={32} />,
-      title: "Envíos rápidos a todo el país",
-      subtitle: null
+      title: "Envíos rápidos a todo el país*",
+      subtitle: <p style={{ fontSize: '0.85em', marginTop: '4px' }}>*en montos mayores a $50.000</p>
     },
     {
       icon: <FaShieldAlt size={32} />,

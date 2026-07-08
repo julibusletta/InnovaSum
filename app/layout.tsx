@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: "Renová tu celular y notebook al mejor precio de Argentina. Descubrí nuestro catálogo.",
     url: "https://www.innovasum.com.ar",
     siteName: "Innovasum",
-    images: [{ url: "https://www.innovasum.com.ar/images/logoinnovasum.webp", width: 800, height: 600, alt: "Innovasum Logo" }],
+    images: [{ url: "https://www.innovasum.com.ar/images/logoinnovasum.webp?v=2", width: 800, height: 600, alt: "Innovasum Logo" }],
     locale: "es_AR",
     type: "website",
   },

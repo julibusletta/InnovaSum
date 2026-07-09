@@ -149,7 +149,7 @@ export const mailer = {
       <body>
         <div class="wrapper">
           <div class="header">
-            <img src="cid:logo" alt="Innovasum" style="max-height: 100px; width: auto; display: block;" />
+            <img src="cid:logo" alt="Innovasum" style="max-height: 100px; width: auto; display: block; margin: 0 auto;" />
           </div>
           <div class="body">
             <h1 class="title">Hola ${userName}!</h1>
@@ -263,7 +263,7 @@ export const mailer = {
     const html = `
       <div style="font-family: sans-serif; padding: 30px; border: 1px solid #eee; max-width: 500px;">
         <div style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
-          <img src="cid:logo" alt="Innovasum" style="max-height: 60px; width: auto;" />
+          <img src="cid:logo" alt="Innovasum" style="max-height: 60px; width: auto; display: block; margin: 0 auto;" />
         </div>
         <h2 style="color: #2563eb;">¡Nuevo Comprobante Recibido!</h2>
         <p>Se ha subido un nuevo comprobante para la orden <strong>#${orderId}</strong>.</p>

@@ -37,3 +37,12 @@ Data: {
 [2026-03-28T02:49:25.022Z] ERROR sending transfer email to germanmcdonalds59@gmail.com
 Data: "Invalid login: 535 Incorrect authentication data"
 --------------------------------------------------
+[2026-07-09T03:33:58.612Z] ERROR sending transfer email to julian.busletta@gmail.com
+Data: "connect ECONNREFUSED ::1:465"
+--------------------------------------------------
+[2026-07-09T03:34:30.320Z] Transfer order email sent to julian.busletta@gmail.com for #JB-TEST-123456
+--------------------------------------------------
+[2026-07-09T03:42:58.280Z] Transfer order email sent to julian.busletta@gmail.com for #JB-TEST-123456
+--------------------------------------------------
+[2026-07-09T03:45:42.339Z] Transfer order email sent to julian.busletta@gmail.com for #JB-TEST-123456
+--------------------------------------------------

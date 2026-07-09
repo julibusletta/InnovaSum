@@ -27,7 +27,7 @@ export default function FAQPage() {
     {
       title: 'Formas de pago',
       question: '¿Cuáles son las formas de pago?',
-      content: 'Contás con varias opciones para abonar tu pedido: Podés elegir entre depósito o transferencia bancaria (abonando el precio especial), tarjetas de crédito (en hasta 18 cuotas fijas) o billeteras virtuales, como Mercado Pago y MODO (con QR y hasta 2 tarjetas de crédito en simultáneo).'
+      content: 'Contás con varias opciones para abonar tu pedido: Podés elegir entre depósito o transferencia bancaria, tarjetas de crédito (en hasta 18 cuotas fijas) o billeteras virtuales, como Mercado Pago y MODO (con QR y hasta 2 tarjetas de crédito en simultáneo).'
     },
     {
       title: 'Códigos de descuento',

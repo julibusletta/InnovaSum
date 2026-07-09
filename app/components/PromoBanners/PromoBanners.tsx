@@ -48,9 +48,6 @@ const PromoBanners = () => {
                         <div className="tb-text-col tb-text-light">
                             <h2 className="tb-title -mb-1 lowercase">JBL CHARGE 6</h2>
                             <div className="text-3xl md:text-4xl font-black text-white uppercase italic">OFERTA</div>
-                            <div className="text-[11px] font-bold text-slate-300 md:mb-5">
-                                * 10% de descuento abonando por transferencia
-                            </div>
                             <div className="tb-features">
                                 <div className="tb-feature">
                                     <div className="tb-icon-wrapper"><FaCreditCard /></div>

@@ -235,9 +235,7 @@ export default function TransferPage() {
                     <p className="text-6xl font-black text-slate-900 tracking-tighter tabular-nums">
                       ${order.total?.toLocaleString('es-AR')}
                     </p>
-                    <p className="text-[10px] text-emerald-600 font-black uppercase tracking-widest pt-2">
-                       (Incluye descuento por transferencia)
-                    </p>
+
                   </div>
                 </div>
               </div>

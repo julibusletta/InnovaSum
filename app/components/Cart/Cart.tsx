@@ -127,7 +127,6 @@ export default function Cart() {
             </div>
 
             <div className="payment-methods">
-              <p>*Precio abonando con depósito o transferencia.</p>
             </div>
 
 

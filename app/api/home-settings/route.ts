@@ -26,7 +26,7 @@ export async function GET() {
           { title: "NUEVAS LLEGADAS", type: 'section', value: 'nuevas', order: 1, active: true }
         ],
         weeklyOffers: [
-          { productId: "378", title: "JBL CHARGE 6", subtitle: "* 10% de descuento abonando por transferencia", link: "/product/378", active: true },
+          { productId: "378", title: "JBL CHARGE 6", subtitle: "", link: "/product/378", active: true },
           { productId: "1339", title: "XIAOMI SMART", subtitle: "ROBOT S40C", link: "/product/1339", active: true }
         ]
       });

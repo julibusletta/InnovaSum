@@ -197,9 +197,7 @@ function CheckoutContent() {
 
     const subtotalWithShipping = subtotalAfterCoupon + shippingCost;
     let finalTotal = subtotalWithShipping;
-    if (paymentMethod === 'transfer') {
-      finalTotal = subtotalWithShipping * 0.9;
-    }
+
 
     const endpoint = paymentMethod.startsWith('mercadopago') ? '/api/checkout/mercadopago' : '/api/checkout/transfer';
 
@@ -514,17 +512,10 @@ function CheckoutContent() {
                   {!selectedRate ? '-' : (shippingCost === 0 ? 'SIN CARGO' : `$${shippingCost.toLocaleString('es-AR')}`)}
                 </span>
               </div>
-              {paymentMethod === 'transfer' && (
-                <div className="total-row">
-                  <span className="total-label text-red-600">Descuento Transferencia (10%)</span>
-                  <span className="total-value text-red-600">-${(subtotalAfterCoupon * 0.1).toLocaleString('es-AR')}</span>
-                </div>
-              )}
-              
               <div className="final-total-row">
                 <span className="final-total-label">Total Final</span>
                 <span className="final-total-value">
-                  ${(paymentMethod === 'transfer' ? subtotalAfterCoupon * 0.9 : subtotalAfterCoupon).toLocaleString('es-AR')}
+                  ${subtotalAfterCoupon.toLocaleString('es-AR')}
                 </span>
               </div>
             </div>

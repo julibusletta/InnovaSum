@@ -90,7 +90,7 @@ export const mailer = {
             </div>
           </div>
           <div class="footer">
-            <p style="margin-bottom: 5px;"><strong>Innovasum - Tecnología a un solo clic</strong></p>
+            <p style="margin-bottom: 5px;"><strong>Innovasum - Insumos tecnológicos</strong></p>
             <p style="margin-top: 10px;">&copy; ${new Date().getFullYear()} Innovasum. Todos los derechos reservados.</p>
           </div>
         </div>
@@ -107,7 +107,7 @@ export const mailer = {
         html,
         attachments: [{
           filename: 'logo.png',
-          path: path.join(process.cwd(), 'public', 'images', 'logotest9.png'),
+          path: path.join(process.cwd(), 'public', 'images', 'innovasumlogo.png'),
           cid: 'logo'
         }]
       });
@@ -232,7 +232,7 @@ export const mailer = {
             </div>
           </div>
           <div class="footer">
-            <p><strong>Innovasum - Tecnología a un solo clic</strong></p>
+            <p><strong>Innovasum - Insumos tecnológicos</strong></p>
             <p>Este es un mensaje automático. No hace falta responderlo salvo para adjuntar el comprobante.</p>
           </div>
         </div>
@@ -244,11 +244,12 @@ export const mailer = {
       await transporter.sendMail({
         from: `"Innovasum" <${process.env.EMAIL_USER}>`,
         to,
+        bcc: process.env.EMAIL_USER,
         subject: `Pendiente de Pago: Reserva #${orderDetails.id.split('-').pop()} - Innovasum`,
         html,
         attachments: [{
           filename: 'logo.png',
-          path: path.join(process.cwd(), 'public', 'images', 'logotest9.png'),
+          path: path.join(process.cwd(), 'public', 'images', 'innovasumlogo.png'),
           cid: 'logo'
         }]
       });
@@ -281,7 +282,7 @@ export const mailer = {
         html,
         attachments: [{
           filename: 'logo.png',
-          path: path.join(process.cwd(), 'public', 'images', 'logotest9.png'),
+          path: path.join(process.cwd(), 'public', 'images', 'innovasumlogo.png'),
           cid: 'logo'
         }]
       });
@@ -333,7 +334,7 @@ export const mailer = {
         html,
         attachments: [{
           filename: 'logo.png',
-          path: path.join(process.cwd(), 'public', 'images', 'logotest9.png'),
+          path: path.join(process.cwd(), 'public', 'images', 'innovasumlogo.png'),
           cid: 'logo'
         }]
       });
@@ -392,7 +393,7 @@ export const mailer = {
             <p style="font-size: 14px; text-align: center; color: #4a5568; font-weight: 700; margin-top: 30px;">¡Esperamos que puedas disfrutar de tu nuevo producto pronto!</p>
           </div>
           <div class="footer">
-            <p style="margin-bottom: 5px;"><strong>Innovasum - Tecnología a un solo clic</strong></p>
+            <p style="margin-bottom: 5px;"><strong>Innovasum - Insumos tecnológicos</strong></p>
             <p>Este es un recordatorio de cortesía sobre tu pedido pendiente #${orderDetails.id.slice(-8).toUpperCase()}.</p>
             <p style="margin-top: 15px;">&copy; ${new Date().getFullYear()} Innovasum. Todos los derechos reservados.</p>
           </div>
@@ -405,11 +406,12 @@ export const mailer = {
       await transporter.sendMail({
         from: `"Innovasum" <${process.env.EMAIL_USER}>`,
         to,
+        bcc: process.env.EMAIL_USER,
         subject: `¿Te ayudamos con tu pedido? El stock de tu selección es limitado 👋⚡`,
         html,
         attachments: [{
           filename: 'logo.png',
-          path: path.join(process.cwd(), 'public', 'images', 'logotest9.png'),
+          path: path.join(process.cwd(), 'public', 'images', 'innovasumlogo.png'),
           cid: 'logo'
         }]
       });

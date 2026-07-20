@@ -84,15 +84,6 @@ function SignInContent() {
                 <FaGoogle className="text-red-500 text-lg" />
                 Continuar con Google
               </button>
-
-              <button
-                onClick={() => signIn("facebook", { callbackUrl })}
-                disabled={loading}
-                className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-transparent rounded-xl shadow-sm bg-[#1877F2] text-sm font-bold text-white hover:bg-[#166fe5] transition-all cursor-pointer disabled:opacity-50"
-              >
-                <FaFacebookF className="text-lg" />
-                Continuar con Facebook
-              </button>
             </div>
 
             <div className="relative my-8">

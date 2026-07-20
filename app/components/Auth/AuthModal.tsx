@@ -279,9 +279,6 @@ export default function AuthModal() {
             <button className="auth-social-btn" onClick={() => handleSocialSignIn('google')}>
               <FaGoogle className="text-red-500" /> Continuar con Google
             </button>
-            <button className="auth-social-btn facebook" onClick={() => handleSocialSignIn('facebook')}>
-              <FaFacebookF /> Continuar con Facebook
-            </button>
           </div>
         </div>
       </div>

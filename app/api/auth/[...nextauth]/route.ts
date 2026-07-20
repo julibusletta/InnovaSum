@@ -1,6 +1,5 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import FacebookProvider from "next-auth/providers/facebook";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { db } from "@/lib/db";
@@ -10,10 +9,6 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID || "dummy",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "dummy",
-    }),
-    FacebookProvider({
-      clientId: process.env.FACEBOOK_CLIENT_ID || "dummy",
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET || "dummy",
     }),
     CredentialsProvider({
       name: "Credentials",
@@ -45,7 +40,7 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async signIn({ user, account, profile }: any) {
-      if (account?.provider === "google" || account?.provider === "facebook") {
+      if (account?.provider === "google") {
         if (!user.email) return false;
         const existingUser = await db.getUserByEmail(user.email);
         if (!existingUser) {
@@ -66,7 +61,7 @@ export const authOptions: NextAuthOptions = {
     },
     async jwt({ token, user, account }: any) {
       if (user) {
-        if (account?.provider === "google" || account?.provider === "facebook") {
+        if (account?.provider === "google") {
           const dbUser = await db.getUserByEmail(user.email);
           if (dbUser) {
             token.role = dbUser.role || "USER";

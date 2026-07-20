@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { FaUser, FaIdCard, FaEnvelope, FaLock, FaMapMarkerAlt } from 'react-icons/fa';
+import { signIn } from 'next-auth/react';
+import { FaUser, FaIdCard, FaEnvelope, FaLock, FaMapMarkerAlt, FaGoogle } from 'react-icons/fa';
 
 const PROVINCIAS = [
   "Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", 
@@ -81,6 +82,27 @@ export default function RegisterPage() {
             {error}
           </div>
         )}
+
+        <div className="mt-8 space-y-4 mb-12">
+          <button
+            type="button"
+            onClick={() => signIn("google", { callbackUrl: "/mi-cuenta" })}
+            disabled={loading}
+            className="w-full flex items-center justify-center gap-3 px-4 py-4 border border-gray-300 rounded-2xl shadow-sm bg-white text-sm font-bold text-gray-700 hover:bg-gray-50 transition-all cursor-pointer disabled:opacity-50"
+          >
+            <FaGoogle className="text-red-500 text-xl" />
+            Registrarme con Google
+          </button>
+          
+          <div className="relative my-10">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-200"></div>
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-4 bg-white text-gray-400 uppercase tracking-widest text-[11px] font-bold">O registrate con tu correo</span>
+            </div>
+          </div>
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-12">
           {/* Datos Personales */}

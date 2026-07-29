@@ -71,7 +71,7 @@ header.scrolled {
   text-decoration: none;
   color: #666;
   font-size: 14px;
-  margin-top: -15px; /* Pull closer to logo */
+  margin-top: 0px; /* Prevent overlap with bottom text of Innovasum logo */
   transition: opacity 0.3s;
 }
 
@@ -482,7 +482,7 @@ header.scrolled .logo {
   }
 
   .tecnisum-link {
-    margin-top: -5px !important;
+    margin-top: 2px !important;
     font-size: 12px !important;
   }
 

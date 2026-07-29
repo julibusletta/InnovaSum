@@ -145,13 +145,28 @@ export default function Header() {
         </button>
 
         {/* Center/Left: Logo */}
-        <Link href="/" className="logo flex items-center">
-          <img
-            src="/images/innovasumlogo.png"
-            alt="Innovasum Logo"
-            className="w-auto object-contain cursor-pointer transition-transform hover:scale-105"
-          />
-        </Link>
+        <div className="flex flex-col items-start justify-center">
+          <Link href="/" className="logo flex items-center">
+            <img
+              src="/images/innovasumlogo.png"
+              alt="Innovasum Logo"
+              className="w-auto object-contain cursor-pointer transition-transform hover:scale-105"
+            />
+          </Link>
+          <a 
+            href="https://www.tecnisum.com.ar" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center text-[11px] text-gray-500 hover:opacity-80 no-underline ml-2 mt-[-4px] transition-opacity"
+          >
+            <span className="mr-1">by</span>
+            <img 
+              src="/images/logotecnisum.png" 
+              alt="Tecnisum Logo" 
+              className="h-[14px] w-auto object-contain" 
+            />
+          </a>
+        </div>
 
           <form onSubmit={handleSearch} className="hidden md:flex search-bar flex-1 max-w-2xl mx-10 items-center rounded-lg border border-gray-300 bg-white shadow-sm">
             <input

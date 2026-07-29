@@ -35,23 +35,60 @@ header.scrolled {
   justify-content: center;
 }
 
-.header-top .logo {
+.header-top .logo-container {
   flex: 0 0 auto;
-  height: 160px;
-  display: flex;
-  align-items: center;
   position: absolute;
   left: 20px;
   z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
-.header-top .logo img {
-  height: 160px;
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  height: 120px; /* Reduced from 160px so it fits well */
   width: auto;
-  max-width: 320px;
+  max-width: 250px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.logo-img:hover {
+  transform: scale(1.03);
+}
+
+.tecnisum-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+  margin-top: -15px; /* Pull closer to logo */
+  transition: opacity 0.3s;
+}
+
+.tecnisum-link:hover {
+  opacity: 0.8;
+}
+
+.tecnisum-link span {
+  margin-right: 5px;
+  font-weight: 600;
+}
+
+.tecnisum-link img {
+  height: 22px; /* Larger as requested */
+  width: auto;
   object-fit: contain;
 }
-
 .search-bar {
   position: relative;
   flex: 0 1 500px;
@@ -167,13 +204,6 @@ header.scrolled {
   z-index: 1;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  display: flex;
-  align-items: center;
-}
 
 .nav-primary {
   display: flex;
@@ -438,23 +468,27 @@ header.scrolled .logo {
     z-index: 1100 !important;
   }
 
-  .logo {
-    display: flex !important;
-    position: absolute !important;
+  .header-top .logo-container {
     left: 50% !important;
     top: 50% !important;
-    transform: translate(-50%, -50%) scale(1.75) !important;
-    height: 60px !important;
-    margin: 0 !important;
-    z-index: 20 !important;
+    transform: translate(-50%, -50%) !important;
+    height: auto !important;
+    width: 100%;
   }
 
-  .logo img {
-    height: 100% !important;
-    width: auto !important;
-    object-fit: contain !important;
+  .logo-img {
+    height: 70px !important;
+    max-width: 200px !important;
   }
 
+  .tecnisum-link {
+    margin-top: -5px !important;
+    font-size: 12px !important;
+  }
+
+  .tecnisum-link img {
+    height: 16px !important;
+  }
   .header-actions {
     display: flex !important;
     position: absolute !important;
@@ -530,12 +564,13 @@ header.scrolled .logo {
     height: 75px !important;
     min-height: 75px !important;
   }
-  
-  .logo {
-    height: 60px !important;
-    margin-left: 20px !important;
+  .header-top .logo-container {
+    height: auto !important;
   }
-
+  
+  .logo-img {
+    height: 55px !important;
+  }
   .header-actions {
     gap: 8px !important;
   }

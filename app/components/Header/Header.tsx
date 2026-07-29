@@ -145,25 +145,24 @@ export default function Header() {
         </button>
 
         {/* Center/Left: Logo */}
-        <div className="flex flex-col items-start justify-center">
-          <Link href="/" className="logo flex items-center">
+        <div className="logo-container">
+          <Link href="/" className="logo-link">
             <img
               src="/images/innovasumlogo.png"
               alt="Innovasum Logo"
-              className="w-auto object-contain cursor-pointer transition-transform hover:scale-105"
+              className="logo-img"
             />
           </Link>
           <a 
             href="https://www.tecnisum.com.ar" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="flex items-center text-[11px] text-gray-500 hover:opacity-80 no-underline ml-2 mt-[-4px] transition-opacity"
+            className="tecnisum-link"
           >
-            <span className="mr-1">by</span>
+            <span>by</span>
             <img 
               src="/images/logotecnisum.png" 
               alt="Tecnisum Logo" 
-              className="h-[14px] w-auto object-contain" 
             />
           </a>
         </div>

@@ -119,9 +119,24 @@ export default function Footer() {
         {/* Separator and text taking full footer width minus padding */}
         <div className="w-full flex flex-col items-center mt-12 md:mt-16">
           <div className="w-[95%] h-px bg-gray-700 opacity-50 mb-8 md:mb-10"></div>
-          <p className="text-center opacity-80 text-sm md:text-base w-full m-0 pb-2">
+          <p className="text-center opacity-80 text-sm md:text-base w-full m-0 pb-1">
             Todos los derechos reservados © 2026 Innovasum
           </p>
+          <a 
+            href="https://www.tecnisum.com.ar" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center justify-center text-[12px] text-gray-400 hover:text-white no-underline transition-colors pb-4 mt-1"
+          >
+            <span className="mr-1">by</span>
+            <div className="bg-white/90 px-1.5 py-0.5 rounded flex items-center">
+              <img 
+                src="/images/logotecnisum.png" 
+                alt="Tecnisum Logo" 
+                className="h-[14px] w-auto object-contain" 
+              />
+            </div>
+          </a>
         </div>
       </footer>
 

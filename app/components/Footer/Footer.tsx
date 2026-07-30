@@ -126,14 +126,14 @@ export default function Footer() {
             href="https://www.tecnisum.com.ar" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="flex items-center justify-center text-[12px] text-gray-400 hover:text-white no-underline transition-colors pb-4 mt-1"
+            className="flex items-center justify-center text-[13px] text-gray-400 hover:text-white no-underline transition-colors pb-4 mt-4"
           >
-            <span className="mr-1">by</span>
-            <div className="bg-white/90 px-1.5 py-0.5 rounded flex items-center">
+            <span className="mr-1.5">by</span>
+            <div className="bg-white/95 px-2 py-1 rounded flex items-center shadow-sm">
               <img 
                 src="/images/logotecnisum.png" 
                 alt="Tecnisum Logo" 
-                className="h-[14px] w-auto object-contain" 
+                className="h-[18px] w-auto object-contain" 
               />
             </div>
           </a>

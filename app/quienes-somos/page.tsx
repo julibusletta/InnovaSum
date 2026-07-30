@@ -14,7 +14,7 @@ export default function QuienesSomos() {
 
         <section className="about-content">
           <p>
-            <span className="dropcap">E</span>n <strong>Innovasum</strong>, llevamos más de 5 años transformando la forma en que los argentinos acceden a la última tecnología. 
+            <span className="dropcap">E</span>n <strong>Innovasum</strong>, como rama oficial de <strong>Tecnisum</strong>, estamos respaldados por más de 20 años de experiencia transformando la forma en que los argentinos acceden a la última tecnología. 
             Nacimos con una misión clara: democratizar el acceso a productos de alta gama, eliminando intermediarios innecesarios y 
             garantizando siempre el mejor precio del mercado.
           </p>

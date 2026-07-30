@@ -41,9 +41,9 @@ header.scrolled {
   left: 20px;
   z-index: 20;
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Side-by-side on desktop */
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100%;
 }
 
@@ -71,7 +71,8 @@ header.scrolled {
   text-decoration: none;
   color: #666;
   font-size: 14px;
-  margin-top: 0px; /* Prevent overlap with bottom text of Innovasum logo */
+  margin-top: 0px;
+  margin-left: 15px; /* Space between Innovasum and Tecnisum logos */
   transition: opacity 0.3s;
 }
 
@@ -474,6 +475,7 @@ header.scrolled .logo {
     transform: translate(-50%, -50%) !important;
     height: auto !important;
     width: 100%;
+    flex-direction: column !important; /* Keep stacked on mobile */
   }
 
   .logo-img {
@@ -483,6 +485,7 @@ header.scrolled .logo {
 
   .tecnisum-link {
     margin-top: 2px !important;
+    margin-left: 0 !important; /* Reset side margin for mobile */
     font-size: 12px !important;
   }
 

@@ -14,9 +14,7 @@ export default function QuienesSomos() {
 
         <section className="about-content">
           <p>
-            <span className="dropcap">E</span>n <strong>Innovasum</strong>, la rama oficial de <strong>i.Tecnisum SAS</strong>, nos enorgullece contar con el respaldo inquebrantable de más de 20 años de trayectoria ininterrumpida en el sector.
-            Nuestra principal misión es revolucionar la forma en que nuestros clientes descubren, adquieren y aprovechan la última tecnología, ofreciendo
-            un ecosistema de ventas altamente profesional y enfocado en soluciones eficientes y de vanguardia.
+            <span className="dropcap">R</span>espaldados por más de 20 años de trayectoria, <strong>Innovasum</strong> nace como una rama de <strong>i.Tecnisum SAS</strong>. Nos enfocamos en brindar a nuestros clientes tecnología de vanguardia y atención profesional, garantizando siempre excelencia, eficiencia y los mejores equipos del mercado.
           </p>
 
           <p>

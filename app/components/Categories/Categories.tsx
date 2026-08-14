@@ -66,7 +66,7 @@ export default function Categories() {
     },
     {
       id: 'cat-starlink',
-      name: 'Starlink',
+      name: 'Accesorios Starlink',
       slug: 'accesorios-starlink',
       image: '/images/categories/starlink.png',
       isMain: false,
@@ -79,7 +79,7 @@ export default function Categories() {
     ...manualCategories
   ];
 
-  const sortOrder = ['celulares', 'apple', 'notebooks', 'smart-home', 'starlink'];
+  const sortOrder = ['celulares', 'apple', 'notebooks', 'smart-home', 'accesorios-starlink'];
   const finalCategories = combinedCategories.sort((a, b) => {
     return sortOrder.indexOf(a.slug) - sortOrder.indexOf(b.slug);
   });

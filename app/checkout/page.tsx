@@ -198,6 +198,15 @@ function CheckoutContent() {
     const subtotalWithShipping = subtotalAfterCoupon + shippingCost;
     let finalTotal = subtotalWithShipping;
 
+    // Send to Meta Pixel
+    import('@/lib/track').then(({ trackMetaEvent }) => {
+      trackMetaEvent('InitiateCheckout', {
+        content_ids: cartItems.map((i: any) => i.id),
+        content_type: 'product',
+        value: finalTotal,
+        currency: 'ARS'
+      });
+    });
 
     const endpoint = paymentMethod.startsWith('mercadopago') ? '/api/checkout/mercadopago' : '/api/checkout/transfer';
 

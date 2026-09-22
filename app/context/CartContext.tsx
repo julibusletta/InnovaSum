@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { trackAddToCart } from '@/lib/track';
 
 export interface CartItem {
   id: string;
@@ -57,6 +58,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [cartItems, isInitialized]);
 
   const addToCart = (item: CartItem) => {
+    // Send to Meta Pixel
+    trackAddToCart(item);
+
     setCartCount((prev) => prev + item.quantity);
     
     setCartItems((prevItems) => {

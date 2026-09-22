@@ -24,6 +24,11 @@ function SearchContent() {
         if (query) {
           const { items } = await getAllPublic(query, 1, 50);
           setProducts(items);
+          
+          // Send to Meta Pixel
+          import('@/lib/track').then(({ trackSearch }) => {
+            trackSearch(query);
+          });
         } else {
           setProducts([]);
         }
